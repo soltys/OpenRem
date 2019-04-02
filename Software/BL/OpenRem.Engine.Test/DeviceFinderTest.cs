@@ -5,9 +5,9 @@ using OpenRem.Engine.OS;
 namespace OpenRem.Engine.Test
 {
     [TestFixture]
-    public class OpenRemDeviceFinderTest
+    public class DeviceFinderTest
     {
-        private OpenRemDeviceFinder sut;
+        private DeviceFinder sut;
         private Mock<IPnPDevice> pnpDeviceMock;
 
         [SetUp]
@@ -76,9 +76,9 @@ namespace OpenRem.Engine.Test
             Assert.IsNotNull(possibleArduinoDevice);
         }
 
-        private OpenRemDeviceFinder CreateSut()
+        private DeviceFinder CreateSut()
         {
-            return new OpenRemDeviceFinder(pnpDeviceMock.Object);
+            return new DeviceFinder(pnpDeviceMock.Object);
         }
     }
 }

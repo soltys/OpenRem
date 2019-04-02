@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OpenRemDeviceFinderTest.cs" />
+    <Compile Include="DeviceFinderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,7 +59,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BL\OpenRem.Engine\OpenRem.Engine.csproj">
+    <ProjectReference Include="..\OpenRem.Engine\OpenRem.Engine.csproj">
       <Project>{92a35deb-7d8f-452b-958b-a7e83259540f}</Project>
       <Name>OpenRem.Engine</Name>
     </ProjectReference>

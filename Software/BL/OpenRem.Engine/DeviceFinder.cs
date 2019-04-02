@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using OpenRem.Engine.OS;
 
 namespace OpenRem.Engine
 {
-    internal class OpenRemDeviceFinder
+    internal class DeviceFinder
     {
         private IPnPDevice pnpDevice;
 
-        public OpenRemDeviceFinder(IPnPDevice pnpDevice)
+        public DeviceFinder(IPnPDevice pnpDevice)
         {
             this.pnpDevice = pnpDevice;
         }

@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Engine", "BL\OpenRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Emulator", "HAL\OpenRem.Emulator\OpenRem.Emulator.csproj", "{08838EC5-0D11-46AC-8FD1-51B2667C06E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Engine.Test", "OpenRem.Engine.Test\OpenRem.Engine.Test.csproj", "{77BE9A99-FB03-479C-9782-D8C337298124}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Engine.Test", "BL\OpenRem.Engine.Test\OpenRem.Engine.Test.csproj", "{77BE9A99-FB03-479C-9782-D8C337298124}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

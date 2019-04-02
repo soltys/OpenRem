@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="ArduinoSerialPortFactory.cs" />
     <Compile Include="ArduinoType.cs" />
-    <Compile Include="OpenRemDataStream.cs" />
+    <Compile Include="ArduinoDataStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

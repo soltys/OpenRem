@@ -7,7 +7,7 @@ using OpenRem.Common;
 
 namespace OpenRem.Arduino
 {
-    public class OpenRemDataStream : IDataStream
+    public class ArduinoDataStream : IDataStream
     {
         private SerialPort serialPort;
         
@@ -16,7 +16,7 @@ namespace OpenRem.Arduino
 
         public IObservable<byte> DataStream { get; private set; }
 
-        public OpenRemDataStream(string comPort, ArduinoType arduinoType)
+        public ArduinoDataStream(string comPort, ArduinoType arduinoType)
         {
             this.comPort = comPort;
             this.arduinoType = arduinoType;
