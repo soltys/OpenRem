@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Engine", "BL\OpenRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Emulator", "HAL\OpenRem.Emulator\OpenRem.Emulator.csproj", "{08838EC5-0D11-46AC-8FD1-51B2667C06E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Engine.Test", "OpenRem.Engine.Test\OpenRem.Engine.Test.csproj", "{77BE9A99-FB03-479C-9782-D8C337298124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +86,12 @@ Global
 		{08838EC5-0D11-46AC-8FD1-51B2667C06E1}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08838EC5-0D11-46AC-8FD1-51B2667C06E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08838EC5-0D11-46AC-8FD1-51B2667C06E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77BE9A99-FB03-479C-9782-D8C337298124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BE9A99-FB03-479C-9782-D8C337298124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BE9A99-FB03-479C-9782-D8C337298124}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BE9A99-FB03-479C-9782-D8C337298124}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BE9A99-FB03-479C-9782-D8C337298124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BE9A99-FB03-479C-9782-D8C337298124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +105,7 @@ Global
 		{45ECB91C-68EE-4EF9-9F1C-32ACE8A12F54} = {8A8E8C0F-B04A-4C2E-89D3-9BED018C6E23}
 		{92A35DEB-7D8F-452B-958B-A7E83259540F} = {2E85DEA9-9448-4AEB-BEF0-D45FFA089BDF}
 		{08838EC5-0D11-46AC-8FD1-51B2667C06E1} = {BD8FE923-DB01-44D3-9F65-78D68E100E5A}
+		{77BE9A99-FB03-479C-9782-D8C337298124} = {2E85DEA9-9448-4AEB-BEF0-D45FFA089BDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AB9D05F-298B-4588-B2E0-9DAE6B079977}

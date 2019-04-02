@@ -10,6 +10,6 @@
         Width="800"
         >
     <Grid>
-        <ui:SaveArduinoOutput />
+        <ComboBox />
     </Grid>
 </Window>

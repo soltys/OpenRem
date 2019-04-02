@@ -1,3 +1,5 @@
+using OpenRem.Common;
+
 namespace OpenRem.Emulator
 {
     /// <summary>

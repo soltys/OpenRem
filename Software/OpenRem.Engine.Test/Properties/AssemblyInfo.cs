@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using OpenRem.Core;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OpenRem.Engine")]
+[assembly: AssemblyTitle("OpenRem.Engine.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OpenRem.Engine")]
+[assembly: AssemblyProduct("OpenRem.Engine.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,10 +20,7 @@ using OpenRem.Core;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("92a35deb-7d8f-452b-958b-a7e83259540f")]
-
-[assembly: InternalsVisibleTo("OpenRem.Engine.Test")]
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+[assembly: Guid("77be9a99-fb03-479c-9782-d8c337298124")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -36,5 +32,6 @@ using OpenRem.Core;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion(VersionInfo.Version)]
-[assembly: AssemblyFileVersion(VersionInfo.Version)]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+
