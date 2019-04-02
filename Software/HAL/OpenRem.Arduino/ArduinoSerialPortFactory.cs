@@ -1,6 +1,6 @@
 using System.IO.Ports;
 
-namespace OpenRem.Common
+namespace OpenRem.Arduino
 {
     public static class ArduinoSerialPortFactory
     {

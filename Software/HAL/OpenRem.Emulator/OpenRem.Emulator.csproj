@@ -57,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InfiniteFileDataStream.cs" />
+    <Compile Include="MicroStopwatch.cs" />
+    <Compile Include="MicroTimer.cs" />
+    <Compile Include="MicroTimerEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

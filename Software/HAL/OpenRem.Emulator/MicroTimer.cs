@@ -1,4 +1,4 @@
-namespace OpenRem.Common
+namespace OpenRem.Emulator
 {
     /// <summary>
     /// MicroTimer class

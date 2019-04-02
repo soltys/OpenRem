@@ -63,10 +63,6 @@
       <Project>{e360a461-585a-4416-82be-b5719b270b39}</Project>
       <Name>OpenRem.Arduino</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Noah\OpenRem.Ark\OpenRem.Ark.csproj">
-      <Project>{9f34264e-808b-45b2-8b44-755c6032973d}</Project>
-      <Name>OpenRem.Ark</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj">
       <Project>{45ecb91c-68ee-4ef9-9f1c-32ace8a12f54}</Project>
       <Name>OpenRem.Common</Name>

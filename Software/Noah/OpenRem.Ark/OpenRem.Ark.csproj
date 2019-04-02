@@ -62,6 +62,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BL\OpenRem.Engine\OpenRem.Engine.csproj">
+      <Project>{92a35deb-7d8f-452b-958b-a7e83259540f}</Project>
+      <Name>OpenRem.Engine</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj">
       <Project>{45ecb91c-68ee-4ef9-9f1c-32ace8a12f54}</Project>
       <Name>OpenRem.Common</Name>

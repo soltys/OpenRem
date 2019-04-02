@@ -11,22 +11,22 @@ namespace OpenRem.Arduino
     {
         private SerialPort serialPort;
         
-        private string comPort;
-
+        private readonly string comPort;
+        private readonly ArduinoType arduinoType;
 
         public IObservable<byte> DataStream { get; private set; }
 
-
-        public OpenRemDataStream(string comPort)
+        public OpenRemDataStream(string comPort, ArduinoType arduinoType)
         {
             this.comPort = comPort;
+            this.arduinoType = arduinoType;
         }
 
         public void Open()
         {
-            this.serialPort = ArduinoSerialPortFactory.Create(this.comPort, ArduinoType.Leonardo);
+            this.serialPort = ArduinoSerialPortFactory.Create(this.comPort, this.arduinoType);
             this.serialPort.Open();
-            this.DataStream = Observable.FromEventPattern<
+            DataStream = Observable.FromEventPattern<
                 SerialDataReceivedEventHandler,
                 SerialDataReceivedEventArgs>
             (

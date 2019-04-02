@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 namespace OpenRem.Common
 {
@@ -7,11 +8,11 @@ namespace OpenRem.Common
     /// </summary>
     public class MicroStopwatch : System.Diagnostics.Stopwatch
     {
-        readonly double _microSecPerTick = 1000000D / Frequency;
+        readonly double _microSecPerTick = 1000000D / Stopwatch.Frequency;
 
         public MicroStopwatch()
         {
-            if (!IsHighResolution)
+            if (!Stopwatch.IsHighResolution)
             {
                 throw new Exception("On this system the high-resolution " +
                                     "performance counter is not available");

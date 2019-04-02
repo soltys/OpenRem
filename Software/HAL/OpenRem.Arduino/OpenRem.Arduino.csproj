@@ -56,6 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArduinoSerialPortFactory.cs" />
+    <Compile Include="ArduinoType.cs" />
     <Compile Include="OpenRemDataStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -77,7 +77,6 @@ namespace OpenRem.Emulator
         public void Stop()
         {
             this.microTimer.Stop();
-            
         }
     }
 }

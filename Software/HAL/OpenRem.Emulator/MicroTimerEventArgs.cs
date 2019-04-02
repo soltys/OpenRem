@@ -1,6 +1,6 @@
 using System;
 
-namespace OpenRem.Common
+namespace OpenRem.Emulator
 {
     /// <summary>
     /// MicroTimer Event Argument class
