@@ -1,8 +1,8 @@
-namespace OpenRem.Arduino
+namespace OpenRem.Arduino.Interface
 {
     public enum ArduinoType
     {
         Leonardo,
-        MkrZero
+        MKRZERO
     }
 }

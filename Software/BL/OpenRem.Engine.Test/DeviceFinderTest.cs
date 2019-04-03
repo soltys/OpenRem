@@ -24,7 +24,7 @@ namespace OpenRem.Engine.Test
             {
                 "Arduino Leonardo (COM10)"
             });
-            var possibleArduinoDevice = sut.GetPossibleArduinoDevices();
+            var possibleArduinoDevice = sut.GetArduinoDevices();
 
             Assert.AreEqual(1,possibleArduinoDevice.Length);
             Assert.AreEqual("Arduino Leonardo", possibleArduinoDevice[0].Name);
@@ -39,7 +39,7 @@ namespace OpenRem.Engine.Test
                 "Arduino Leonardo (COM10)",
                 "Arduino MKRZERO (COM11)"
             });
-            var possibleArduinoDevice = sut.GetPossibleArduinoDevices();
+            var possibleArduinoDevice = sut.GetArduinoDevices();
 
             Assert.AreEqual(2, possibleArduinoDevice.Length);
             Assert.AreEqual("Arduino Leonardo", possibleArduinoDevice[0].Name);
@@ -57,7 +57,7 @@ namespace OpenRem.Engine.Test
                 "Arduino Leonardo (COM10)",
                 "Communication Port (COM1)"
             });
-            var possibleArduinoDevice = sut.GetPossibleArduinoDevices();
+            var possibleArduinoDevice = sut.GetArduinoDevices();
 
             Assert.AreEqual(1, possibleArduinoDevice.Length);
             Assert.AreEqual("Arduino Leonardo", possibleArduinoDevice[0].Name);
@@ -71,7 +71,7 @@ namespace OpenRem.Engine.Test
             {
                 "Communication Port (COM1)"
             });
-            var possibleArduinoDevice = sut.GetPossibleArduinoDevices();
+            var possibleArduinoDevice = sut.GetArduinoDevices();
 
             Assert.IsNotNull(possibleArduinoDevice);
         }

@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmbededSample.cs" />
+    <Compile Include="EmulatorFactory.cs" />
     <Compile Include="InfiniteFileDataStream.cs" />
     <Compile Include="MicroTimer\MicroStopwatch.cs" />
     <Compile Include="MicroTimer\MicroTimer.cs" />

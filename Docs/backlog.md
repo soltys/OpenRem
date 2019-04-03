@@ -20,7 +20,13 @@
 - [ ] Create infrastructure for OpenRem Platform
     - [x] OpenRem.Core (version handling)
     - [x] OpenRem.CommonUi (from Remedy.CommonUI)
-    - [ ] OpenRem.UI (AutoFac, ReactiveUI(?))
+    - [x] OpenRem.UI (AutoFac, ReactiveUI(?))
+	- [ ] Build to \_Result folder
+		- [ ] Remove unnessesary Project references from OpenRem.UI
+	- [ ] Fix namespaces
+		- [ ] Remove `.Interface`
+	- [ ] Make importing version from one place - OpenRem.Core
+	- [ ] Cleanup usings
     - [ ] Import (?) WPF Sound Visualization Library
     - [ ] Import NAudio
     - [ ] Import parts form FakeImc as (back-end)

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OpenRem.Emulator
+namespace OpenRem.Emulator.Interface
 {
     public interface IEmbeddedSample
     {

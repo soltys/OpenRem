@@ -2,6 +2,6 @@
 {
     internal interface IDeviceFinder
     {
-        ArduinoDevice[] GetPossibleArduinoDevices();
+        ArduinoDevice[] GetArduinoDevices();
     }
 }

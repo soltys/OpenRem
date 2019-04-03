@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Autofac;
 using Autofac.Extras.CommonServiceLocator;
 using CommonServiceLocator;
 using OpenRem.Common;
@@ -12,11 +13,18 @@ namespace OpenRem.UI
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
+            
             
             var container = AutofacConfiguration.BuildContainer();
             var csl = new AutofacServiceLocator(container);
             ServiceLocator.SetLocatorProvider(() => csl);
+
+
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var window = scope.Resolve<MainWindow>();
+                window.Show();
+            }
         }
     }
 }

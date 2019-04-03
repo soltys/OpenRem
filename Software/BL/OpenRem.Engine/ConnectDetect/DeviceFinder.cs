@@ -13,7 +13,7 @@ namespace OpenRem.Engine
             this.pnpDevice = pnpDevice;
         }
 
-        public ArduinoDevice[] GetPossibleArduinoDevices()
+        public ArduinoDevice[] GetArduinoDevices()
         {
             var deviceList = this.pnpDevice.GetDevices();
 

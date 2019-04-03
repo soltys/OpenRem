@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Autofac;
+using OpenRem.Emulator.Interface;
 
 namespace OpenRem.Emulator.Module
 {
@@ -7,10 +8,9 @@ namespace OpenRem.Emulator.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            var dataAccess = Assembly.GetExecutingAssembly();
 
-            builder.RegisterAssemblyTypes(dataAccess)
-                .AsImplementedInterfaces();
+            builder.RegisterType<EmbeddedSample>().As<IEmbeddedSample>();
+            builder.RegisterType<EmulatorFactory>().As<IEmulatorFactory>();
         }
     }
 }

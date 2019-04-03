@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using OpenRem.Emulator;
+using OpenRem.Emulator.Interface;
 
 namespace OpenRem.Engine
 {

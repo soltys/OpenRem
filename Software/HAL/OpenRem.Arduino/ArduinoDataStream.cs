@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using System.Reactive.Linq;
+using OpenRem.Arduino.Interface;
 using OpenRem.Common;
 
 namespace OpenRem.Arduino

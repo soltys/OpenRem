@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace OpenRem.Common
+namespace OpenRem.Emulator
 {
     /// <summary>
     /// MicroStopwatch class

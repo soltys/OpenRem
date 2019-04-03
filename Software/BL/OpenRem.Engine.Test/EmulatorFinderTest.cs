@@ -1,6 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using OpenRem.Emulator;
+using OpenRem.Emulator.Interface;
 
 namespace OpenRem.Engine.Test
 {

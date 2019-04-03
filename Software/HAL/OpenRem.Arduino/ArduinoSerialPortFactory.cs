@@ -1,4 +1,5 @@
 using System.IO.Ports;
+using OpenRem.Arduino.Interface;
 
 namespace OpenRem.Arduino
 {

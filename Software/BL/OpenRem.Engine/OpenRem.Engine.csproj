@@ -45,10 +45,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectDetect\AnalyzerCollection.cs" />
     <Compile Include="ConnectDetect\ArduinoDevice.cs" />
+    <Compile Include="ConnectDetect\ArduinoNameParser.cs" />
+    <Compile Include="ConnectDetect\DetectManager.cs" />
     <Compile Include="ConnectDetect\DeviceFinder.cs" />
     <Compile Include="ConnectDetect\Emulator.cs" />
     <Compile Include="ConnectDetect\EmulatorFinder.cs" />
+    <Compile Include="ConnectDetect\IAnalyzerCollection.cs" />
     <Compile Include="Module\EngineModule.cs" />
     <Compile Include="ConnectDetect\IDeviceFinder.cs" />
     <Compile Include="ConnectDetect\IEmulatorFinder.cs" />
@@ -57,10 +61,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\HAL\OpenRem.Arduino\OpenRem.Arduino.csproj">
-      <Project>{e360a461-585a-4416-82be-b5719b270b39}</Project>
-      <Name>OpenRem.Arduino</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj">
       <Project>{45ecb91c-68ee-4ef9-9f1c-32ace8a12f54}</Project>
       <Name>OpenRem.Common</Name>
@@ -69,9 +69,17 @@
       <Project>{03bae7c0-ba53-4792-97d6-ae1637821846}</Project>
       <Name>OpenRem.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\HAL\OpenRem.Arduino.Interface\OpenRem.Arduino.Interface.csproj">
+      <Project>{FFD6877B-3913-4CF9-B394-4A154821CF63}</Project>
+      <Name>OpenRem.Arduino.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\HAL\OpenRem.Emulator.Interface\OpenRem.Emulator.Interface.csproj">
       <Project>{B7030F6A-D793-44FF-A373-D1723C0CFB4F}</Project>
       <Name>OpenRem.Emulator.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj">
+      <Project>{2A548A63-56DF-486F-8C8D-83EDFCB74BE0}</Project>
+      <Name>OpenRem.Engine.Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
