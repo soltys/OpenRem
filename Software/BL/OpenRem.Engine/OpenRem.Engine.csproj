@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ArduinoDevice.cs" />
     <Compile Include="DeviceFinder.cs" />
+    <Compile Include="EngineModule.cs" />
     <Compile Include="OS\PnPDevice.cs" />
     <Compile Include="OS\IPnPDevice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
