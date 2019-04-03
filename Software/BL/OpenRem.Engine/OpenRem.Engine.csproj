@@ -45,9 +45,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArduinoDevice.cs" />
-    <Compile Include="DeviceFinder.cs" />
-    <Compile Include="EngineModule.cs" />
+    <Compile Include="ConnectDetect\ArduinoDevice.cs" />
+    <Compile Include="ConnectDetect\DeviceFinder.cs" />
+    <Compile Include="ConnectDetect\Emulator.cs" />
+    <Compile Include="ConnectDetect\EmulatorFinder.cs" />
+    <Compile Include="Module\EngineModule.cs" />
+    <Compile Include="ConnectDetect\IDeviceFinder.cs" />
+    <Compile Include="ConnectDetect\IEmulatorFinder.cs" />
     <Compile Include="OS\PnPDevice.cs" />
     <Compile Include="OS\IPnPDevice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +68,10 @@
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj">
       <Project>{03bae7c0-ba53-4792-97d6-ae1637821846}</Project>
       <Name>OpenRem.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HAL\OpenRem.Emulator.Interface\OpenRem.Emulator.Interface.csproj">
+      <Project>{B7030F6A-D793-44FF-A373-D1723C0CFB4F}</Project>
+      <Name>OpenRem.Emulator.Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

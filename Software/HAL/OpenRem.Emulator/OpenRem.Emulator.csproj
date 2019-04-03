@@ -44,10 +44,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmbededSample.cs" />
     <Compile Include="InfiniteFileDataStream.cs" />
-    <Compile Include="MicroStopwatch.cs" />
-    <Compile Include="MicroTimer.cs" />
-    <Compile Include="MicroTimerEventArgs.cs" />
+    <Compile Include="MicroTimer\MicroStopwatch.cs" />
+    <Compile Include="MicroTimer\MicroTimer.cs" />
+    <Compile Include="MicroTimer\MicroTimerEventArgs.cs" />
+    <Compile Include="Module\EmulatorEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,11 +61,13 @@
       <Project>{03bae7c0-ba53-4792-97d6-ae1637821846}</Project>
       <Name>OpenRem.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenRem.Emulator.Interface\OpenRem.Emulator.Interface.csproj">
+      <Project>{B7030F6A-D793-44FF-A373-D1723C0CFB4F}</Project>
+      <Name>OpenRem.Emulator.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="emulator.raw">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="emulator.raw" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac">

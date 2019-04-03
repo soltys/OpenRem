@@ -6,7 +6,7 @@ namespace OpenRem.Engine.OS
     /// <summary>
     /// Access System list of plug and play
     /// </summary>
-    class PnPDevice :IPnPDevice
+    class PnPDevice : IPnPDevice
     {
         public IEnumerable<string> GetDevices()
         {
@@ -16,7 +16,7 @@ namespace OpenRem.Engine.OS
 
             foreach (var o in searcher.Get())
             {
-                var queryObj =  o as ManagementObject;
+                var queryObj = o as ManagementObject;
                 if (queryObj?["Caption"] != null)
                 {
                     yield return queryObj["Caption"].ToString();

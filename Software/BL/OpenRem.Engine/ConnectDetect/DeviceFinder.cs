@@ -4,7 +4,7 @@ using OpenRem.Engine.OS;
 
 namespace OpenRem.Engine
 {
-    internal class DeviceFinder
+    internal class DeviceFinder : IDeviceFinder
     {
         private IPnPDevice pnpDevice;
 
