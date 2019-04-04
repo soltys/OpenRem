@@ -47,7 +47,7 @@
     <Compile Include="ArduinoFactory.cs" />
     <Compile Include="ArduinoSerialPortFactory.cs" />
     <Compile Include="ArduinoDataStream.cs" />
-    <Compile Include="Module\EmulatorEngine.cs" />
+    <Compile Include="Module\ArduinoEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

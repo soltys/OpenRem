@@ -45,5 +45,11 @@
     <Compile Include="IDetectManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj">
+      <Project>{45ecb91c-68ee-4ef9-9f1c-32ace8a12f54}</Project>
+      <Name>OpenRem.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

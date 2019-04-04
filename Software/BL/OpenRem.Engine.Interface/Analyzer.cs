@@ -1,15 +1,16 @@
-﻿using System;
+﻿using OpenRem.Common;
 
 namespace OpenRem.Engine.Interface
 {
     public class Analyzer
     {
-        public Analyzer(Guid id)
+        public Analyzer(IDataStream dataStream, string name)
         {
-            Id = id;
+            DataStream = dataStream;
+            Name = name;
         }
 
-        public Guid Id { get; }
+        public IDataStream DataStream { get; }
         public string Name { get; set; }
     }
 }

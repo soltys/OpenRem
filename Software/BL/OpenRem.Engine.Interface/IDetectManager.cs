@@ -1,7 +1,9 @@
-﻿namespace OpenRem.Engine.Interface
+﻿using System.Collections.Generic;
+
+namespace OpenRem.Engine.Interface
 {
     public interface IDetectManager
     {
-        Analyzer[] GetAnalyzers();
+        IEnumerable<Analyzer> GetAnalyzers();
     }
 }

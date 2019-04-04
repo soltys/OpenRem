@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using System.Linq;
+using Moq;
 using NUnit.Framework;
 using OpenRem.Engine.OS;
 
@@ -24,7 +25,7 @@ namespace OpenRem.Engine.Test
             {
                 "Arduino Leonardo (COM10)"
             });
-            var possibleArduinoDevice = sut.GetArduinoDevices();
+            var possibleArduinoDevice = sut.GetArduinoDevices().ToArray();
 
             Assert.AreEqual(1,possibleArduinoDevice.Length);
             Assert.AreEqual("Arduino Leonardo", possibleArduinoDevice[0].Name);
@@ -39,7 +40,7 @@ namespace OpenRem.Engine.Test
                 "Arduino Leonardo (COM10)",
                 "Arduino MKRZERO (COM11)"
             });
-            var possibleArduinoDevice = sut.GetArduinoDevices();
+            var possibleArduinoDevice = sut.GetArduinoDevices().ToArray();
 
             Assert.AreEqual(2, possibleArduinoDevice.Length);
             Assert.AreEqual("Arduino Leonardo", possibleArduinoDevice[0].Name);
@@ -57,7 +58,7 @@ namespace OpenRem.Engine.Test
                 "Arduino Leonardo (COM10)",
                 "Communication Port (COM1)"
             });
-            var possibleArduinoDevice = sut.GetArduinoDevices();
+            var possibleArduinoDevice = sut.GetArduinoDevices().ToArray();
 
             Assert.AreEqual(1, possibleArduinoDevice.Length);
             Assert.AreEqual("Arduino Leonardo", possibleArduinoDevice[0].Name);

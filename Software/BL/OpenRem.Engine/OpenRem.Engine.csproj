@@ -45,14 +45,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectDetect\AnalyzerCollection.cs" />
     <Compile Include="ConnectDetect\ArduinoDevice.cs" />
     <Compile Include="ConnectDetect\ArduinoNameParser.cs" />
     <Compile Include="ConnectDetect\DetectManager.cs" />
     <Compile Include="ConnectDetect\DeviceFinder.cs" />
     <Compile Include="ConnectDetect\Emulator.cs" />
     <Compile Include="ConnectDetect\EmulatorFinder.cs" />
-    <Compile Include="ConnectDetect\IAnalyzerCollection.cs" />
     <Compile Include="Module\EngineModule.cs" />
     <Compile Include="ConnectDetect\IDeviceFinder.cs" />
     <Compile Include="ConnectDetect\IEmulatorFinder.cs" />
