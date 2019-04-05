@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using OpenRem.Arduino;
-using OpenRem.Common;
-using OpenRem.Emulator.Interface;
+using OpenRem.Emulator;
+using OpenRem.HAL;
 
 namespace OpenRem.Engine
 {

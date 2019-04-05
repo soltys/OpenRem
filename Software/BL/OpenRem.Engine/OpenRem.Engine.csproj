@@ -77,6 +77,10 @@
       <Project>{B7030F6A-D793-44FF-A373-D1723C0CFB4F}</Project>
       <Name>OpenRem.Emulator.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\HAL\OpenRem.HAL.Interface\OpenRem.HAL.Interface.csproj">
+      <Project>{362456ba-b77d-4aaf-b2b6-7609379036bb}</Project>
+      <Name>OpenRem.HAL.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj">
       <Project>{2A548A63-56DF-486F-8C8D-83EDFCB74BE0}</Project>
       <Name>OpenRem.Engine.Interface</Name>

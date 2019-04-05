@@ -54,6 +54,10 @@
       <Project>{03bae7c0-ba53-4792-97d6-ae1637821846}</Project>
       <Name>OpenRem.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenRem.HAL.Interface\OpenRem.HAL.Interface.csproj">
+      <Project>{362456ba-b77d-4aaf-b2b6-7609379036bb}</Project>
+      <Name>OpenRem.HAL.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

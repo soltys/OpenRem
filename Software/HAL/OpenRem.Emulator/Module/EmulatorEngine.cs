@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using Autofac;
-using OpenRem.Emulator.Interface;
+﻿using Autofac;
 
 namespace OpenRem.Emulator.Module
 {

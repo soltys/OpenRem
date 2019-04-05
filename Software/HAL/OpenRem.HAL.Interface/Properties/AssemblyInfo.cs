@@ -5,11 +5,11 @@ using OpenRem.Core;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OpenRem.Ark")]
+[assembly: AssemblyTitle("OpenRem.HAL.Interface")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OpenRem.Ark")]
+[assembly: AssemblyProduct("OpenRem.HAL.Interface")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using OpenRem.Core;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9f34264e-808b-45b2-8b44-755c6032973d")]
+[assembly: Guid("362456ba-b77d-4aaf-b2b6-7609379036bb")]
 
 // Version information for an assembly consists of the following four values:
 //

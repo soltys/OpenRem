@@ -1,4 +1,4 @@
-﻿using OpenRem.Common;
+﻿using OpenRem.HAL;
 
 namespace OpenRem.Arduino
 {

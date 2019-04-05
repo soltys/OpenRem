@@ -1,5 +1,4 @@
-﻿using OpenRem.Common;
-using OpenRem.Emulator.Interface;
+﻿using OpenRem.HAL;
 
 namespace OpenRem.Emulator
 {
