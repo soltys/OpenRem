@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using OpenRem.Arduino.Interface;
 
 namespace OpenRem.Arduino.Module
 {

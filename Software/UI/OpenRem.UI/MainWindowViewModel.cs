@@ -1,6 +1,6 @@
 ﻿using CommonServiceLocator;
 using GalaSoft.MvvmLight;
-using OpenRem.Engine.Interface;
+using OpenRem.Engine;
 
 namespace OpenRem.UI
 {

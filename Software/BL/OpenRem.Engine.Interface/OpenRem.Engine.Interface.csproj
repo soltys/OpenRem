@@ -7,7 +7,7 @@
     <ProjectGuid>{2A548A63-56DF-486F-8C8D-83EDFCB74BE0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenRem.Engine.Interface</RootNamespace>
+    <RootNamespace>OpenRem.Engine</RootNamespace>
     <AssemblyName>OpenRem.Engine.Interface</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
