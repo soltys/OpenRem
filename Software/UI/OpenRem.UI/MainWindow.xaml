@@ -3,16 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ui="clr-namespace:OpenRem.UI"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="450"
         Width="800"
+        DataContext="{Binding MainWindow,
+                              Source={StaticResource ViewModelLocator}}"
         >
-    <Window.DataContext>
-        <ui:MainWindowViewModel />
-    </Window.DataContext>
     <Grid>
-        <ComboBox />
+        <ComboBox MinWidth="100"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  DisplayMemberPath="Name"
+                  ItemsSource="{Binding Analyzers}"
+                  SelectedItem="{Binding SelectedAnalyzer}"
+                  />
     </Grid>
 </Window>
