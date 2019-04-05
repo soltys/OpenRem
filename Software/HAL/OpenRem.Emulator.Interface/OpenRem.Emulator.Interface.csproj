@@ -7,7 +7,7 @@
     <ProjectGuid>{B7030F6A-D793-44FF-A373-D1723C0CFB4F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenRem.Emulator.Interface</RootNamespace>
+    <RootNamespace>OpenRem.Emulator</RootNamespace>
     <AssemblyName>OpenRem.Emulator.Interface</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

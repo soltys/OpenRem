@@ -1,4 +1,4 @@
-﻿namespace OpenRem.Engine.Interface
+﻿namespace OpenRem.Engine
 {
     public interface IDetectManager
     {

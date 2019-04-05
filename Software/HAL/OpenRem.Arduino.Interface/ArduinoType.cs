@@ -1,4 +1,4 @@
-namespace OpenRem.Arduino.Interface
+namespace OpenRem.Arduino
 {
     public enum ArduinoType
     {

@@ -1,6 +1,6 @@
 ﻿using OpenRem.Common;
 
-namespace OpenRem.Arduino.Interface
+namespace OpenRem.Arduino
 {
     public interface IArduinoFactory
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenRem.Engine.Interface
+namespace OpenRem.Engine
 {
     public class Analyzer
     {

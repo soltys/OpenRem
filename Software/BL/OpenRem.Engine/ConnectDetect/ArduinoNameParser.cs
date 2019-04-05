@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using OpenRem.Arduino;
-using OpenRem.Arduino.Interface;
 
 namespace OpenRem.Engine
 {

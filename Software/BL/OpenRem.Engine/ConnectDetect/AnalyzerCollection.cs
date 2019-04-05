@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using OpenRem.Arduino.Interface;
+using OpenRem.Arduino;
 using OpenRem.Common;
 using OpenRem.Emulator.Interface;
 

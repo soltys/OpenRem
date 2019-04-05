@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using GalaSoft.MvvmLight;
-using OpenRem.Engine.Interface;
+using OpenRem.Engine;
 
 namespace OpenRem.UI
 {

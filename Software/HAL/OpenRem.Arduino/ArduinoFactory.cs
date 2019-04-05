@@ -1,5 +1,4 @@
-﻿using OpenRem.Arduino.Interface;
-using OpenRem.Common;
+﻿using OpenRem.Common;
 
 namespace OpenRem.Arduino
 {
