@@ -15,12 +15,6 @@ namespace OpenRem.UI
             var container = AutofacConfiguration.BuildContainer();
             var csl = new AutofacServiceLocator(container);
             ServiceLocator.SetLocatorProvider(() => csl);
-
-            //using (var scope = container.BeginLifetimeScope())
-            //{
-            //    var window = scope.Resolve<MainWindow>();
-            //    window.Show();
-            //}
         }
     }
 }
