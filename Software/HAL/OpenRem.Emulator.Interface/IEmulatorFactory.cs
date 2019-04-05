@@ -1,6 +1,6 @@
-﻿using OpenRem.Common;
+﻿using OpenRem.HAL;
 
-namespace OpenRem.Emulator.Interface
+namespace OpenRem.Emulator
 {
     public interface IEmulatorFactory
     {

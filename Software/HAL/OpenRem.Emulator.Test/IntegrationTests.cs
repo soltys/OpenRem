@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using NUnit.Framework;
-using OpenRem.Common;
 
 namespace OpenRem.Emulator.Test
 {

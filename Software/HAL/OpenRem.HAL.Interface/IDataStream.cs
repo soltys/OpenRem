@@ -1,6 +1,6 @@
 using System;
 
-namespace OpenRem.Common
+namespace OpenRem.HAL
 {
     public interface IDataStream
     {

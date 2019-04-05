@@ -66,6 +66,10 @@
       <Project>{B7030F6A-D793-44FF-A373-D1723C0CFB4F}</Project>
       <Name>OpenRem.Emulator.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenRem.HAL.Interface\OpenRem.HAL.Interface.csproj">
+      <Project>{362456ba-b77d-4aaf-b2b6-7609379036bb}</Project>
+      <Name>OpenRem.HAL.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="emulator.raw" />

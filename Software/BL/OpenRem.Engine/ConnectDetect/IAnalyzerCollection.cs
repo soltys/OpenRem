@@ -1,5 +1,5 @@
 ﻿using System;
-using OpenRem.Common;
+using OpenRem.HAL;
 
 namespace OpenRem.Engine
 {

@@ -63,6 +63,10 @@
       <Project>{FFD6877B-3913-4CF9-B394-4A154821CF63}</Project>
       <Name>OpenRem.Arduino.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenRem.HAL.Interface\OpenRem.HAL.Interface.csproj">
+      <Project>{362456ba-b77d-4aaf-b2b6-7609379036bb}</Project>
+      <Name>OpenRem.HAL.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac">
