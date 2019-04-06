@@ -36,7 +36,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\_Result\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -124,10 +124,6 @@
       <Project>{2a548a63-56df-486f-8c8d-83edfcb74be0}</Project>
       <Name>OpenRem.Engine.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\BL\OpenRem.Engine\OpenRem.Engine.csproj">
-      <Project>{92a35deb-7d8f-452b-958b-a7e83259540f}</Project>
-      <Name>OpenRem.Engine</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj">
       <Project>{45ecb91c-68ee-4ef9-9f1c-32ace8a12f54}</Project>
       <Name>OpenRem.Common</Name>
@@ -135,26 +131,6 @@
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj">
       <Project>{03bae7c0-ba53-4792-97d6-ae1637821846}</Project>
       <Name>OpenRem.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\HAL\OpenRem.Arduino.Interface\OpenRem.Arduino.Interface.csproj">
-      <Project>{ffd6877b-3913-4cf9-b394-4a154821cf63}</Project>
-      <Name>OpenRem.Arduino.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\HAL\OpenRem.Arduino\OpenRem.Arduino.csproj">
-      <Project>{e360a461-585a-4416-82be-b5719b270b39}</Project>
-      <Name>OpenRem.Arduino</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\HAL\OpenRem.Emulator.Interface\OpenRem.Emulator.Interface.csproj">
-      <Project>{b7030f6a-d793-44ff-a373-d1723c0cfb4f}</Project>
-      <Name>OpenRem.Emulator.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\HAL\OpenRem.Emulator\OpenRem.Emulator.csproj">
-      <Project>{08838ec5-0d11-46ac-8fd1-51b2667c06e1}</Project>
-      <Name>OpenRem.Emulator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Noah\OpenRem.Ark\OpenRem.Ark.csproj">
-      <Project>{9f34264e-808b-45b2-8b44-755c6032973d}</Project>
-      <Name>OpenRem.Ark</Name>
     </ProjectReference>
     <ProjectReference Include="..\OpenRem.CommonUI\OpenRem.CommonUI.csproj">
       <Project>{445c19f4-e724-42f0-9aaf-a2b2867d826a}</Project>
