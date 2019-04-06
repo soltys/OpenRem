@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Analyzer.cs" />
     <Compile Include="IDetectManager.cs" />
+    <Compile Include="IRawFileRecorder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
