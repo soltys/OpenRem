@@ -49,6 +49,7 @@
     <Compile Include="Side.cs" />
     <Compile Include="Sideable.cs" />
     <Compile Include="SideableExtensions.cs" />
+    <Compile Include="StreamHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenRem.Core\OpenRem.Core.csproj">

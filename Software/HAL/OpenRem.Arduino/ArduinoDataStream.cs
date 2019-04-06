@@ -14,7 +14,7 @@ namespace OpenRem.Arduino
         private readonly string comPort;
         private readonly ArduinoType arduinoType;
 
-        public IObservable<byte> DataStream { get; private set; }
+        public IObservable<byte> RawDataStream { get; private set; }
 
         public ArduinoDataStream(string comPort, ArduinoType arduinoType)
         {
@@ -26,7 +26,7 @@ namespace OpenRem.Arduino
         {
             this.serialPort = ArduinoSerialPortFactory.Create(this.comPort, this.arduinoType);
             this.serialPort.Open();
-            DataStream = Observable.FromEventPattern<
+            RawDataStream = Observable.FromEventPattern<
                 SerialDataReceivedEventHandler,
                 SerialDataReceivedEventArgs>
             (

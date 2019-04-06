@@ -27,6 +27,6 @@ namespace OpenRem.HAL
         /// <summary>
         /// Data stream
         /// </summary>
-        IObservable<byte> DataStream { get; }
+        IObservable<byte> RawDataStream { get; }
     }
 }

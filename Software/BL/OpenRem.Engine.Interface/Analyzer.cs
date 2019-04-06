@@ -2,6 +2,7 @@
 
 namespace OpenRem.Engine
 {
+
     public class Analyzer
     {
         public Analyzer(Guid id)

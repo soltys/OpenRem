@@ -10,5 +10,11 @@ namespace OpenRem.Common
         {
             return assembly.GetManifestResourceNames().Where(str => str.EndsWith(resourceEndsWith));
         }
+
+        public static byte[] ReadResourceAllBytes(this Assembly assembly, string resource)
+        {
+            var resourceStream = assembly.GetManifestResourceStream(resource);
+            return resourceStream.ReadAllBytes();
+        }
     }
 }
