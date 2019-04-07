@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ArduinoConfig"
+    targetNamespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd"
+    elementFormDefault="qualified"
+    xmlns="https://github.com/soltys/OpenRem/ArduinoConfig.xsd"
+    xmlns:tns="https://github.com/soltys/OpenRem/ArduinoConfig.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="ArduinoList" type="tns:ArduinoList"/>
+
+  <xs:complexType name="ArduinoList">
+    <xs:sequence>
+      <xs:element name="Arduino" maxOccurs="unbounded" type="tns:Arduino"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Arduino">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="SampleRate" type="xs:positiveInteger"/>
+      <xs:element name="BitRate" type="xs:positiveInteger"/>
+      <xs:element name="ChannelsNumber" type="xs:positiveInteger"/>
+      <xs:element name="Probe" minOccurs="1" maxOccurs="2" type="tns:Probe">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Probe">
+    <xs:sequence>
+      <xs:element name="Input" type="tns:Microphone"/>
+      <xs:element name="Output" type="tns:Microphone"/>
+    </xs:sequence>
+    <xs:attribute name="Side">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Left"/>
+          <xs:enumeration value="Right"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Microphone">
+    <xs:attribute name="Channel">
+      <xs:simpleType>
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="0"/>
+          <xs:maxInclusive value="3"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>
