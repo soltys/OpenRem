@@ -8,6 +8,6 @@ namespace OpenRem.Config
 {
     public interface IArduinoConfigReader
     {
-        void GetConfig(string name);
+        ArduinoConfig GetConfig(string name);
     }
 }

@@ -35,3 +35,5 @@ using OpenRem.Core;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion(VersionInfo.Version)]
 [assembly: AssemblyFileVersion(VersionInfo.Version)]
+[assembly: InternalsVisibleTo("OpenRem.Config.Test")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]

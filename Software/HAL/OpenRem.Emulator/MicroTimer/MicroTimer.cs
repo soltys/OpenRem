@@ -7,7 +7,7 @@ namespace OpenRem.Emulator
     {
         public delegate void MicroTimerElapsedEventHandler(
             object sender,
-            MicroTimerEventArgs timerEventArgs);
+            MicroTimerEventArgs e);
         public event MicroTimerElapsedEventHandler MicroTimerElapsed;
 
         System.Threading.Thread _threadTimer = null;

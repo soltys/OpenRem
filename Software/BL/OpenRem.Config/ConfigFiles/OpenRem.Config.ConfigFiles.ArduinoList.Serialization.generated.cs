@@ -12,11 +12,11 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace OpenRem.Config
+namespace OpenRem.Config.ConfigFiles
 {
     /// <summary>
     ///   Automatically generated mapping for the ArduinoList XML element
-    ///   declared in the OpenRem.Config namespace.
+    ///   declared in the OpenRem.Config.ConfigFiles namespace.
     /// </summary>
 	public partial class ArduinoList
 	{

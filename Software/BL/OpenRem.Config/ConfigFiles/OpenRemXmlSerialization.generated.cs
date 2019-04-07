@@ -26,7 +26,7 @@ namespace System
 
 #endif
 
-namespace OpenRem.Config {
+namespace OpenRem.Config.ConfigFiles {
     
     
     /// <summary>

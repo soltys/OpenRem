@@ -42,12 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArduinoConfigReader.cs" />
-    <Compile Include="Module\ConfigModule.cs" />
-    <Compile Include="OpenRem.Config.ArduinoList.Serialization.generated.cs">
+    <Compile Include="ConfigFiles\OpenRem.Config.ConfigFiles.ArduinoList.Serialization.generated.cs">
       <DependentUpon>OpenRemXmlSerialization.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmbeddedConfig.cs" />
+    <Compile Include="IEmbeddedConfig.cs" />
+    <Compile Include="Module\ConfigModule.cs" />
+    <Compile Include="ProbeSideExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OpenRemXmlSerialization.generated.cs">
+    <Compile Include="ConfigFiles\OpenRemXmlSerialization.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OpenRemXmlSerialization.tt</DependentUpon>
@@ -62,14 +65,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ArduinoConfig.xml" />
-    <Content Include="OpenRemXmlSerialization.tt">
+    <EmbeddedResource Include="ConfigFiles\ArduinoConfig.xml" />
+    <Content Include="ConfigFiles\OpenRemXmlSerialization.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>OpenRemXmlSerialization.generated.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ArduinoConfig.xsd">
+    <None Include="ConfigFiles\ArduinoConfig.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
