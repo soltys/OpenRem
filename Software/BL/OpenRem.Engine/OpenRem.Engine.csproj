@@ -45,6 +45,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AudioProcessing\ObservableExtensions.cs" />
+    <Compile Include="AudioProcessing\PcmEncoding.cs" />
+    <Compile Include="AudioProcessing\AudioSample.cs" />
     <Compile Include="ConnectDetect\AnalyzerCollection.cs" />
     <Compile Include="ConnectDetect\ArduinoDevice.cs" />
     <Compile Include="ConnectDetect\ArduinoNameParser.cs" />

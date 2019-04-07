@@ -44,7 +44,9 @@
     <Compile Include="ArduinoNameParserTest.cs" />
     <Compile Include="DeviceFinderTest.cs" />
     <Compile Include="EmulatorFinderTest.cs" />
+    <Compile Include="PcmEncodingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RawAudioSampleTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Moq">
@@ -61,6 +63,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj">
+      <Project>{45ECB91C-68EE-4EF9-9F1C-32ACE8A12F54}</Project>
+      <Name>OpenRem.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\HAL\OpenRem.Arduino.Interface\OpenRem.Arduino.Interface.csproj">
       <Project>{FFD6877B-3913-4CF9-B394-4A154821CF63}</Project>
       <Name>OpenRem.Arduino.Interface</Name>
