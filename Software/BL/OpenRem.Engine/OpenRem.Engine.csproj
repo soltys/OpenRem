@@ -56,9 +56,12 @@
     <Compile Include="Module\EngineModule.cs" />
     <Compile Include="ConnectDetect\IDeviceFinder.cs" />
     <Compile Include="ConnectDetect\IEmulatorFinder.cs" />
+    <Compile Include="OS\FileAccess.cs" />
+    <Compile Include="OS\IFileAccess.cs" />
     <Compile Include="OS\PnPDevice.cs" />
     <Compile Include="OS\IPnPDevice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recorder\RawFileRecorder.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj">

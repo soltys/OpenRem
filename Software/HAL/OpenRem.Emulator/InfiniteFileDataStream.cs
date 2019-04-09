@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reactive.Linq;
+using OpenRem.Common;
 using OpenRem.HAL;
 
 namespace OpenRem.Emulator
@@ -14,7 +15,7 @@ namespace OpenRem.Emulator
         private int offset;
         private byte[] fileContent;
 
-        public IObservable<byte> DataStream { get; private set; }
+        public IObservable<byte> RawDataStream { get; private set; }
 
         public InfiniteFileDataStream(string fileName)
         {
@@ -24,11 +25,11 @@ namespace OpenRem.Emulator
 
         public void Open()
         {
-            this.fileContent = File.ReadAllBytes(this.fileName);
+            this.fileContent = typeof(InfiniteFileDataStream).Assembly.ReadResourceAllBytes(this.fileName);
 
             //22 microseconds is aprox 44.1k Hz
             this.microTimer = new MicroTimer(22);
-            DataStream = Observable.FromEventPattern<MicroTimer.MicroTimerElapsedEventHandler, MicroTimerEventArgs>(
+            RawDataStream = Observable.FromEventPattern<MicroTimer.MicroTimerElapsedEventHandler, MicroTimerEventArgs>(
                     handler => this.microTimer.MicroTimerElapsed += handler,
                     handler => this.microTimer.MicroTimerElapsed -= handler)
                 .SelectMany((val) =>
