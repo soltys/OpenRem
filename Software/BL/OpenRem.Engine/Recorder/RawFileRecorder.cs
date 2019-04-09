@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Linq;
-using System.Reactive.Linq;
+using OpenRem.Common;
 using OpenRem.Engine.OS;
 using OpenRem.HAL;
 
@@ -25,16 +24,18 @@ namespace OpenRem.Engine
             this.dataStream.Open();
 
             var fileStream = fileAccess.RecreateAlwaysFile(fileName);
-            this.writingAction = this.dataStream.RawDataStream.Buffer(8).Subscribe(data =>
-            {
-                var buffer = data.ToArray();
-                fileStream.Write(buffer, 0, buffer.Length);
-            },
-            () =>
-            {
-                //on complete
-                fileStream.Close();
-            });
+            this.writingAction = this.dataStream.RawDataStream
+                .StereoSample(PcmEncoding.PCM32Bit)
+                .Subscribe(data =>
+                    {
+                        var buffer = data.RawData;
+                        fileStream.Write(buffer, 0, buffer.Length);
+                    },
+                    () =>
+                    {
+                        //on complete
+                        fileStream.Close();
+                    });
 
 
             this.dataStream.Start();
