@@ -1,10 +1,9 @@
 ﻿using System.Linq;
-using System.Windows.Forms;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using Microsoft.Win32;
 using OpenRem.CommonUI;
 using OpenRem.Engine;
+using Microsoft.Win32;
 
 namespace OpenRem.UI
 {

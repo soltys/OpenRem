@@ -24,11 +24,5 @@ namespace OpenRem.Common
                                            .Single(str => str.EndsWith(resourceName));
             return assembly.GetManifestResourceStream(fullResourceName);
         }
-
-        public static byte[] ReadResourceAllBytes(this Assembly assembly, string resource)
-        {
-            var resourceStream = assembly.GetManifestResourceStream(resource);
-            return resourceStream.ReadAllBytes();
-        }
     }
 }
