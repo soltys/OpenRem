@@ -1,21 +1,16 @@
 ﻿using System.Reflection;
 using Autofac;
-using Module = Autofac.Module;
 
-namespace OpenRem.Engine
+namespace OpenRem.Config.Module
 {
-    public class EngineModule : Module
+    class ConfigModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             var dataAccess = Assembly.GetExecutingAssembly();
-            
-            builder.RegisterType<DetectManager>().As<IDetectManager>();
 
             builder.RegisterAssemblyTypes(dataAccess)
                 .AsImplementedInterfaces();
-
-            builder.RegisterType<AnalyzerCollection>().As<IAnalyzerCollection>().SingleInstance();
         }
     }
 }
