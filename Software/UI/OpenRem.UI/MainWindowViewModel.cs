@@ -2,19 +2,25 @@
 using System.Linq;
 using GalaSoft.MvvmLight;
 using OpenRem.Engine;
+using OpenRem.Service.Interface;
 
 namespace OpenRem.UI
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private IDetectManager detectManager;
+        private IServiceWrapper serviceWrapper;
 
-        public MainWindowViewModel(IDetectManager detectManager)
+        public MainWindowViewModel(IServiceWrapper serviceWrapper)
         {
-            this.detectManager = detectManager;
+            this.serviceWrapper = serviceWrapper;
 
-            Analyzers = this.detectManager.GetAnalyzers();
-            SelectedAnalyzer = this.Analyzers.FirstOrDefault();
+            if (!serviceWrapper.IsRunning)
+            {
+                serviceWrapper.StartServer();
+            }
+
+            Analyzers = serviceWrapper.GetAnalyzers();
+            SelectedAnalyzer = Analyzers.FirstOrDefault();
         }
 
         public IEnumerable<Analyzer> Analyzers { get; }
