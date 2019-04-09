@@ -3,22 +3,22 @@ using OpenRem.Config.ConfigFiles;
 
 namespace OpenRem.Config
 {
-    class ArduinoConfigReader : IArduinoConfigReader
+    class AnalyzerConfigReader : IAnalyzerConfigReader
     {
         private readonly IEmbeddedConfig embeddedConfig;
-        private string ConfigName => "ArduinoConfig.xml";
+        private string ConfigName => "AnalyzerConfig.xml";
 
-        public ArduinoConfigReader(IEmbeddedConfig embeddedConfig)
+        public AnalyzerConfigReader(IEmbeddedConfig embeddedConfig)
         {
             this.embeddedConfig = embeddedConfig;
         }
 
-        public ArduinoConfig GetConfig(string name)
+        public AnalyzerConfig GetConfig(string name)
         {
             var configFile = this.embeddedConfig.GetConfigFile(ConfigName);
-            var arduinoList = ArduinoList.DeserializeFrom(configFile);
-            var arduinoConfig = arduinoList.Arduino.Single(x => x.Name == name);
-            return new ArduinoConfig
+            var arduinoList = AnalyzerList.DeserializeFrom(configFile);
+            var arduinoConfig = arduinoList.Analyzer.Single(x => x.Name == name);
+            return new AnalyzerConfig
             {
                 Name = arduinoConfig.Name,
                 BitRate = int.Parse(arduinoConfig.BitRate),

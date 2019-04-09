@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace OpenRem.Config
 {
-    public interface IArduinoConfigReader
+    public interface IAnalyzerConfigReader
     {
-        ArduinoConfig GetConfig(string name);
+        AnalyzerConfig GetConfig(string name);
     }
 }

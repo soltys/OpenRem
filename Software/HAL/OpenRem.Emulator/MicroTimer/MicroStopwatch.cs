@@ -6,7 +6,7 @@ namespace OpenRem.Emulator
     /// <summary>
     /// MicroStopwatch class
     /// </summary>
-    public class MicroStopwatch : System.Diagnostics.Stopwatch
+    public class MicroStopwatch : Stopwatch
     {
         readonly double _microSecPerTick = 1000000D / Stopwatch.Frequency;
 

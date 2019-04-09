@@ -20,10 +20,10 @@ namespace OpenRem.Engine
 
         public void Start(Guid analyzerGuid, string fileName)
         {
-            this.dataStream = this.analyzerCollection[analyzerGuid].Invoke();
+            this.dataStream = this.analyzerCollection[analyzerGuid].FactoryMethod();
             this.dataStream.Open();
 
-            var fileStream = fileAccess.RecreateAlwaysFile(fileName);
+            var fileStream = this.fileAccess.RecreateAlwaysFile(fileName);
             this.writingAction = this.dataStream.RawDataStream
                 .StereoSample(PcmEncoding.PCM32Bit)
                 .Subscribe(data =>

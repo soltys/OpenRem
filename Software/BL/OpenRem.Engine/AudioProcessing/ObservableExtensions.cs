@@ -10,7 +10,8 @@ namespace OpenRem.Engine
     {
         public static IObservable<AudioSample> GetSample(this IObservable<byte> observable, PcmEncoding encoding, int channelsCount)
         {
-            int bufferSize = (int)encoding * channelsCount;
+            int bytesPerSide = PcmEncodingHelper.ToByteLength(encoding);
+            int bufferSize = bytesPerSide * channelsCount;
             return observable.Buffer(bufferSize).Select(x => new AudioSample(x.ToArray(), encoding, channelsCount));
         }
 

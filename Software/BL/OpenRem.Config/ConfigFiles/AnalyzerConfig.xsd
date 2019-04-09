@@ -1,20 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="ArduinoConfig"
-    targetNamespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd"
+<xs:schema id="AnalyzerConfig"
+    targetNamespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd"
     elementFormDefault="qualified"
-    xmlns="https://github.com/soltys/OpenRem/ArduinoConfig.xsd"
-    xmlns:tns="https://github.com/soltys/OpenRem/ArduinoConfig.xsd"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
->
-  <xs:element name="ArduinoList" type="tns:ArduinoList"/>
+    xmlns="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd"
+    xmlns:tns="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AnalyzerList" type="tns:AnalyzerList"/>
 
-  <xs:complexType name="ArduinoList">
+  <xs:complexType name="AnalyzerList">
     <xs:sequence>
-      <xs:element name="Arduino" maxOccurs="unbounded" type="tns:Arduino"/>
+      <xs:element name="Analyzer" maxOccurs="unbounded" type="tns:Analyzer"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="Arduino">
+  <xs:complexType name="Analyzer">
     <xs:sequence>
       <xs:element name="Name" type="xs:string"/>
       <xs:element name="SampleRate" type="xs:positiveInteger"/>

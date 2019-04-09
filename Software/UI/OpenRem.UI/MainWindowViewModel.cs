@@ -23,14 +23,14 @@ namespace OpenRem.UI
         public Analyzer SelectedAnalyzer
         {
             get => this.selectedAnalyzer;
-            set => Set(() => this.SelectedAnalyzer, ref selectedAnalyzer, value);
+            set => Set(() => SelectedAnalyzer, ref this.selectedAnalyzer, value);
         }
 
         private string outputFilename;
         public string OutputFilename
         {
             get => this.outputFilename;
-            set => Set(() => this.OutputFilename, ref outputFilename, value);
+            set => Set(() => OutputFilename, ref this.outputFilename, value);
         }
 
         public MainWindowViewModel(IDetectManager detectManager, IRawFileRecorder rawFileRecorder)
@@ -40,7 +40,7 @@ namespace OpenRem.UI
 
 
             Analyzers = new UICollection<Analyzer>(this.detectManager.GetAnalyzers());
-            SelectedAnalyzer = this.Analyzers.FirstOrDefault();
+            SelectedAnalyzer = Analyzers.FirstOrDefault();
 
             AddCommands();
         }

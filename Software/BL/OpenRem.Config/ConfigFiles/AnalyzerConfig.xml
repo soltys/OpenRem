@@ -2,9 +2,19 @@
 <AnalyzerList
   xmlns="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="https://github.com/soltys/OpenRem ../OpenRem.Config/ConfigFiles/AnalyzerConfig.xsd">
+  xsi:schemaLocation="https://github.com/soltys/OpenRem AnalyzerConfig.xsd">
   <Analyzer>
     <Name>MKRZERO</Name>
+    <SampleRate>44100</SampleRate>
+    <BitRate>32</BitRate>
+    <ChannelsNumber>2</ChannelsNumber>
+    <Probe Side="Left">
+      <Input Channel="0"/>
+      <Output Channel="1"/>
+    </Probe>
+  </Analyzer>
+  <Analyzer>
+    <Name>Emulator</Name>
     <SampleRate>44100</SampleRate>
     <BitRate>32</BitRate>
     <ChannelsNumber>2</ChannelsNumber>

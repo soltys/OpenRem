@@ -5,15 +5,15 @@ using OpenRem.Common;
 namespace OpenRem.Config.Test
 {
     [TestFixture]
-    public class ArduinoConfigReaderTest
+    public class AnalyzerConfigReaderTest
     {
         [Test]
         public void GetConfig_For_MKRZero()
         {
             var embeddedConfig = new Mock<IEmbeddedConfig>();
-            var sut = new ArduinoConfigReader(embeddedConfig.Object);
-            embeddedConfig.Setup(x => x.GetConfigFile("ArduinoConfig.xml"))
-                .Returns(() => typeof(ArduinoConfigReaderTest).Assembly.GetResourceStream("SampleArduinoConfig.xml"));
+            var sut = new AnalyzerConfigReader(embeddedConfig.Object);
+            embeddedConfig.Setup(x => x.GetConfigFile("AnalyzerConfig.xml"))
+                .Returns(() => typeof(AnalyzerConfigReaderTest).Assembly.GetResourceStream("SampleArduinoConfig.xml"));
 
             var config = sut.GetConfig("MKRZERO");
 

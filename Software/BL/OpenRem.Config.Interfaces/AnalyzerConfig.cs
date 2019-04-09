@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenRem.Config
 {
-    public class ArduinoConfig
+    public class AnalyzerConfig
     {
         public string Name { get; set; }
         public  int SampleRate { get; set; }

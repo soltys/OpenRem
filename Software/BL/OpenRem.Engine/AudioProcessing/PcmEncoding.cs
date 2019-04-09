@@ -2,8 +2,8 @@
 {
     public enum PcmEncoding
     {
-        PCM8Bit = 1,
-        PCM16Bit = 2,
-        PCM32Bit = 4,
+        PCM8Bit = 8,
+        PCM16Bit = 16,
+        PCM32Bit = 32,
     }
 }

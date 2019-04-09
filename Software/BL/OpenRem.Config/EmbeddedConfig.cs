@@ -12,7 +12,7 @@ namespace OpenRem.Config
     {
         public Stream GetConfigFile(string fileName)
         {
-            return typeof(ArduinoConfigReader).Assembly.GetResourceStream(fileName);
+            return typeof(AnalyzerConfigReader).Assembly.GetResourceStream(fileName);
         }
     }
 }

@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using OpenRem.Arduino;
+using OpenRem.Config;
 using OpenRem.Emulator;
-using OpenRem.HAL;
 
 namespace OpenRem.Engine
 {
-    class AnalyzerCollection: IAnalyzerCollection
+    class AnalyzerCollection : IAnalyzerCollection
     {
-        private readonly Dictionary<Guid, Func<IDataStream>> inMemoryAnalyzers = new Dictionary<Guid, Func<IDataStream>>();
+        private readonly Dictionary<Guid, AnalyzerData> inMemoryAnalyzers = new Dictionary<Guid, AnalyzerData>();
 
         private readonly IEmulatorFactory emulatorFactory;
         private readonly IArduinoFactory arduinoFactory;
+        private readonly IAnalyzerConfigReader analyzerConfigReader;
 
-        public AnalyzerCollection(IEmulatorFactory emulatorFactory, IArduinoFactory arduinoFactory)
+        public AnalyzerCollection(IEmulatorFactory emulatorFactory, IArduinoFactory arduinoFactory, IAnalyzerConfigReader analyzerConfigReader)
         {
             this.emulatorFactory = emulatorFactory;
             this.arduinoFactory = arduinoFactory;
+            this.analyzerConfigReader = analyzerConfigReader;
         }
 
         public void Clear()
@@ -27,21 +29,31 @@ namespace OpenRem.Engine
         public Guid Add(ArduinoDevice arduinoDevice)
         {
             var guid = Guid.NewGuid();
+            var arduinoType = ArduinoNameParser.ToArduinoType(arduinoDevice.Name);
             this.inMemoryAnalyzers.Add(guid,
-               ()=> this.arduinoFactory.Create(arduinoDevice.ComPort, ArduinoNameParser.ToArduinoType(arduinoDevice.Name))
-           );
+                new AnalyzerData()
+                {
+                    FactoryMethod = () => this.arduinoFactory.Create(arduinoDevice.ComPort, arduinoType),
+                    AnalyzerConfig = this.analyzerConfigReader.GetConfig(arduinoType.ToString())
+                });
+           
             return guid;
         }
 
         public Guid Add(Emulator emulator)
         {
             var guid = Guid.NewGuid();
+
             this.inMemoryAnalyzers.Add(guid,
-                () => this.emulatorFactory.Create(emulator.SignalName)
-            );
+                new AnalyzerData()
+                {
+                    FactoryMethod = () => this.emulatorFactory.Create(emulator.SignalName),
+                    AnalyzerConfig = this.analyzerConfigReader.GetConfig("Emulator")
+                });
+
             return guid;
         }
 
-        public Func<IDataStream> this[Guid guid] => this.inMemoryAnalyzers[guid];
+        public AnalyzerData this[Guid guid] => this.inMemoryAnalyzers[guid];
     }
 }
