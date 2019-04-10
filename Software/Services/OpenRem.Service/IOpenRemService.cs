@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.ServiceModel;
 using OpenRem.Service.Interface;
 
 namespace OpenRem.Service
@@ -8,5 +9,11 @@ namespace OpenRem.Service
     {
         [OperationContract]
         AnalyzerDTO[] GetAnalyzers();
+
+        [OperationContract]
+        void StartRawFileRecorder(Guid analyzerGuid, string fileName);
+
+        [OperationContract]
+        void StopRawFileRecorder();
     }
 }

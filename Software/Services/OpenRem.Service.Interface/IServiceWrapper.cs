@@ -1,4 +1,5 @@
-﻿using OpenRem.Engine;
+﻿using System;
+using OpenRem.Engine;
 
 namespace OpenRem.Service.Interface
 {
@@ -9,5 +10,9 @@ namespace OpenRem.Service.Interface
         bool IsRunning { get; }
 
         Analyzer[] GetAnalyzers();
+
+        void StartRawFileRecorder(Guid analyzerGuid, string fileName);
+
+        void StopRawFileRecorder();
     }
 }
