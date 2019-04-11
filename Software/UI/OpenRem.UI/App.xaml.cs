@@ -16,6 +16,8 @@ namespace OpenRem.UI
             var container = AutofacConfiguration.BuildContainer();
             var csl = new AutofacServiceLocator(container);
             ServiceLocator.SetLocatorProvider(() => csl);
+            var serviceWrapper = ServiceLocator.Current.GetInstance<IServiceWrapper>();
+            serviceWrapper.StartServer();
         }
 
         protected override void OnExit(ExitEventArgs e)

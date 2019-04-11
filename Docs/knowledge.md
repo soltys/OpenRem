@@ -27,6 +27,10 @@
 * [Streaming Audio and Samples](https://github.com/naudio/NAudio/blob/master/Docs/WaveProviders.md)
 * [Using RawSourceWaveStream](https://github.com/naudio/NAudio/blob/master/Docs/RawSourceWaveStream.md)
 
+## AutoFac
+
+* [Self-Hosting WCF Services with the Autofac WCF Integration](https://alexmg.com/posts/self-hosting-wcf-services-with-the-autofac-wcf-integration)
+
 ## MEMS microphone description
 
 Listen to this good news - we now have a breakout board for a super tiny I2S MEMS microphone. Just like 'classic' electret microphones, MEMS mics can detect sound and convert it to voltage, but they're way smaller and thinner. This microphone doesn't even have analog out, its purely digital. The I2S is a small, low cost MEMS mic with a range of about 50Hz - 15KHz, good for just about all general audio recording/detection.

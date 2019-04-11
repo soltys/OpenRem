@@ -10,9 +10,7 @@ namespace OpenRem.UI
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private IServiceWrapper serviceWrapper;
-        private IRawFileRecorder rawFileRecorder;
-
+        private readonly IRawFileRecorder rawFileRecorder;
 
         public RelayCommand SelectFile { get; private set; }
         public RelayCommand StartRecording { get; private set; }
@@ -34,17 +32,11 @@ namespace OpenRem.UI
             set => Set(() => this.OutputFilename, ref outputFilename, value);
         }
 
-        public MainWindowViewModel(IServiceWrapper serviceWrapper, IRawFileRecorder rawFileRecorder)
+        public MainWindowViewModel(IDetectManager detectManager, IRawFileRecorder rawFileRecorder)
         {
-            this.serviceWrapper = serviceWrapper;
             this.rawFileRecorder = rawFileRecorder;
 
-            if (!serviceWrapper.IsRunning)
-            {
-                serviceWrapper.StartServer();
-            }
-
-            Analyzers = new UICollection<Analyzer>(serviceWrapper.GetAnalyzers());
+            Analyzers = new UICollection<Analyzer>(detectManager.GetAnalyzers());
             SelectedAnalyzer = this.Analyzers.FirstOrDefault();
 
             AddCommands();

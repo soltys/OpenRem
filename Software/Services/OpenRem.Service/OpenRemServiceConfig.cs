@@ -18,9 +18,9 @@ namespace OpenRem.Service
             SendTimeout = TimeSpan.MaxValue
         };
 
-        public static string EndpointAddress(string machine, int port)
+        public static string EndpointAddress(string machine, int port, string name)
         {
-            return $"net.tcp://{machine}:{port}";
+            return $"net.tcp://{machine}:{port}/{name}";
         }
     }
 }
