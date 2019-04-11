@@ -6,8 +6,5 @@ namespace OpenRem.Service.Interface
     {
         void StartServer();
         void StopServerIfInternalInstance();
-        bool IsRunning { get; }
-
-        Analyzer[] GetAnalyzers();
     }
 }
