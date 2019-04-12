@@ -26,7 +26,6 @@ namespace OpenRem.Engine
             this.dataStream = analyzer.Factory();
             this.dataStream.Open();
 
-
             var fileStream = this.fileAccess.RecreateAlwaysFile(fileName);
             this.writingAction = this.dataStream.RawDataStream
                 .StereoSample(encoding)
