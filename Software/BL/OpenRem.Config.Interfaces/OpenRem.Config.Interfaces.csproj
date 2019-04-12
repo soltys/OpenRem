@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArduinoConfig.cs" />
-    <Compile Include="IArduinoConfigReader.cs" />
+    <Compile Include="AnalyzerConfig.cs" />
+    <Compile Include="IAnalyzerConfigReader.cs" />
     <Compile Include="ProbeConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

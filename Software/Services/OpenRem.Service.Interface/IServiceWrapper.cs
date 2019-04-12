@@ -1,6 +1,4 @@
-﻿using OpenRem.Engine;
-
-namespace OpenRem.Service.Interface
+﻿namespace OpenRem.Service.Interface
 {
     public interface IServiceWrapper
     {

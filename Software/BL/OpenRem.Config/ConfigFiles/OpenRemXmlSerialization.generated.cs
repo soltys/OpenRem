@@ -30,7 +30,7 @@ namespace OpenRem.Config.ConfigFiles {
     
     
     /// <summary>
-    ///   Automatically generated XML type mapping for ArduinoList.
+    ///   Automatically generated XML type mapping for AnalyzerList.
     /// </summary>
     /// <remarks>
     ///   This is an automaticaly generated type, please do not edit it.
@@ -38,28 +38,28 @@ namespace OpenRem.Config.ConfigFiles {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd", IsNullable=true)]
-    public partial class ArduinoList {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd", IsNullable=true)]
+    public partial class AnalyzerList {
         
-        private Arduino[] arduinoField;
+        private Analyzer[] analyzerField;
         
         /// <summary>
-        ///   Gets or sets Arduino.
+        ///   Gets or sets Analyzer.
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("Arduino")]
-        public Arduino[] Arduino {
+        [System.Xml.Serialization.XmlElementAttribute("Analyzer")]
+        public Analyzer[] Analyzer {
             get {
-                return this.arduinoField;
+                return this.analyzerField;
             }
             set {
-                this.arduinoField = value;
+                this.analyzerField = value;
             }
         }
     }
     
     /// <summary>
-    ///   Automatically generated XML type mapping for Arduino.
+    ///   Automatically generated XML type mapping for Analyzer.
     /// </summary>
     /// <remarks>
     ///   This is an automaticaly generated type, please do not edit it.
@@ -67,15 +67,15 @@ namespace OpenRem.Config.ConfigFiles {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd", IsNullable=true)]
-    public partial class Arduino {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd", IsNullable=true)]
+    public partial class Analyzer {
         
         private string nameField;
         
         private string sampleRateField;
         
-        private string bitRateField;
+        private string subChunkSizeField;
         
         private string channelsNumberField;
         
@@ -107,15 +107,15 @@ namespace OpenRem.Config.ConfigFiles {
         }
         
         /// <summary>
-        ///   Gets or sets BitRate.
+        ///   Gets or sets SubChunkSize.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
-        public string BitRate {
+        public string SubChunkSize {
             get {
-                return this.bitRateField;
+                return this.subChunkSizeField;
             }
             set {
-                this.bitRateField = value;
+                this.subChunkSizeField = value;
             }
         }
         
@@ -155,8 +155,8 @@ namespace OpenRem.Config.ConfigFiles {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd", IsNullable=true)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd", IsNullable=true)]
     public partial class Probe {
         
         private Microphone inputField;
@@ -227,8 +227,8 @@ namespace OpenRem.Config.ConfigFiles {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd", IsNullable=true)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd", IsNullable=true)]
     public partial class Microphone {
         
         private string channelField;
@@ -255,7 +255,7 @@ namespace OpenRem.Config.ConfigFiles {
     /// </remarks>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="https://github.com/soltys/OpenRem/ArduinoConfig.xsd")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
     public enum ProbeSide {
         
         /// <summary>

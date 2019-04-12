@@ -1,5 +1,4 @@
 ﻿using System;
-using OpenRem.Common;
 using OpenRem.Engine.OS;
 using OpenRem.HAL;
 
@@ -20,12 +19,17 @@ namespace OpenRem.Engine
 
         public void Start(Guid analyzerGuid, string fileName)
         {
-            this.dataStream = this.analyzerCollection[analyzerGuid].Invoke();
+            var analyzer = this.analyzerCollection[analyzerGuid];
+            var probe = analyzer.AnalyzerConfig.Probes[0];
+            PcmEncoding encoding = PcmEncodingHelper.ToPcmEncoding(analyzer.AnalyzerConfig.SubChunkSize);
+
+            this.dataStream = analyzer.Factory();
             this.dataStream.Open();
 
-            var fileStream = fileAccess.RecreateAlwaysFile(fileName);
+            var fileStream = this.fileAccess.RecreateAlwaysFile(fileName);
             this.writingAction = this.dataStream.RawDataStream
-                .StereoSample(PcmEncoding.PCM32Bit)
+                .StereoSample(encoding)
+                .ChannelSample(probe.InputChannel)
                 .Subscribe(data =>
                     {
                         var buffer = data.RawData;

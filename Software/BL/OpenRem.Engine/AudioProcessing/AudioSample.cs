@@ -24,7 +24,12 @@ namespace OpenRem.Engine
                 throw new InvalidOperationException("You can only convert stereo sample into mono");
             }
 
-            int dataSize = (int)PcmEncoding;
+            if (RawData.Length < 2 || RawData.Length % 2 != 0)
+            {
+                throw new InvalidOperationException("Raw data must be a multiple of 2");
+            }
+
+            int dataSize = PcmEncodingHelper.ToByteLength(PcmEncoding);
             int offset = side == Side.Left ? 0 : (RawData.Length / 2);
             var monoSample = new List<byte>(dataSize);
             for (int i = 0; i < dataSize; i++)

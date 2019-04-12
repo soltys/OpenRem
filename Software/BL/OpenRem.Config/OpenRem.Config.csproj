@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArduinoConfigReader.cs" />
-    <Compile Include="ConfigFiles\OpenRem.Config.ConfigFiles.ArduinoList.Serialization.generated.cs">
+    <Compile Include="AnalyzerConfigReader.cs" />
+    <Compile Include="ConfigFiles\OpenRem.Config.ConfigFiles.AnalyzerList.Serialization.generated.cs">
       <DependentUpon>OpenRemXmlSerialization.tt</DependentUpon>
     </Compile>
     <Compile Include="EmbeddedConfig.cs" />
@@ -65,14 +65,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ConfigFiles\ArduinoConfig.xml" />
+    <EmbeddedResource Include="ConfigFiles\AnalyzerConfig.xml" />
     <Content Include="ConfigFiles\OpenRemXmlSerialization.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>OpenRemXmlSerialization.generated.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ConfigFiles\ArduinoConfig.xsd">
+    <None Include="ConfigFiles\AnalyzerConfig.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

@@ -4,7 +4,6 @@ using GalaSoft.MvvmLight.CommandWpf;
 using OpenRem.CommonUI;
 using OpenRem.Engine;
 using Microsoft.Win32;
-using OpenRem.Service.Interface;
 
 namespace OpenRem.UI
 {
@@ -22,14 +21,14 @@ namespace OpenRem.UI
         public Analyzer SelectedAnalyzer
         {
             get => this.selectedAnalyzer;
-            set => Set(() => this.SelectedAnalyzer, ref selectedAnalyzer, value);
+            set => Set(() => SelectedAnalyzer, ref this.selectedAnalyzer, value);
         }
 
         private string outputFilename;
         public string OutputFilename
         {
             get => this.outputFilename;
-            set => Set(() => this.OutputFilename, ref outputFilename, value);
+            set => Set(() => OutputFilename, ref this.outputFilename, value);
         }
 
         public MainWindowViewModel(IDetectManager detectManager, IRawFileRecorder rawFileRecorder)
@@ -37,7 +36,7 @@ namespace OpenRem.UI
             this.rawFileRecorder = rawFileRecorder;
 
             Analyzers = new UICollection<Analyzer>(detectManager.GetAnalyzers());
-            SelectedAnalyzer = this.Analyzers.FirstOrDefault();
+            SelectedAnalyzer = Analyzers.FirstOrDefault();
 
             AddCommands();
         }

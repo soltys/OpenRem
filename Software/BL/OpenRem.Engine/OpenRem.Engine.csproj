@@ -48,7 +48,9 @@
     <Compile Include="AudioProcessing\ObservableExtensions.cs" />
     <Compile Include="AudioProcessing\PcmEncoding.cs" />
     <Compile Include="AudioProcessing\AudioSample.cs" />
+    <Compile Include="AudioProcessing\PcmEncodingHelper.cs" />
     <Compile Include="ConnectDetect\AnalyzerCollection.cs" />
+    <Compile Include="ConnectDetect\AnalyzerData.cs" />
     <Compile Include="ConnectDetect\ArduinoDevice.cs" />
     <Compile Include="ConnectDetect\ArduinoNameParser.cs" />
     <Compile Include="ConnectDetect\DetectManager.cs" />
@@ -86,6 +88,10 @@
     <ProjectReference Include="..\..\HAL\OpenRem.HAL.Interface\OpenRem.HAL.Interface.csproj">
       <Project>{362456ba-b77d-4aaf-b2b6-7609379036bb}</Project>
       <Name>OpenRem.HAL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenRem.Config.Interfaces\OpenRem.Config.Interfaces.csproj">
+      <Project>{B019166C-6430-44BC-86A3-3B929CC0CDA4}</Project>
+      <Name>OpenRem.Config.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj">
       <Project>{2A548A63-56DF-486F-8C8D-83EDFCB74BE0}</Project>

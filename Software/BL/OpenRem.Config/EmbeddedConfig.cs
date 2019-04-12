@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenRem.Common;
 
 namespace OpenRem.Config
@@ -12,7 +8,12 @@ namespace OpenRem.Config
     {
         public Stream GetConfigFile(string fileName)
         {
-            return typeof(ArduinoConfigReader).Assembly.GetResourceStream(fileName);
+            return typeof(EmbeddedConfig).Assembly.GetResourceStream(fileName);
+        }
+
+        public IEnumerable<string> GetFiles(string extension)
+        {
+            return typeof(EmbeddedConfig).Assembly.GetResourcesEndsWith(extension);
         }
     }
 }
