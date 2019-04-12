@@ -36,8 +36,14 @@ namespace OpenRem.UI
         {
             this.rawFileRecorder = rawFileRecorder;
 
-            Analyzers = new UICollection<Analyzer>(detectManager.GetAnalyzers());
+<<<<<<< HEAD
+
+            Analyzers = new UICollection<Analyzer>(this.detectManager.GetAnalyzers());
             SelectedAnalyzer = Analyzers.FirstOrDefault();
+=======
+            Analyzers = new UICollection<Analyzer>(detectManager.GetAnalyzers());
+            SelectedAnalyzer = this.Analyzers.FirstOrDefault();
+>>>>>>> master
 
             AddCommands();
         }

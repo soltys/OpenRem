@@ -132,6 +132,10 @@
       <Project>{03bae7c0-ba53-4792-97d6-ae1637821846}</Project>
       <Name>OpenRem.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Services\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj">
+      <Project>{19166610-493d-4203-9240-58d6567cca0b}</Project>
+      <Name>OpenRem.Service.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenRem.CommonUI\OpenRem.CommonUI.csproj">
       <Project>{445c19f4-e724-42f0-9aaf-a2b2867d826a}</Project>
       <Name>OpenRem.CommonUI</Name>

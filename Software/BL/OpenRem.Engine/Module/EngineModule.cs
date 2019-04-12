@@ -12,8 +12,8 @@ namespace OpenRem.Engine
             
             builder.RegisterType<DetectManager>().As<IDetectManager>();
 
-            builder.RegisterAssemblyTypes(dataAccess)
-                .AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(dataAccess).AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(dataAccess).AsSelf();
 
             builder.RegisterType<AnalyzerCollection>().As<IAnalyzerCollection>().SingleInstance();
         }

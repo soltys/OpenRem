@@ -12,7 +12,12 @@ namespace OpenRem.Config
     {
         public Stream GetConfigFile(string fileName)
         {
-            return typeof(AnalyzerConfigReader).Assembly.GetResourceStream(fileName);
+            return typeof(EmbeddedConfig).Assembly.GetResourceStream(fileName);
+        }
+
+        public IEnumerable<string> GetFiles(string extension)
+        {
+            return typeof(EmbeddedConfig).Assembly.GetResourcesEndsWith(extension);
         }
     }
 }

@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace OpenRem.Engine
+namespace OpenRem.Service.Interface
 {
     [DataContract]
-    public class Analyzer
+    public class AnalyzerDTO
     {
-        public Analyzer(Guid id)
-        {
-            Id = id;
-        }
-
         [DataMember]
-        public Guid Id { get; }
+        public Guid Id { get; set; }
+
         [DataMember]
         public string Name { get; set; }
     }
