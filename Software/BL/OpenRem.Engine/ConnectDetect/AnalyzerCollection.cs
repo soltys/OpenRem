@@ -33,7 +33,7 @@ namespace OpenRem.Engine
             this.inMemoryAnalyzers.Add(guid,
                 new AnalyzerData()
                 {
-                    FactoryMethod = () => this.arduinoFactory.Create(arduinoDevice.ComPort, arduinoType),
+                    Factory = () => this.arduinoFactory.Create(arduinoDevice.ComPort, arduinoType),
                     AnalyzerConfig = this.analyzerConfigReader.GetConfig(arduinoType.ToString())
                 });
            
@@ -47,7 +47,7 @@ namespace OpenRem.Engine
             this.inMemoryAnalyzers.Add(guid,
                 new AnalyzerData()
                 {
-                    FactoryMethod = () => this.emulatorFactory.Create(emulator.SignalName),
+                    Factory = () => this.emulatorFactory.Create(emulator.SignalName),
                     AnalyzerConfig = this.analyzerConfigReader.GetConfig("Emulator")
                 });
 

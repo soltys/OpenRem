@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArduinoNameParserTest.cs" />
+    <Compile Include="DetectManagerTest.cs" />
     <Compile Include="DeviceFinderTest.cs" />
     <Compile Include="EmulatorFinderTest.cs" />
     <Compile Include="PcmEncodingTest.cs" />
@@ -74,6 +75,10 @@
     <ProjectReference Include="..\..\HAL\OpenRem.Emulator.Interface\OpenRem.Emulator.Interface.csproj">
       <Project>{B7030F6A-D793-44FF-A373-D1723C0CFB4F}</Project>
       <Name>OpenRem.Emulator.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj">
+      <Project>{2A548A63-56DF-486F-8C8D-83EDFCB74BE0}</Project>
+      <Name>OpenRem.Engine.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\OpenRem.Engine\OpenRem.Engine.csproj">
       <Project>{92a35deb-7d8f-452b-958b-a7e83259540f}</Project>

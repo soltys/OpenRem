@@ -20,8 +20,10 @@ namespace OpenRem.Engine
 
         public void Start(Guid analyzerGuid, string fileName)
         {
-            this.dataStream = this.analyzerCollection[analyzerGuid].FactoryMethod();
+            var analyzer = this.analyzerCollection[analyzerGuid];
+            this.dataStream = analyzer.Factory();
             this.dataStream.Open();
+
 
             var fileStream = this.fileAccess.RecreateAlwaysFile(fileName);
             this.writingAction = this.dataStream.RawDataStream
