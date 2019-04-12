@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using System.ServiceModel.Description;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Integration.Wcf;

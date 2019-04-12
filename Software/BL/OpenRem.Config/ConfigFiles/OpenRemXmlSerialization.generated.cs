@@ -35,7 +35,7 @@ namespace OpenRem.Config.ConfigFiles {
     /// <remarks>
     ///   This is an automaticaly generated type, please do not edit it.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
@@ -64,7 +64,7 @@ namespace OpenRem.Config.ConfigFiles {
     /// <remarks>
     ///   This is an automaticaly generated type, please do not edit it.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
@@ -75,7 +75,7 @@ namespace OpenRem.Config.ConfigFiles {
         
         private string sampleRateField;
         
-        private string subchunkSizeField;
+        private string subChunkSizeField;
         
         private string channelsNumberField;
         
@@ -107,15 +107,15 @@ namespace OpenRem.Config.ConfigFiles {
         }
         
         /// <summary>
-        ///   Gets or sets SubchunkSize.
+        ///   Gets or sets SubChunkSize.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
-        public string SubchunkSize {
+        public string SubChunkSize {
             get {
-                return this.subchunkSizeField;
+                return this.subChunkSizeField;
             }
             set {
-                this.subchunkSizeField = value;
+                this.subChunkSizeField = value;
             }
         }
         
@@ -152,7 +152,7 @@ namespace OpenRem.Config.ConfigFiles {
     /// <remarks>
     ///   This is an automaticaly generated type, please do not edit it.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
@@ -224,7 +224,7 @@ namespace OpenRem.Config.ConfigFiles {
     /// <remarks>
     ///   This is an automaticaly generated type, please do not edit it.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
@@ -253,7 +253,7 @@ namespace OpenRem.Config.ConfigFiles {
     /// <remarks>
     ///   This is an automaticaly generated type, please do not edit it.
     /// </remarks>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="https://github.com/soltys/OpenRem/AnalyzerConfig.xsd")]
     public enum ProbeSide {
