@@ -17,7 +17,7 @@
     <xs:sequence>
       <xs:element name="Name" type="xs:string"/>
       <xs:element name="SampleRate" type="xs:positiveInteger"/>
-      <xs:element name="BitRate" type="xs:positiveInteger"/>
+      <xs:element name="SubChunkSize" type="xs:positiveInteger"/>
       <xs:element name="ChannelsNumber" type="xs:positiveInteger"/>
       <xs:element name="Probe" minOccurs="1" maxOccurs="2" type="tns:Probe">
       </xs:element>

@@ -6,17 +6,18 @@
   <Analyzer>
     <Name>MKRZERO</Name>
     <SampleRate>44100</SampleRate>
-    <BitRate>32</BitRate>
+    <SubChunkSize>32</SubChunkSize>
     <ChannelsNumber>2</ChannelsNumber>
     <Probe Side="Left">
       <Input Channel="0"/>
       <Output Channel="1"/>
     </Probe>
   </Analyzer>
+
   <Analyzer>
     <Name>Emulator</Name>
     <SampleRate>44100</SampleRate>
-    <BitRate>32</BitRate>
+    <SubChunkSize>32</SubChunkSize>
     <ChannelsNumber>2</ChannelsNumber>
     <Probe Side="Left">
       <Input Channel="0"/>

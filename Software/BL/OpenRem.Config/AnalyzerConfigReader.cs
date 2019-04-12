@@ -21,7 +21,7 @@ namespace OpenRem.Config
             return new AnalyzerConfig
             {
                 Name = arduinoConfig.Name,
-                BitRate = int.Parse(arduinoConfig.BitRate),
+                SubChunkSize = int.Parse(arduinoConfig.SubchunkSize),
                 ChannelsNumber = int.Parse(arduinoConfig.ChannelsNumber),
                 SampleRate = int.Parse(arduinoConfig.SampleRate),
                 Probes = arduinoConfig.Probe.Select(probe => new ProbeConfig()

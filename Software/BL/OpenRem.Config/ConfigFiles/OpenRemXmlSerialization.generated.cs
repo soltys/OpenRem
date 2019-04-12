@@ -75,7 +75,7 @@ namespace OpenRem.Config.ConfigFiles {
         
         private string sampleRateField;
         
-        private string bitRateField;
+        private string subchunkSizeField;
         
         private string channelsNumberField;
         
@@ -107,15 +107,15 @@ namespace OpenRem.Config.ConfigFiles {
         }
         
         /// <summary>
-        ///   Gets or sets BitRate.
+        ///   Gets or sets SubchunkSize.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
-        public string BitRate {
+        public string SubchunkSize {
             get {
-                return this.bitRateField;
+                return this.subchunkSizeField;
             }
             set {
-                this.bitRateField = value;
+                this.subchunkSizeField = value;
             }
         }
         

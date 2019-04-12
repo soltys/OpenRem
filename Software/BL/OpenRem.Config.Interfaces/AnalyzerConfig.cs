@@ -10,7 +10,7 @@ namespace OpenRem.Config
     {
         public string Name { get; set; }
         public  int SampleRate { get; set; }
-        public int BitRate { get; set; }
+        public int SubChunkSize { get; set; }
         public int ChannelsNumber { get; set; }
         public ProbeConfig[] Probes { get; set; }
     }

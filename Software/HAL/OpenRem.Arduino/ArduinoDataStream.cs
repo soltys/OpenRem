@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using OpenRem.HAL;
 
 namespace OpenRem.Arduino
@@ -10,7 +12,7 @@ namespace OpenRem.Arduino
     public class ArduinoDataStream : IDataStream
     {
         private SerialPort serialPort;
-        
+
         private readonly string comPort;
         private readonly ArduinoType arduinoType;
 
@@ -55,14 +57,27 @@ namespace OpenRem.Arduino
 
         public void Start()
         {
-            var message = new byte[] { 1 };
-            this.serialPort.Write(message, 0, 1);
+            SendStopMessage();
+            this.serialPort.DiscardInBuffer();
+            Task.Delay(200).ContinueWith((t) => { SendStartMessage(); });
         }
 
         public void Stop()
         {
+            SendStopMessage();
+            this.serialPort.DiscardInBuffer();
+        }
+
+        private void SendStartMessage()
+        {
+            var message = new byte[] { 1 };
+            this.serialPort.Write(message, 0, message.Length);
+        }
+
+        private void SendStopMessage()
+        {
             var message = new byte[] { 0 };
-            this.serialPort.Write(message, 0, 1);
+            this.serialPort.Write(message, 0, message.Length);
         }
     }
 }

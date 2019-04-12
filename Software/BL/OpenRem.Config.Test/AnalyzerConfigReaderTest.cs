@@ -19,7 +19,7 @@ namespace OpenRem.Config.Test
 
             Assert.AreEqual("MKRZERO", config.Name);
             Assert.AreEqual(44100, config.SampleRate);
-            Assert.AreEqual(32, config.BitRate);
+            Assert.AreEqual(32, config.SubChunkSize);
             Assert.AreEqual(2, config.ChannelsNumber);
 
             Assert.AreEqual(1, config.Probes.Length);
