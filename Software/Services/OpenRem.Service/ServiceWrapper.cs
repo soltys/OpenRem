@@ -61,7 +61,7 @@ namespace OpenRem.Service
 
         public static ServiceType[] GetEngineTypes()
         {
-            var engineImplementation = AppDomainHelper.GetImplementationTypes(AppDomainHelper.EngineAssemblyName);
+            var engineImplementation = AppDomainHelper.GetReferenceTypes(AppDomainHelper.EngineAssemblyName);
             var engineInterfaces = AppDomainHelper.GetInterfaceTypes(AppDomainHelper.EngineInterfaceAssemblyName);
 
             if (engineImplementation == null || engineInterfaces == null)

@@ -6,10 +6,10 @@ namespace OpenRem.Service
 {
     public static class OpenRemServiceConfig
     {
-        public static string ServiceAddress => "localhost";
+        public static string ServiceAddress => Environment.MachineName;
         public static int ServicePort => 32123;
 
-        public static Binding Binding => new BasicHttpBinding(BasicHttpSecurityMode.None)
+        public static Binding Binding => new NetTcpBinding(SecurityMode.None)
         {
             MaxBufferPoolSize = int.MaxValue,
             MaxBufferSize = int.MaxValue,
@@ -20,7 +20,7 @@ namespace OpenRem.Service
 
         public static string GetAddress(string machine, int port, string name)
         {
-            return $"http://{machine}:{port}/{name}";
+            return $"net.tcp://{machine}:{port}/{name}";
         }
 
         public static string GetAddress(Type type)
