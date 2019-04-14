@@ -6,13 +6,8 @@ namespace OpenRem.Engine
     [DataContract]
     public class Analyzer
     {
-        public Analyzer(Guid id)
-        {
-            Id = id;
-        }
-
         [DataMember]
-        public Guid Id { get; }
+        public Guid Id { get; set; }
         [DataMember]
         public string Name { get; set; }
     }

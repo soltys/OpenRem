@@ -10,12 +10,12 @@ namespace OpenRem.UI
     public class MainWindowViewModel : ViewModelBase
     {
         private readonly IRawFileRecorder rawFileRecorder;
-
+        public RelayCommand LoadAnalyzers { get; private set; }
         public RelayCommand SelectFile { get; private set; }
         public RelayCommand StartRecording { get; private set; }
         public RelayCommand StopRecording { get; private set; }
 
-        public UICollection<Analyzer> Analyzers { get; }
+        public UICollection<Analyzer> Analyzers { get; } = new UICollection<Analyzer>();
 
         private Analyzer selectedAnalyzer;
         public Analyzer SelectedAnalyzer
@@ -25,6 +25,8 @@ namespace OpenRem.UI
         }
 
         private string outputFilename;
+        private IDetectManager detectManager;
+
         public string OutputFilename
         {
             get => this.outputFilename;
@@ -34,15 +36,18 @@ namespace OpenRem.UI
         public MainWindowViewModel(IDetectManager detectManager, IRawFileRecorder rawFileRecorder)
         {
             this.rawFileRecorder = rawFileRecorder;
-
-            Analyzers = new UICollection<Analyzer>(detectManager.GetAnalyzers());
-            SelectedAnalyzer = Analyzers.FirstOrDefault();
+            this.detectManager = detectManager;
 
             AddCommands();
         }
 
         private void AddCommands()
         {
+            LoadAnalyzers = new RelayCommand(() =>
+            {
+                Analyzers.AddRange(detectManager.GetAnalyzers());
+                SelectedAnalyzer = Analyzers.FirstOrDefault();
+            });
             SelectFile = new RelayCommand(ShowSaveFileDialog);
             StartRecording = new RelayCommand(() => { this.rawFileRecorder.Start(SelectedAnalyzer.Id, OutputFilename); });
             StopRecording = new RelayCommand(() => { this.rawFileRecorder.Stop(); });

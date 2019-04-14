@@ -12,6 +12,10 @@
         >
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel>
+            <Button Command="{Binding LoadAnalyzers}"
+                    Content="Load Analyzers"
+                    Margin="0,0,0,10"
+                    />
             <ComboBox MinWidth="100"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center"

@@ -43,6 +43,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autofac\AppDomainHelper.cs" />
     <Compile Include="Autofac\AutofacConfiguration.cs" />
     <Compile Include="EmbededResourceHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

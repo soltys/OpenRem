@@ -5,13 +5,14 @@ using System.ServiceModel;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Integration.Wcf;
+using OpenRem.Common;
 using OpenRem.Service.Interface;
 
 namespace OpenRem.Service
 {
     public class ServiceWrapper : IServiceWrapper
     {
-        private List<ServiceHost> hosts = new List<ServiceHost>();
+        private readonly List<ServiceHost> hosts = new List<ServiceHost>();
         private readonly ILifetimeScope scope;
 
         public ServiceWrapper(ILifetimeScope scope)
@@ -21,35 +22,20 @@ namespace OpenRem.Service
 
         public void StartServer()
         {
-            var engineImplementation = AppDomain.CurrentDomain.GetAssemblies()
-                .FirstOrDefault(x => x.FullName.StartsWith("OpenRem.Engine"))
-                ?.GetTypes()
-                .Where(x => x.IsClass);
-
-            var engineInterfaces = AppDomain.CurrentDomain.GetAssemblies()
-                .FirstOrDefault(x => x.FullName.StartsWith("OpenRem.Engine.Interface"))
-                ?.GetTypes()
-                .Where(x => x.IsInterface);
+            var engineImplementation = AppDomainHelper.GetImplementationTypes(AppDomainHelper.EngineAssemblyName);
+            var engineInterfaces = AppDomainHelper.GetInterfaceTypes(AppDomainHelper.EngineInterfaceAssemblyName);
 
             if (engineImplementation == null || engineInterfaces == null)
             {
                 throw new InvalidOperationException("Types are not found");
-                
+
             }
 
-            var publicTypes = engineImplementation.Select(implementation =>
-            {
-                var publicInterfaces = implementation
-                    .GetInterfaces()
-                    .Where(i => engineInterfaces.Contains(i)).ToArray();
-
-                return  new ServiceType  { Implementation = implementation, Interfaces = publicInterfaces };
-            }).Where(x => x.Interfaces != null && x.Interfaces.Length > 0).ToArray();
-
+            var servicesTypes = ServiceType.GetServiceTypes(engineImplementation, engineInterfaces);
 
             Task.Factory.StartNew(() =>
             {
-                foreach (var publicType in publicTypes)
+                foreach (var publicType in servicesTypes)
                 {
                     var host = CreateServiceHost(publicType);
                     this.hosts.Add(host);
@@ -60,11 +46,7 @@ namespace OpenRem.Service
 
         private ServiceHost CreateServiceHost(ServiceType publicType)
         {
-            Uri address = new Uri(
-                OpenRemServiceConfig.EndpointAddress(
-                    OpenRemServiceConfig.ServiceAddress,
-                    OpenRemServiceConfig.ServicePort,
-                    publicType.Implementation.Name));
+            Uri address = new Uri(OpenRemServiceConfig.GetAddress(publicType.Implementation));
             ServiceHost host = new ServiceHost(publicType.Implementation);
             foreach (var @interface in publicType.Interfaces)
             {
@@ -83,12 +65,6 @@ namespace OpenRem.Service
                 host.Close();
             }
             this.hosts.Clear();
-        }
-
-        private class ServiceType
-        {
-            public Type Implementation { get; set; }
-            public Type[] Interfaces { get; set; }
         }
     }
 }

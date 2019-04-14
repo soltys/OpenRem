@@ -41,16 +41,18 @@ namespace OpenRem.Engine
 
         private Analyzer ToAnalyzer(Guid id, ArduinoDevice arduinoDevice)
         {
-            return new Analyzer(id)
+            return new Analyzer
             {
+                Id =  id,
                 Name = arduinoDevice.Name
             };
         }
 
         private Analyzer ToAnalyzer(Guid id, Emulator emulator)
         {
-            return new Analyzer(id)
+            return new Analyzer
             {
+                Id = id,
                 Name = "Emulator - " + emulator.SignalName
             };
         }
