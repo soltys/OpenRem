@@ -22,16 +22,7 @@ namespace OpenRem.Service
 
         public void StartServer()
         {
-            var engineImplementation = AppDomainHelper.GetImplementationTypes(AppDomainHelper.EngineAssemblyName);
-            var engineInterfaces = AppDomainHelper.GetInterfaceTypes(AppDomainHelper.EngineInterfaceAssemblyName);
-
-            if (engineImplementation == null || engineInterfaces == null)
-            {
-                throw new InvalidOperationException("Types are not found");
-
-            }
-
-            var servicesTypes = ServiceType.GetServiceTypes(engineImplementation, engineInterfaces);
+            var servicesTypes = GetEngineTypes();
 
             Task.Factory.StartNew(() =>
             {
@@ -43,7 +34,7 @@ namespace OpenRem.Service
 
             });
         }
-
+       
         private ServiceHost CreateServiceHost(ServiceType publicType)
         {
             Uri address = new Uri(OpenRemServiceConfig.GetAddress(publicType.Implementation));
@@ -66,5 +57,21 @@ namespace OpenRem.Service
             }
             this.hosts.Clear();
         }
+
+
+        public static ServiceType[] GetEngineTypes()
+        {
+            var engineImplementation = AppDomainHelper.GetImplementationTypes(AppDomainHelper.EngineAssemblyName);
+            var engineInterfaces = AppDomainHelper.GetInterfaceTypes(AppDomainHelper.EngineInterfaceAssemblyName);
+
+            if (engineImplementation == null || engineInterfaces == null)
+            {
+                throw new InvalidOperationException("Types are not found");
+            }
+
+            var servicesTypes = ServiceType.GetServiceTypes(engineImplementation, engineInterfaces);
+            return servicesTypes;
+        }
+
     }
 }

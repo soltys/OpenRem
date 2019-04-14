@@ -14,25 +14,34 @@ namespace OpenRem.Service.Module
         {
             builder.RegisterType<ServiceWrapper>().As<IServiceWrapper>().SingleInstance();
 
+            var serviceTypes = ServiceWrapper.GetEngineTypes();
 
-            builder.Register(c => new ChannelFactory<IDetectManager>(
-                   OpenRemServiceConfig.Binding,
-                   OpenRemServiceConfig.GetAddress("DetectManager")))
+            foreach (var serviceType in serviceTypes)
+            {
+                foreach (var interfaceType in serviceType.Interfaces)
+                {
+                    RegisterServiceTypes(builder, serviceType.Implementation, interfaceType);
+                }
+            }
+        }
+
+        private static void RegisterServiceTypes(ContainerBuilder builder, Type implementation, Type interfaceType)
+        {
+            Type channelFactoryType = typeof(ChannelFactory<>);
+            Type serviceAccessType = channelFactoryType.MakeGenericType(interfaceType);
+
+            builder.Register(x => Activator.CreateInstance(serviceAccessType, OpenRemServiceConfig.Binding, OpenRemServiceConfig.GetAddress(implementation)))
+                .As(serviceAccessType)
                 .SingleInstance();
-            builder
-                .Register(c => c.Resolve<ChannelFactory<IDetectManager>>().CreateChannel())
-                .As<IDetectManager>()
-                .UseWcfSafeRelease();
 
-            builder.Register(c => new ChannelFactory<IRawFileRecorder>(
-                    OpenRemServiceConfig.Binding,
-                    OpenRemServiceConfig.GetAddress("RawFileRecorder")))
-                .SingleInstance();
-            builder
-                .Register(c => c.Resolve<ChannelFactory<IRawFileRecorder>>().CreateChannel())
-                .As<IRawFileRecorder>()
+            builder.Register(x =>
+                {
+                    object serviceAccess = x.Resolve(serviceAccessType);
+                    dynamic cf = Convert.ChangeType(serviceAccess, serviceAccessType);
+                    return cf.CreateChannel();
+                })
+                .As(interfaceType)
                 .UseWcfSafeRelease();
-
         }
     }
 }
