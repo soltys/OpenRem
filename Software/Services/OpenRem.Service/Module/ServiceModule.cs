@@ -2,8 +2,6 @@
 using System.ServiceModel;
 using Autofac;
 using Autofac.Integration.Wcf;
-using OpenRem.Common;
-using OpenRem.Engine;
 using OpenRem.Service.Interface;
 
 namespace OpenRem.Service.Module
