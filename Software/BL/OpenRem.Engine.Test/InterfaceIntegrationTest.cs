@@ -16,9 +16,9 @@ namespace OpenRem.Engine.Test
         public void Setup()
         {
             var testAssemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            Assembly.LoadFile(Path.Combine(testAssemblyPath, AppDomainHelper.EngineInterfaceAssemblyName+".dll"));
+            Assembly.LoadFile(Path.Combine(testAssemblyPath, AppDomainHelper.EngineInterfaceAssemblyName + ".dll"));
         }
-      
+
 
         [Test]
         public void EveryInterface_Have_ServiceContractAttribute()

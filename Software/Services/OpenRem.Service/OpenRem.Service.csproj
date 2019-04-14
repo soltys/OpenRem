@@ -54,7 +54,7 @@
     <Compile Include="OpenRemServiceConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceType.cs" />
-    <Compile Include="ServiceWrapper.cs" />
+    <Compile Include="EngineServiceHost.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BL\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj">

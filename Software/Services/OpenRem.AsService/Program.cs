@@ -4,21 +4,21 @@ using OpenRem.Common;
 using OpenRem.Service;
 using OpenRem.Service.Interface;
 
-namespace AsService
+namespace OpenRem.ServiceApplication
 {
-    class ServiceInConsole
+    class Program
     {
         static void Main(string[] args)
         {
             var container = AutofacConfiguration.BuildContainer();
 
-            var serviceWrapper = container.Resolve<IServiceWrapper>();
-            serviceWrapper.StartServer();
+            var serviceWrapper = container.Resolve<IEngineServceHost>();
+            serviceWrapper.Start();
 
             Console.WriteLine($"Running OpenRem service on {OpenRemServiceConfig.ServiceAddress}:{OpenRemServiceConfig.ServicePort}. Press Enter to close...");
             Console.ReadLine();
 
-            serviceWrapper.StopServerIfInternalInstance();
+            serviceWrapper.Stop();
         }
     }
 }

@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalyzerDTO.cs" />
-    <Compile Include="IServiceWrapper.cs" />
+    <Compile Include="IEngineServceHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

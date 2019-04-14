@@ -10,17 +10,17 @@ using OpenRem.Service.Interface;
 
 namespace OpenRem.Service
 {
-    public class ServiceWrapper : IServiceWrapper
+    public class EngineServiceHost : IEngineServceHost
     {
         private readonly List<ServiceHost> hosts = new List<ServiceHost>();
         private readonly ILifetimeScope scope;
 
-        public ServiceWrapper(ILifetimeScope scope)
+        public EngineServiceHost(ILifetimeScope scope)
         {
             this.scope = scope;
         }
 
-        public void StartServer()
+        public void Start()
         {
             var servicesTypes = GetEngineTypes();
 
@@ -49,7 +49,7 @@ namespace OpenRem.Service
             return host;
         }
 
-        public void StopServerIfInternalInstance()
+        public void Stop()
         {
             foreach (var host in this.hosts)
             {
