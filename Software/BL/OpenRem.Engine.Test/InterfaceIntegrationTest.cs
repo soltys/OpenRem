@@ -28,7 +28,7 @@ namespace OpenRem.Engine.Test
             foreach (var @interface in interfaces)
             {
                 var attributes = @interface.GetCustomAttributes(typeof(ServiceContractAttribute), false);
-                Assert.IsTrue(attributes.Length > 0, $"{@interface.Name}");
+                Assert.IsTrue(attributes.Length > 0, $"{@interface.Namespace}.{@interface.Name}");
             }
         }
 
@@ -43,7 +43,7 @@ namespace OpenRem.Engine.Test
                 foreach (var method in methods)
                 {
                     var attributes = method.GetCustomAttributes(typeof(OperationContractAttribute), false);
-                    Assert.IsTrue(attributes.Length > 0, $"{@interface.Name}.{method.Name}");
+                    Assert.IsTrue(attributes.Length > 0, $"{@interface.Namespace}.{@interface.Name}.{method.Name}");
                 }
             }
         }
@@ -57,7 +57,7 @@ namespace OpenRem.Engine.Test
             {
                 var constructors = referenceType.GetConstructors();
                 var parameterlessCount = constructors.Count(x => x.GetParameters().Length == 0);
-                Assert.AreEqual(1, parameterlessCount, $"{referenceType.Name}");
+                Assert.AreEqual(1, parameterlessCount, $"{referenceType.Namespace}.{referenceType.Name}");
             }
         }
 
@@ -69,7 +69,7 @@ namespace OpenRem.Engine.Test
             foreach (var referenceType in referenceTypes)
             {
                 var attributes = referenceType.GetCustomAttributes(typeof(DataContractAttribute), false);
-                Assert.IsTrue(attributes.Length > 0, $"{referenceType.Name}");
+                Assert.IsTrue(attributes.Length > 0, $"{referenceType.Namespace}.{referenceType.Name}");
             }
         }
 
@@ -85,7 +85,7 @@ namespace OpenRem.Engine.Test
                 foreach (var property in properties)
                 {
                     var attributes = property.GetCustomAttributes(typeof(DataMemberAttribute), false);
-                    Assert.IsTrue(attributes.Length > 0, $"{referenceType.Name}.{property.Name}");
+                    Assert.IsTrue(attributes.Length > 0, $"{referenceType.Namespace}.{referenceType.Name}.{property.Name}");
                 }
             }
         }
