@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace OpenRem.Emulator.Test
 {
     [TestFixture]
-    public class IntegrationTests
+    public class IntegrationTest
     {
         [Test]
         public void ShouldHaveAtLeastOneRawFile()
