@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToolsPlayground", "AudioToolsPlayground\AudioToolsPlayground.csproj", "{EBD7C2A5-B790-4834-AB0B-63B320EC2C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioTools.Interface", "AudioTools.Interface\AudioTools.Interface.csproj", "{06761DE3-3E8D-45A8-80FE-7C5CA463BFDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioTools", "AudioTools\AudioTools.csproj", "{EA332E76-587D-41AF-93A9-E180954FB6E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBD7C2A5-B790-4834-AB0B-63B320EC2C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD7C2A5-B790-4834-AB0B-63B320EC2C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD7C2A5-B790-4834-AB0B-63B320EC2C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD7C2A5-B790-4834-AB0B-63B320EC2C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06761DE3-3E8D-45A8-80FE-7C5CA463BFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06761DE3-3E8D-45A8-80FE-7C5CA463BFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06761DE3-3E8D-45A8-80FE-7C5CA463BFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06761DE3-3E8D-45A8-80FE-7C5CA463BFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA332E76-587D-41AF-93A9-E180954FB6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA332E76-587D-41AF-93A9-E180954FB6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA332E76-587D-41AF-93A9-E180954FB6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA332E76-587D-41AF-93A9-E180954FB6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
