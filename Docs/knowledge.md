@@ -1,3 +1,7 @@
+# Knowledge
+
+All information gathered during development of **OpenRem**.
+
 ## Wave Format
 * [Wave Format](http://soundfile.sapp.org/doc/WaveFormat/)
 
@@ -27,7 +31,15 @@
 * [Streaming Audio and Samples](https://github.com/naudio/NAudio/blob/master/Docs/WaveProviders.md)
 * [Using RawSourceWaveStream](https://github.com/naudio/NAudio/blob/master/Docs/RawSourceWaveStream.md)
 
-## AutoFac
+## Service
+
+### Web API
+
+* [Dynamic register controller in C# Web Api](https://stackoverflow.com/questions/37813884/dynamic-register-controller-in-c-sharp-web-api)
+* [Generic and dynamically generated controllers in ASP.NET Core MVC](https://www.strathweb.com/2018/04/generic-and-dynamically-generated-controllers-in-asp-net-core-mvc/)
+* [Building Dynamic Web API Controllers](https://aspnetboilerplate.com/Pages/Documents/Dynamic-Web-API)
+
+### WCF
 
 * [Self-Hosting WCF Services with the Autofac WCF Integration](https://alexmg.com/posts/self-hosting-wcf-services-with-the-autofac-wcf-integration)
 

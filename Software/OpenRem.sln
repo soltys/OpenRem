@@ -11,54 +11,54 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8A8E8C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{6A1D5BD9-9C46-45DB-9602-02EC3C292F89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.UI", "UI\OpenRem.UI\OpenRem.UI.csproj", "{314AC842-4AAC-40DA-B7D2-46034E6FF25A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.UI", "UI\OpenRem.UI\OpenRem.UI.csproj", "{314AC842-4AAC-40DA-B7D2-46034E6FF25A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{92A35DEB-7D8F-452B-958B-A7E83259540F} = {92A35DEB-7D8F-452B-958B-A7E83259540F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.CommonUI", "UI\OpenRem.CommonUI\OpenRem.CommonUI.csproj", "{445C19F4-E724-42F0-9AAF-A2B2867D826A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.CommonUI", "UI\OpenRem.CommonUI\OpenRem.CommonUI.csproj", "{445C19F4-E724-42F0-9AAF-A2B2867D826A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Arduino", "HAL\OpenRem.Arduino\OpenRem.Arduino.csproj", "{E360A461-585A-4416-82BE-B5719B270B39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Arduino", "HAL\OpenRem.Arduino\OpenRem.Arduino.csproj", "{E360A461-585A-4416-82BE-B5719B270B39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Core", "Common\OpenRem.Core\OpenRem.Core.csproj", "{03BAE7C0-BA53-4792-97D6-AE1637821846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Core", "Common\OpenRem.Core\OpenRem.Core.csproj", "{03BAE7C0-BA53-4792-97D6-AE1637821846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Common", "Common\OpenRem.Common\OpenRem.Common.csproj", "{45ECB91C-68EE-4EF9-9F1C-32ACE8A12F54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Common", "Common\OpenRem.Common\OpenRem.Common.csproj", "{45ECB91C-68EE-4EF9-9F1C-32ACE8A12F54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Engine", "BL\OpenRem.Engine\OpenRem.Engine.csproj", "{92A35DEB-7D8F-452B-958B-A7E83259540F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Engine", "BL\OpenRem.Engine\OpenRem.Engine.csproj", "{92A35DEB-7D8F-452B-958B-A7E83259540F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Emulator", "HAL\OpenRem.Emulator\OpenRem.Emulator.csproj", "{08838EC5-0D11-46AC-8FD1-51B2667C06E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Emulator", "HAL\OpenRem.Emulator\OpenRem.Emulator.csproj", "{08838EC5-0D11-46AC-8FD1-51B2667C06E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Engine.Test", "BL\OpenRem.Engine.Test\OpenRem.Engine.Test.csproj", "{77BE9A99-FB03-479C-9782-D8C337298124}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Engine.Test", "BL\OpenRem.Engine.Test\OpenRem.Engine.Test.csproj", "{77BE9A99-FB03-479C-9782-D8C337298124}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Emulator.Interface", "HAL\OpenRem.Emulator.Interface\OpenRem.Emulator.Interface.csproj", "{B7030F6A-D793-44FF-A373-D1723C0CFB4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Emulator.Interface", "HAL\OpenRem.Emulator.Interface\OpenRem.Emulator.Interface.csproj", "{B7030F6A-D793-44FF-A373-D1723C0CFB4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Emulator.Test", "HAL\OpenRem.Emulator.Test\OpenRem.Emulator.Test.csproj", "{A026B8B1-BB0B-45E0-AA96-709191032655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Emulator.Test", "HAL\OpenRem.Emulator.Test\OpenRem.Emulator.Test.csproj", "{A026B8B1-BB0B-45E0-AA96-709191032655}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Emulator", "Emulator", "{ACF5EC69-2BBA-4201-A91F-C376F5E57BFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arduino", "Arduino", "{33798FC3-3A7D-45B2-BC31-31C09D27391E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Engine.Interface", "BL\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj", "{2A548A63-56DF-486F-8C8D-83EDFCB74BE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Engine.Interface", "BL\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj", "{2A548A63-56DF-486F-8C8D-83EDFCB74BE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Arduino.Interface", "HAL\OpenRem.Arduino.Interface\OpenRem.Arduino.Interface.csproj", "{FFD6877B-3913-4CF9-B394-4A154821CF63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Arduino.Interface", "HAL\OpenRem.Arduino.Interface\OpenRem.Arduino.Interface.csproj", "{FFD6877B-3913-4CF9-B394-4A154821CF63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.HAL.Interface", "HAL\OpenRem.HAL.Interface\OpenRem.HAL.Interface.csproj", "{362456BA-B77D-4AAF-B2B6-7609379036BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.HAL.Interface", "HAL\OpenRem.HAL.Interface\OpenRem.HAL.Interface.csproj", "{362456BA-B77D-4AAF-B2B6-7609379036BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{F74C8612-4E18-4DB6-801E-F04D8B4032B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Config", "BL\OpenRem.Config\OpenRem.Config.csproj", "{4B486BFB-AC7C-44F1-B92E-E6E5DA92C8EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Config", "BL\OpenRem.Config\OpenRem.Config.csproj", "{4B486BFB-AC7C-44F1-B92E-E6E5DA92C8EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Config.Interfaces", "BL\OpenRem.Config.Interfaces\OpenRem.Config.Interfaces.csproj", "{B019166C-6430-44BC-86A3-3B929CC0CDA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Config.Interfaces", "BL\OpenRem.Config.Interfaces\OpenRem.Config.Interfaces.csproj", "{B019166C-6430-44BC-86A3-3B929CC0CDA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Config.Test", "BL\OpenRem.Config.Test\OpenRem.Config.Test.csproj", "{BB7EB9DD-C5BF-4C47-9749-A34177032E83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Config.Test", "BL\OpenRem.Config.Test\OpenRem.Config.Test.csproj", "{BB7EB9DD-C5BF-4C47-9749-A34177032E83}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B6027F6E-F507-4755-B1D7-9AD418A11F1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Ark", "Services\OpenRem.Ark\OpenRem.Ark.csproj", "{9F34264E-808B-45B2-8B44-755C6032973D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Ark", "Services\OpenRem.Ark\OpenRem.Ark.csproj", "{9F34264E-808B-45B2-8B44-755C6032973D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Service", "Services\OpenRem.Service\OpenRem.Service.csproj", "{35AE0F6F-8391-4A89-B020-4857D98D4B07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service", "Services\OpenRem.Service\OpenRem.Service.csproj", "{35AE0F6F-8391-4A89-B020-4857D98D4B07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Service.Interface", "Services\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj", "{19166610-493D-4203-9240-58D6567CCA0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Interface", "Services\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj", "{19166610-493D-4203-9240-58D6567CCA0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Common.Test", "Common\OpenRem.Common.Test\OpenRem.Common.Test.csproj", "{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5}"
 EndProject
@@ -79,8 +79,8 @@ Global
 		{314AC842-4AAC-40DA-B7D2-46034E6FF25A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{445C19F4-E724-42F0-9AAF-A2B2867D826A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{445C19F4-E724-42F0-9AAF-A2B2867D826A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{445C19F4-E724-42F0-9AAF-A2B2867D826A}.Installer_Debug|Any CPU.ActiveCfg = Installer_Debug|Any CPU
-		{445C19F4-E724-42F0-9AAF-A2B2867D826A}.Installer_Debug|Any CPU.Build.0 = Installer_Debug|Any CPU
+		{445C19F4-E724-42F0-9AAF-A2B2867D826A}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445C19F4-E724-42F0-9AAF-A2B2867D826A}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{445C19F4-E724-42F0-9AAF-A2B2867D826A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{445C19F4-E724-42F0-9AAF-A2B2867D826A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E360A461-585A-4416-82BE-B5719B270B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
