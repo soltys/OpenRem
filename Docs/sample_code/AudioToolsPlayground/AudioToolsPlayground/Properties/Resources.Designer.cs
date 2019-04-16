@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AudioHandlerPlayground.Properties
+namespace AudioToolsPlayground.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -45,7 +45,7 @@ namespace AudioHandlerPlayground.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("AudioHandlerPlayground.Properties.Resources",
+                        new global::System.Resources.ResourceManager("AudioToolsPlayground.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioHandlerPlayground", "AudioHandlerPlayground\AudioHandlerPlayground.csproj", "{EBD7C2A5-B790-4834-AB0B-63B320EC2C91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioToolsPlayground", "AudioToolsPlayground\AudioToolsPlayground.csproj", "{EBD7C2A5-B790-4834-AB0B-63B320EC2C91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioHandler.Interface", "AudioHandler.Interface\AudioHandler.Interface.csproj", "{06761DE3-3E8D-45A8-80FE-7C5CA463BFDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioTools.Interface", "AudioTools.Interface\AudioTools.Interface.csproj", "{06761DE3-3E8D-45A8-80FE-7C5CA463BFDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioHandler", "AudioHandler\AudioHandler.csproj", "{EA332E76-587D-41AF-93A9-E180954FB6E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioTools", "AudioTools\AudioTools.csproj", "{EA332E76-587D-41AF-93A9-E180954FB6E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

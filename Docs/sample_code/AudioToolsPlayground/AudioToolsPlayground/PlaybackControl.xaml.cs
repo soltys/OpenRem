@@ -1,6 +1,6 @@
 using System.Windows.Controls;
 
-namespace AudioHandlerPlayground
+namespace AudioToolsPlayground
 {
     public partial class PlaybackControl : UserControl
     {

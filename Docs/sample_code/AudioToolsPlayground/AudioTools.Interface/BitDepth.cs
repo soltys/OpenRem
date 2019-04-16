@@ -1,4 +1,4 @@
-namespace AudioHandler.Interface
+namespace AudioTools.Interface
 {
     public enum BitDepth
     {

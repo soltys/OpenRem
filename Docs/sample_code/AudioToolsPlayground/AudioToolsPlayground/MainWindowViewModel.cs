@@ -2,11 +2,11 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using AudioHandler;
-using AudioHandler.Interface;
-using AudioHandlerPlayground.Commands;
+using AudioTools;
+using AudioTools.Interface;
+using AudioToolsPlayground.Commands;
 
-namespace AudioHandlerPlayground
+namespace AudioToolsPlayground
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {

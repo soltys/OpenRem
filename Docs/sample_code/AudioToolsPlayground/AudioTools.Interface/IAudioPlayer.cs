@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace AudioHandler.Interface
+namespace AudioTools.Interface
 {
     public interface IAudioPlayer
     {

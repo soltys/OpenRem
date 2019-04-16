@@ -1,6 +1,6 @@
-using AudioHandler.Interface;
+using AudioTools.Interface;
 
-namespace AudioHandler
+namespace AudioTools
 {
     public class RawSound : ISound
     {

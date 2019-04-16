@@ -1,4 +1,4 @@
-﻿namespace AudioHandlerPlayground
+﻿namespace AudioToolsPlayground
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

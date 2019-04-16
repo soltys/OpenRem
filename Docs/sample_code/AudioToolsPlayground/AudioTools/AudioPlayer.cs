@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using System.Threading;
-using AudioHandler.Interface;
+using AudioTools.Interface;
 using NAudio.Wave;
 
-namespace AudioHandler
+namespace AudioTools
 {
     public class AudioPlayer : IAudioPlayer
     {

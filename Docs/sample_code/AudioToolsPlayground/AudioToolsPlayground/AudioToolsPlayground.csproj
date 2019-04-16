@@ -6,8 +6,8 @@
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{EBD7C2A5-B790-4834-AB0B-63B320EC2C91}</ProjectGuid>
         <OutputType>WinExe</OutputType>
-        <RootNamespace>AudioHandlerPlayground</RootNamespace>
-        <AssemblyName>AudioHandlerPlayground</AssemblyName>
+        <RootNamespace>AudioToolsPlayground</RootNamespace>
+        <AssemblyName>AudioToolsPlayground</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -87,13 +87,13 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\AudioHandler.Interface\AudioHandler.Interface.csproj">
+      <ProjectReference Include="..\AudioTools.Interface\AudioTools.Interface.csproj">
         <Project>{06761de3-3e8d-45a8-80fe-7c5ca463bfdb}</Project>
-        <Name>AudioHandler.Interface</Name>
+        <Name>AudioTools.Interface</Name>
       </ProjectReference>
-      <ProjectReference Include="..\AudioHandler\AudioHandler.csproj">
+      <ProjectReference Include="..\AudioTools\AudioTools.csproj">
         <Project>{ea332e76-587d-41af-93a9-e180954fb6e7}</Project>
-        <Name>AudioHandler</Name>
+        <Name>AudioTools</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
