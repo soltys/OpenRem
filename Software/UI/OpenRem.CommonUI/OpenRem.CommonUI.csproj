@@ -1,148 +1,56 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="MSBuild.Sdk.Extras/1.6.65">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{445C19F4-E724-42F0-9AAF-A2B2867D826A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>OpenRem.CommonUI</RootNamespace>
-    <AssemblyName>OpenRem.CommonUI</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>net471</TargetFramework>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
+    <AssemblyTitle>OpenRem.CommonUI</AssemblyTitle>
+    <Product>OpenRem.CommonUI</Product>
+    <Copyright>Copyright ©  2017</Copyright>
+        
+    <ExtrasEnableWpfProjectSetup>true</ExtrasEnableWpfProjectSetup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\..\_Result\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Installer_Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Installer_Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.*" />
+    <PackageReference Include="System.Reflection.Context" Version="4.*" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.*" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
+    <PackageReference Include="System.Net.Http" Version="4.*" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.ComponentModel.Composition.Registration" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Reflection.Context" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoScrollListBoxBehavior.cs" />
-    <Compile Include="AutoScrollOnItemsChange.cs" />
-    <Compile Include="BooleanToObjectConverter.cs" />
-    <Compile Include="BooleanToVisibilityConverter.cs" />
-    <Compile Include="BooleanToWrapConverter.cs" />
-    <Compile Include="CenterWindowToOwnerBehavior.cs" />
-    <Compile Include="CommandBehavior.cs" />
-    <Compile Include="DoubleClickToClipboardBehavior.cs" />
-    <Compile Include="FrequencyConverter.cs" />
-    <Compile Include="InverseBooleanConverter.cs" />
-    <Compile Include="KeyToResourceConverter.cs" />
-    <Compile Include="LogExtensions.cs" />
-    <Compile Include="MinimizeToTrayButton.cs" />
-    <Compile Include="NullOrEmptyToVisibilityConverter.cs" />
-    <Compile Include="ObservableSideable.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="MyWindow.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SelectAllTextOnFocusBehavior.cs" />
-    <Compile Include="SingleAppInstance.cs" />
-    <Compile Include="SizeChange.cs" />
-    <Compile Include="TextBoxBehavior.cs" />
-    <Compile Include="ToggleButtonExtensions.cs" />
-    <Compile Include="ToolTipExtensions.cs" />
-    <Compile Include="TypeSpecificDataTemplate.cs" />
-    <Compile Include="TypeSpecificDataTemplateSelector.cs" />
-    <Compile Include="UICollection.cs" />
-    <Compile Include="VisualTreeUtilities.cs" />
-    <Compile Include="WindowResizingTrigger.cs" />
-    <None Include="App.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Skins\MainSkin.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.2" />
     <PackageReference Include="CommonServiceLocator" Version="2.0.4" />
-    <PackageReference Include="Expression.Blend.Sdk">
-      <Version>1.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Expression.Blend.Sdk.WPF">
-      <Version>1.0.1</Version>
-    </PackageReference>
+    <PackageReference Include="Expression.Blend.Sdk" Version="1.0.2" />
+    <PackageReference Include="Expression.Blend.Sdk.WPF" Version="1.0.1" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
-    <PackageReference Include="ReactiveUI">
-      <Version>9.12.1</Version>
-    </PackageReference>
-    <PackageReference Include="System.Reactive">
-      <Version>4.1.3</Version>
-    </PackageReference>
+    <PackageReference Include="ReactiveUI" Version="9.12.1" />
+    <PackageReference Include="System.Reactive" Version="4.1.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj">
-      <Project>{45ecb91c-68ee-4ef9-9f1c-32ace8a12f54}</Project>
-      <Name>OpenRem.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj">
-      <Project>{03bae7c0-ba53-4792-97d6-ae1637821846}</Project>
-      <Name>OpenRem.Core</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
+    <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Remove="Properties\Resources.Designer.cs" />
+  </ItemGroup>
 </Project>
