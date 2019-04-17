@@ -12,12 +12,12 @@
     <OutputPath>..\..\_Result\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.2" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
     <PackageReference Include="Microsoft.CSharp" Version="4.*" />
     <PackageReference Include="System.Net.Http" Version="4.*" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da" />
     <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
