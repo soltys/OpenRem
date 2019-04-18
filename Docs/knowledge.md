@@ -33,15 +33,13 @@ All information gathered during development of **OpenRem**.
 
 ## Service
 
-### Web API
-
-* [Dynamic register controller in C# Web Api](https://stackoverflow.com/questions/37813884/dynamic-register-controller-in-c-sharp-web-api)
-* [Generic and dynamically generated controllers in ASP.NET Core MVC](https://www.strathweb.com/2018/04/generic-and-dynamically-generated-controllers-in-asp-net-core-mvc/)
-* [Building Dynamic Web API Controllers](https://aspnetboilerplate.com/Pages/Documents/Dynamic-Web-API)
-
 ### WCF
 
 * [Self-Hosting WCF Services with the Autofac WCF Integration](https://alexmg.com/posts/self-hosting-wcf-services-with-the-autofac-wcf-integration)
+
+### gRPC
+
+* [Dotnetifying gRPC: Sane Edition](https://blog.codingmilitia.com/2018/05/19/dotnetifying-grpc-sane-edition)
 
 ## MEMS microphone description
 
