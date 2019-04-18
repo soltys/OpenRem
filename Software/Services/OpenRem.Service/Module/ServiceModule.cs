@@ -10,7 +10,7 @@ namespace OpenRem.Service.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<EngineServiceHost>().As<IEngineServceHost>().SingleInstance();
+            builder.RegisterType<EngineServiceHost>().As<IEngineServiceHost>().SingleInstance();
 
             var serviceTypes = EngineServiceHost.GetEngineTypes();
 
