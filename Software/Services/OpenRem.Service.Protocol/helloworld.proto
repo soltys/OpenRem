@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package OpenRem.Service.Protocol;
+
+service DetectManager {
+	// Sends a greeting
+	rpc GetAnalyzers (EmptyRequest) returns (GetAnalyzerResponse) {}
+}
+
+service RawFileRecorder {
+	rpc Start (StartRecordingRequest) returns (EmptyResponse) {}
+	rpc Stop (EmptyRequest) returns (EmptyResponse) {}
+}
+
+message EmptyRequest {	
+}
+
+message EmptyResponse {	
+}
+
+message StartRecordingRequest {
+	string id = 1;
+	string fileName = 2;
+}
+
+message GetAnalyzerResponse {
+	repeated AnalyzerDto analyzers = 1;
+}
+message AnalyzerDto {
+	string id = 1;
+	string name = 2;
+}

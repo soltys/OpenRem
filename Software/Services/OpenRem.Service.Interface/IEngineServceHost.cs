@@ -1,8 +1,10 @@
-﻿namespace OpenRem.Service.Interface
+﻿using System.Threading.Tasks;
+
+namespace OpenRem.Service.Interface
 {
     public interface IEngineServceHost
     {
         void Start();
-        void Stop();
+        Task Stop();
     }
 }

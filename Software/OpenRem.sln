@@ -60,9 +60,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service", "Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Interface", "Services\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj", "{19166610-493D-4203-9240-58D6567CCA0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.Common.Test", "Common\OpenRem.Common.Test\OpenRem.Common.Test.csproj", "{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Common.Test", "Common\OpenRem.Common.Test\OpenRem.Common.Test.csproj", "{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRem.ServiceApplication", "Services\OpenRem.ServiceApplication\OpenRem.ServiceApplication.csproj", "{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.ServiceApplication", "Services\OpenRem.ServiceApplication\OpenRem.ServiceApplication.csproj", "{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Protocol", "Services\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj", "{B8C473E1-3331-462D-917B-632EDE4648A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -197,6 +199,12 @@ Global
 		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C473E1-3331-462D-917B-632EDE4648A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C473E1-3331-462D-917B-632EDE4648A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C473E1-3331-462D-917B-632EDE4648A3}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C473E1-3331-462D-917B-632EDE4648A3}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C473E1-3331-462D-917B-632EDE4648A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C473E1-3331-462D-917B-632EDE4648A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -226,6 +234,7 @@ Global
 		{19166610-493D-4203-9240-58D6567CCA0B} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 		{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5} = {8A8E8C0F-B04A-4C2E-89D3-9BED018C6E23}
 		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
+		{B8C473E1-3331-462D-917B-632EDE4648A3} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AB9D05F-298B-4588-B2E0-9DAE6B079977}
