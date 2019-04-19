@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 
@@ -31,7 +32,7 @@ namespace OpenRem.Engine.Test
         }
 
         [Test]
-        public async void GetAnalyzers_NothingToBeFound_EmptyCollection()
+        public async Task GetAnalyzers_NothingToBeFound_EmptyCollection()
         {
             var analyzers = await this.sut.GetAnalyzersAsync();
             Assert.IsNotNull(analyzers);
@@ -41,7 +42,7 @@ namespace OpenRem.Engine.Test
         }
 
         [Test]
-        public async void GetAnalyzers_FindArduino()
+        public async Task GetAnalyzers_FindArduino()
         {
             var arduinoDevice = new ArduinoDevice
             {
@@ -69,7 +70,7 @@ namespace OpenRem.Engine.Test
 
 
         [Test]
-        public async void GetAnalyzers_FindEmulator()
+        public async Task GetAnalyzers_FindEmulator()
         {
             var emulator = new Emulator()
             {
