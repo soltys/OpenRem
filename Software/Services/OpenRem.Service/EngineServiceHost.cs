@@ -78,10 +78,10 @@ namespace OpenRem.Service
             {
                 Services =
                 {
-                    DetectManager.BindService(new DetectManagerImpl(scope.Resolve<IDetectManager>())),
+                    DetectManager.BindService(new DetectManagerImpl(this.scope.Resolve<IDetectManager>())),
                     RawFileRecorder.BindService(new RawFileRecorderImpl(this.scope.Resolve<IRawFileRecorder>()))
                 },
-                Ports = { new ServerPort("localhost", OpenRemServiceConfig.ServicePort, ServerCredentials.Insecure) }
+                Ports = { new ServerPort("localhost", ServiceConfig.ServicePort, ServerCredentials.Insecure) }
             };
             this.server.Start();
         }

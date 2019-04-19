@@ -30,6 +30,7 @@
     <OutputPath>..\..\_Result\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Grpc.Core" Version="1.20.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.*" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
     <PackageReference Include="System.Net.Http" Version="4.*" />

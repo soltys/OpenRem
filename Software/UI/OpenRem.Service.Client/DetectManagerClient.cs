@@ -7,11 +7,18 @@ using OpenRem.Service.Protocol;
 
 namespace OpenRem.Service.Client
 {
-    public class DetectManagerClient : DetectManager.DetectManagerClient, IDetectManager
+    class DetectManagerClient : IDetectManager
     {
+        private DetectManager.DetectManagerClient client;
+
+        public DetectManagerClient(IChannelProvider channelProvider)
+        {
+            this.client = new DetectManager.DetectManagerClient(channelProvider.GetChannel());
+        }
+
         public async Task<Analyzer[]> GetAnalyzersAsync()
         {
-            var response = await GetAnalyzersAsync(new EmptyRequest(), new CallOptions());
+            var response = await this.client.GetAnalyzersAsync(new EmptyRequest(), new CallOptions());
             return response.Analyzers.Select(x => new Analyzer
             {
                 Id = Guid.Parse(x.Id),

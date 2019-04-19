@@ -4,8 +4,12 @@
     <TargetFramework>net471</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\_Result\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
-    <None Remove="helloworld.proto" />
+    <None Remove="OpenRemProtocol.proto" />
   </ItemGroup>
   
   <ItemGroup>
@@ -15,6 +19,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Protobuf Include="helloworld.proto" />
+    <Protobuf Include="OpenRemProtocol.proto" />
   </ItemGroup>
 </Project>
