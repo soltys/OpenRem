@@ -86,14 +86,9 @@ namespace OpenRem.Service
             this.server.Start();
         }
 
-        public async Task Stop()
+        public async Task StopAsync()
         {
             await this.server.ShutdownAsync().ConfigureAwait(false);
-        }
-
-        public static IEnumerable<ServiceType> GetEngineTypes()
-        {
-            return null;
         }
     }
 }

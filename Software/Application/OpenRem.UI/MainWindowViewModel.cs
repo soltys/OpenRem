@@ -25,7 +25,7 @@ namespace OpenRem.UI
         }
 
         private string outputFilename;
-        private IDetectManager detectManager;
+        private readonly IDetectManager detectManager;
 
         public string OutputFilename
         {

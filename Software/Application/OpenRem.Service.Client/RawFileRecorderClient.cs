@@ -5,18 +5,16 @@ using OpenRem.Service.Protocol;
 
 namespace OpenRem.Service.Client
 {
-    class RawFileRecorderClient: IRawFileRecorder
+    class RawFileRecorderClient : RpcClient<RawFileRecorder.RawFileRecorderClient>, IRawFileRecorder
     {
-        private readonly RawFileRecorder.RawFileRecorderClient client;
-
-        public RawFileRecorderClient(IChannelProvider channelProvider)
+        public RawFileRecorderClient(IChannelProvider channelProvider):base (channelProvider)
         {
-            this.client = new RawFileRecorder.RawFileRecorderClient(channelProvider.GetChannel());
+            this.Client = new RawFileRecorder.RawFileRecorderClient(this.Channel);
         }
 
         public async Task StartAsync(Guid analyzerGuid, string fileName)
         {
-            await this.client.StartAsync(new StartRecordingRequest()
+            await this.Client.StartAsync(new StartRecordingRequest()
             {
                 Id = analyzerGuid.ToString(),
                 FileName = fileName
@@ -25,7 +23,7 @@ namespace OpenRem.Service.Client
 
         public async Task  StopAsync()
         {
-           await this.client.StopAsync(new EmptyRequest());
+           await this.Client.StopAsync(new EmptyRequest());
         }
     }
 }

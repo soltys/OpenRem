@@ -3,9 +3,9 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net471</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <AssemblyTitle>AsService</AssemblyTitle>
+    <AssemblyTitle>Service</AssemblyTitle>
     <Company>DGS</Company>
-    <Product>AsService</Product>
+    <Product>Service</Product>
     <Copyright>Copyright © DGS 2019</Copyright>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -21,6 +21,7 @@
     <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\OpenRem.Common.Application\OpenRem.Common.Application.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj" />
     <ProjectReference Include="..\OpenRem.Service\OpenRem.Service.csproj" />

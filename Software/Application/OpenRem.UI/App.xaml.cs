@@ -3,6 +3,7 @@ using Autofac;
 using Autofac.Extras.CommonServiceLocator;
 using CommonServiceLocator;
 using OpenRem.Common;
+using OpenRem.Common.Application.Autofac;
 using OpenRem.Service.Interface;
 
 namespace OpenRem.UI
@@ -16,11 +17,11 @@ namespace OpenRem.UI
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            var serviceContainer = AutofacConfiguration.BuildContainer(new[] { "OpenRem.exe", "OpenRem.Service.Client" });
+            var serviceContainer = AutofacConfiguration.BuildContainer(AssemblyFilter.OnlyLogic);
             this.serviceWrapper = serviceContainer.Resolve<IEngineServiceHost>();
 
 
-            var applicationContainer = AutofacConfiguration.BuildContainer(new[] { "OpenRem.Service.dll", "OpenRem.Engine" });
+            var applicationContainer = AutofacConfiguration.BuildContainer(AssemblyFilter.OnlyApplicationLayer);
             var csl = new AutofacServiceLocator(applicationContainer);
             ServiceLocator.SetLocatorProvider(() => csl);
 
@@ -29,7 +30,7 @@ namespace OpenRem.UI
 
         protected override void OnExit(ExitEventArgs e)
         {
-            this.serviceWrapper.Stop();
+            this.serviceWrapper.StopAsync();
 
             base.OnExit(e);
         }

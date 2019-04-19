@@ -11,12 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8A8E8C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{6A1D5BD9-9C46-45DB-9602-02EC3C292F89}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.UI", "UI\OpenRem.UI\OpenRem.UI.csproj", "{314AC842-4AAC-40DA-B7D2-46034E6FF25A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.UI", "Application\OpenRem.UI\OpenRem.UI.csproj", "{314AC842-4AAC-40DA-B7D2-46034E6FF25A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{92A35DEB-7D8F-452B-958B-A7E83259540F} = {92A35DEB-7D8F-452B-958B-A7E83259540F}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.CommonUI", "UI\OpenRem.CommonUI\OpenRem.CommonUI.csproj", "{445C19F4-E724-42F0-9AAF-A2B2867D826A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.CommonUI", "Application\OpenRem.CommonUI\OpenRem.CommonUI.csproj", "{445C19F4-E724-42F0-9AAF-A2B2867D826A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Arduino", "HAL\OpenRem.Arduino\OpenRem.Arduino.csproj", "{E360A461-585A-4416-82BE-B5719B270B39}"
 EndProject
@@ -54,19 +54,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Config.Test", "BL\O
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B6027F6E-F507-4755-B1D7-9AD418A11F1A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Ark", "Services\OpenRem.Ark\OpenRem.Ark.csproj", "{9F34264E-808B-45B2-8B44-755C6032973D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Ark", "Service\OpenRem.Ark\OpenRem.Ark.csproj", "{9F34264E-808B-45B2-8B44-755C6032973D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service", "Services\OpenRem.Service\OpenRem.Service.csproj", "{35AE0F6F-8391-4A89-B020-4857D98D4B07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service", "Service\OpenRem.Service\OpenRem.Service.csproj", "{35AE0F6F-8391-4A89-B020-4857D98D4B07}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Interface", "Services\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj", "{19166610-493D-4203-9240-58D6567CCA0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Interface", "Service\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj", "{19166610-493D-4203-9240-58D6567CCA0B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Common.Test", "Common\OpenRem.Common.Test\OpenRem.Common.Test.csproj", "{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.ServiceApplication", "Services\OpenRem.ServiceApplication\OpenRem.ServiceApplication.csproj", "{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Protocol", "Service\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj", "{B8C473E1-3331-462D-917B-632EDE4648A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Protocol", "Services\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj", "{B8C473E1-3331-462D-917B-632EDE4648A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Client", "Application\OpenRem.Service.Client\OpenRem.Service.Client.csproj", "{3037AD52-8BBE-408A-B30D-F145A686D614}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Client", "UI\OpenRem.Service.Client\OpenRem.Service.Client.csproj", "{3037AD52-8BBE-408A-B30D-F145A686D614}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Application", "Service\OpenRem.Service.Application\OpenRem.Service.Application.csproj", "{626746AA-5CD3-4C88-B3AA-7A7A89E17BA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Common.Application", "Common\OpenRem.Common.Application\OpenRem.Common.Application.csproj", "{0252B968-38FB-48B9-B024-2BE5656BAFC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -195,12 +197,6 @@ Global
 		{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8C473E1-3331-462D-917B-632EDE4648A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8C473E1-3331-462D-917B-632EDE4648A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8C473E1-3331-462D-917B-632EDE4648A3}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -213,6 +209,18 @@ Global
 		{3037AD52-8BBE-408A-B30D-F145A686D614}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3037AD52-8BBE-408A-B30D-F145A686D614}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3037AD52-8BBE-408A-B30D-F145A686D614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626746AA-5CD3-4C88-B3AA-7A7A89E17BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626746AA-5CD3-4C88-B3AA-7A7A89E17BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626746AA-5CD3-4C88-B3AA-7A7A89E17BA5}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626746AA-5CD3-4C88-B3AA-7A7A89E17BA5}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626746AA-5CD3-4C88-B3AA-7A7A89E17BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626746AA-5CD3-4C88-B3AA-7A7A89E17BA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0252B968-38FB-48B9-B024-2BE5656BAFC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0252B968-38FB-48B9-B024-2BE5656BAFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0252B968-38FB-48B9-B024-2BE5656BAFC8}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0252B968-38FB-48B9-B024-2BE5656BAFC8}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0252B968-38FB-48B9-B024-2BE5656BAFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0252B968-38FB-48B9-B024-2BE5656BAFC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -241,9 +249,10 @@ Global
 		{35AE0F6F-8391-4A89-B020-4857D98D4B07} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 		{19166610-493D-4203-9240-58D6567CCA0B} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 		{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5} = {8A8E8C0F-B04A-4C2E-89D3-9BED018C6E23}
-		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 		{B8C473E1-3331-462D-917B-632EDE4648A3} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 		{3037AD52-8BBE-408A-B30D-F145A686D614} = {6A1D5BD9-9C46-45DB-9602-02EC3C292F89}
+		{626746AA-5CD3-4C88-B3AA-7A7A89E17BA5} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
+		{0252B968-38FB-48B9-B024-2BE5656BAFC8} = {8A8E8C0F-B04A-4C2E-89D3-9BED018C6E23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AB9D05F-298B-4588-B2E0-9DAE6B079977}
