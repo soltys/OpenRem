@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. HAL", "4. HAL", "{BD8FE923-DB01-44D3-9F65-78D68E100E5A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Hardware Abstraction Layer", "4. Hardware Abstraction Layer", "{BD8FE923-DB01-44D3-9F65-78D68E100E5A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. BL", "3. BL", "{2E85DEA9-9448-4AEB-BEF0-D45FFA089BDF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Business Logic", "3. Business Logic", "{2E85DEA9-9448-4AEB-BEF0-D45FFA089BDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Common", "0. Common", "{8A8E8C0F-B04A-4C2E-89D3-9BED018C6E23}"
 EndProject
@@ -52,7 +52,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Config.Interfaces",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Config.Test", "BL\OpenRem.Config.Test\OpenRem.Config.Test.csproj", "{BB7EB9DD-C5BF-4C47-9749-A34177032E83}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Services", "2. Services", "{B6027F6E-F507-4755-B1D7-9AD418A11F1A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Service", "2. Service", "{B6027F6E-F507-4755-B1D7-9AD418A11F1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Ark", "Service\OpenRem.Ark\OpenRem.Ark.csproj", "{9F34264E-808B-45B2-8B44-755C6032973D}"
 EndProject
