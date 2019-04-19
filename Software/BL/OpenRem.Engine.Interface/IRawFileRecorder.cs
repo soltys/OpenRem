@@ -1,14 +1,12 @@
 ﻿using System;
 using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace OpenRem.Engine
 {
-    [ServiceContract]
     public interface IRawFileRecorder
     {
-        [OperationContract]
-        void Start(Guid analyzerGuid, string fileName);
-        [OperationContract]
-        void Stop();
+        Task StartAsync(Guid analyzerGuid, string fileName);
+        Task StopAsync();
     }
 }

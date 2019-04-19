@@ -20,9 +20,9 @@ namespace OpenRem.Service
             this.real = detectManager;
         }
 
-        public override Task<GetAnalyzerResponse> GetAnalyzers(EmptyRequest request, ServerCallContext context)
+        public override async Task<GetAnalyzerResponse> GetAnalyzers(EmptyRequest request, ServerCallContext context)
         {
-            var analyzers = this.real.GetAnalyzers();
+            var analyzers = await this.real.GetAnalyzersAsync();
 
             var response = new GetAnalyzerResponse();
             response.Analyzers.AddRange(analyzers.Select(x => new AnalyzerDto()
@@ -31,8 +31,7 @@ namespace OpenRem.Service
                 Name = x.Name
             }));
             
-            return Task.FromResult(response);
-            
+            return response;
         }
     }
 
@@ -45,16 +44,16 @@ namespace OpenRem.Service
             this.real = detectManager;
         }
 
-        public override Task<EmptyResponse> Start(StartRecordingRequest request, ServerCallContext context)
+        public override async Task<EmptyResponse> Start(StartRecordingRequest request, ServerCallContext context)
         {
-            this.real.Start(Guid.Parse(request.Id), request.FileName);
-            return Task.FromResult(new EmptyResponse());
+            await this.real.StartAsync(Guid.Parse(request.Id), request.FileName);
+            return new EmptyResponse();
         }
 
-        public override Task<EmptyResponse> Stop(EmptyRequest request, ServerCallContext context)
+        public override async Task<EmptyResponse> Stop(EmptyRequest request, ServerCallContext context)
         {
-            this.real.Stop();
-            return Task.FromResult(new EmptyResponse());
+            await this.real.StopAsync();
+            return new EmptyResponse();
         }
     }
 
