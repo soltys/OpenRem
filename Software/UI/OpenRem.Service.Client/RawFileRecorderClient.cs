@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using OpenRem.Engine;
 using OpenRem.Service.Protocol;
 
@@ -6,18 +7,18 @@ namespace OpenRem.Service.Client
 {
     public class RawFileRecorderClient: RawFileRecorder.RawFileRecorderClient, IRawFileRecorder
     {
-        public void Start(Guid analyzerGuid, string fileName)
+        public async Task StartAsync(Guid analyzerGuid, string fileName)
         {
-            this.Start(new StartRecordingRequest()
+            await StartAsync(new StartRecordingRequest()
             {
                 Id = analyzerGuid.ToString(),
                 FileName = fileName
             });
         }
 
-        public void Stop()
+        public async Task  StopAsync()
         {
-           this.Stop(new EmptyRequest());
+           await StopAsync(new EmptyRequest());
         }
     }
 }

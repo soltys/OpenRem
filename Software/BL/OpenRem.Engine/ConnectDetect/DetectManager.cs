@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace OpenRem.Engine
 {
@@ -16,7 +17,7 @@ namespace OpenRem.Engine
             this.emulatorFinder = emulatorFinder;
         }
 
-        public Analyzer[] GetAnalyzers()
+        public Task<Analyzer[]> GetAnalyzersAsync()
         {
             var analyzers = new List<Analyzer>();
 
@@ -36,7 +37,8 @@ namespace OpenRem.Engine
 
                 analyzers.Add(ToAnalyzer(guid, emulator));
             }
-            return analyzers.ToArray();
+
+            return Task.FromResult(analyzers.ToArray());
         }
 
         private Analyzer ToAnalyzer(Guid id, ArduinoDevice arduinoDevice)

@@ -43,14 +43,14 @@ namespace OpenRem.UI
 
         private void AddCommands()
         {
-            LoadAnalyzers = new RelayCommand(() =>
+            LoadAnalyzers = new RelayCommand( async () =>
             {
-                Analyzers.AddRange(detectManager.GetAnalyzers());
+                Analyzers.AddRange(await this.detectManager.GetAnalyzersAsync());
                 SelectedAnalyzer = Analyzers.FirstOrDefault();
             });
             SelectFile = new RelayCommand(ShowSaveFileDialog);
-            StartRecording = new RelayCommand(() => { this.rawFileRecorder.Start(SelectedAnalyzer.Id, OutputFilename); });
-            StopRecording = new RelayCommand(() => { this.rawFileRecorder.Stop(); });
+            StartRecording = new RelayCommand(async () => { await this.rawFileRecorder.StartAsync(SelectedAnalyzer.Id, OutputFilename); });
+            StopRecording = new RelayCommand(async () => { await this.rawFileRecorder.StopAsync(); });
         }
 
         private void ShowSaveFileDialog()

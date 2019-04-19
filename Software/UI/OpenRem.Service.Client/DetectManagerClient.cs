@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Grpc.Core;
 using OpenRem.Engine;
 using OpenRem.Service.Protocol;
@@ -8,9 +9,9 @@ namespace OpenRem.Service.Client
 {
     public class DetectManagerClient : DetectManager.DetectManagerClient, IDetectManager
     {
-        public Analyzer[] GetAnalyzers()
+        public async Task<Analyzer[]> GetAnalyzersAsync()
         {
-            var response = this.GetAnalyzers(new EmptyRequest(), new CallOptions());
+            var response = await GetAnalyzersAsync(new EmptyRequest(), new CallOptions());
             return response.Analyzers.Select(x => new Analyzer
             {
                 Id = Guid.Parse(x.Id),
