@@ -5,6 +5,8 @@
     <Company>DGS</Company>
     <Product>OpenRem.Service</Product>
     <Copyright>Copyright © DGS 2019</Copyright>
+    <AssemblyName>OpenRem.Service.Server</AssemblyName>
+    <RootNamespace>OpenRem.Service.Server</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\_Result\</OutputPath>
@@ -24,7 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\BL\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
-    <ProjectReference Include="..\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj" />
     <ProjectReference Include="..\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj" />
+    <ProjectReference Include="..\OpenRem.Service.Server.Interface\OpenRem.Service.Server.Interface.csproj" />
   </ItemGroup>
 </Project>

@@ -23,7 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Common\OpenRem.Common.Application\OpenRem.Common.Application.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
-    <ProjectReference Include="..\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj" />
-    <ProjectReference Include="..\OpenRem.Service\OpenRem.Service.csproj" />
+    <ProjectReference Include="..\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj" />
+    <ProjectReference Include="..\OpenRem.Service.Server.Interface\OpenRem.Service.Server.Interface.csproj" />
   </ItemGroup>
 </Project>

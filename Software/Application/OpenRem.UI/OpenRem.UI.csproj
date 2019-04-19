@@ -48,7 +48,7 @@
     <ProjectReference Include="..\..\Common\OpenRem.Common.Application\OpenRem.Common.Application.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
-    <ProjectReference Include="..\..\Service\OpenRem.Service.Interface\OpenRem.Service.Interface.csproj" />
+    <ProjectReference Include="..\..\Service\OpenRem.Service.Server.Interface\OpenRem.Service.Server.Interface.csproj" />
     <ProjectReference Include="..\OpenRem.CommonUI\OpenRem.CommonUI.csproj" />
   </ItemGroup>
   <ItemGroup>
