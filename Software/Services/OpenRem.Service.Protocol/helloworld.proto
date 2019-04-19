@@ -3,7 +3,7 @@ syntax = "proto3";
 package OpenRem.Service.Protocol;
 
 service DetectManager {
-	// Sends a greeting
+	// Get Analyzers
 	rpc GetAnalyzers (EmptyRequest) returns (GetAnalyzerResponse) {}
 }
 
@@ -24,9 +24,11 @@ message StartRecordingRequest {
 }
 
 message GetAnalyzerResponse {
-	repeated AnalyzerDto analyzers = 1;
+	message AnalyzerDTO {
+		string id = 1;
+		string name = 2;
+	}
+
+	repeated AnalyzerDTO analyzers = 1;
 }
-message AnalyzerDto {
-	string id = 1;
-	string name = 2;
-}
+

@@ -10,7 +10,11 @@ using OpenRem.Service.Protocol;
 
 namespace OpenRem.Service
 {
-    
+
+    class Dete2ctManagerImpl : Protocol.DetectManager.DetectManagerClient
+    {
+
+    }
     class DetectManagerImpl : Protocol.DetectManager.DetectManagerBase
     {
         private IDetectManager real;
@@ -25,7 +29,7 @@ namespace OpenRem.Service
             var analyzers = await this.real.GetAnalyzersAsync();
 
             var response = new GetAnalyzerResponse();
-            response.Analyzers.AddRange(analyzers.Select(x => new AnalyzerDto()
+            response.Analyzers.AddRange(analyzers.Select(x => new GetAnalyzerResponse.Types.AnalyzerDTO()
             {
                 Id = x.Id.ToString(),
                 Name = x.Name
@@ -58,7 +62,7 @@ namespace OpenRem.Service
     }
 
 
-    public class EngineServiceHost : IEngineServceHost
+    public class EngineServiceHost : IEngineServiceHost
     {
         private Server server;
         private ILifetimeScope scope;

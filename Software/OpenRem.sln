@@ -66,6 +66,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.ServiceApplication"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Protocol", "Services\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj", "{B8C473E1-3331-462D-917B-632EDE4648A3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Client", "UI\OpenRem.Service.Client\OpenRem.Service.Client.csproj", "{3037AD52-8BBE-408A-B30D-F145A686D614}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -205,6 +207,12 @@ Global
 		{B8C473E1-3331-462D-917B-632EDE4648A3}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8C473E1-3331-462D-917B-632EDE4648A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8C473E1-3331-462D-917B-632EDE4648A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3037AD52-8BBE-408A-B30D-F145A686D614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3037AD52-8BBE-408A-B30D-F145A686D614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3037AD52-8BBE-408A-B30D-F145A686D614}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3037AD52-8BBE-408A-B30D-F145A686D614}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3037AD52-8BBE-408A-B30D-F145A686D614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3037AD52-8BBE-408A-B30D-F145A686D614}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -235,6 +243,7 @@ Global
 		{2E31143D-B5FB-4DD2-97DF-AA75D984E1E5} = {8A8E8C0F-B04A-4C2E-89D3-9BED018C6E23}
 		{28596F5D-1AEB-4DC4-86A3-B85EF46AA797} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 		{B8C473E1-3331-462D-917B-632EDE4648A3} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
+		{3037AD52-8BBE-408A-B30D-F145A686D614} = {6A1D5BD9-9C46-45DB-9602-02EC3C292F89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AB9D05F-298B-4588-B2E0-9DAE6B079977}

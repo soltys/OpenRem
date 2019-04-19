@@ -2,7 +2,7 @@
 
 namespace OpenRem.Service.Interface
 {
-    public interface IEngineServceHost
+    public interface IEngineServiceHost
     {
         void Start();
         Task Stop();
