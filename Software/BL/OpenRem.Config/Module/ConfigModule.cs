@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Autofac;
+using Microsoft.Extensions.Configuration;
 
 namespace OpenRem.Config.Module
 {
@@ -11,6 +12,14 @@ namespace OpenRem.Config.Module
 
             builder.RegisterAssemblyTypes(dataAccess)
                 .AsImplementedInterfaces();
+
+            builder.RegisterType<ConfigurationRootProvider>()
+                .As<IConfigurationRootProvider>()
+                .SingleInstance();
+
+            builder.Register(c => c.Resolve<IConfigurationRootProvider>().GetConfigurationRoot())
+                .As<IConfigurationRoot>()
+                .SingleInstance();
         }
     }
 }

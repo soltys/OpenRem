@@ -1,52 +1,41 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Primitives;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 
 namespace OpenRem.Config
 {
     class AnalyzerConfigReader : IAnalyzerConfigReader
     {
-        public AnalyzerConfigReader()
+        private IConfigurationRoot configurationRoot;
+
+        public AnalyzerConfigReader(IConfigurationRoot configurationRoot)
         {
+            this.configurationRoot = configurationRoot;
         }
 
         public AnalyzerConfig GetConfig(string name)
-        {
-            try
-            {
+        {            
+            var dtos = ExtractConfig<AnalyzerDto>(configurationRoot, "AnalyzerCollection");
 
-                var manifestEmbeddedProvider = new ManifestEmbeddedFileProvider(typeof(AnalyzerConfigReader).Assembly);
-                var config = new ConfigurationBuilder()
-                            .AddJsonFile(manifestEmbeddedProvider, "Config/Analyzer.json", false, false)
-                            .Build();
-                var dtos = ExtractConfig<AnalyzerDto>(config, "AnalyzerCollection");
-                Console.Write(dtos.Count);
-            }
-            catch (Exception e)
+            var dto = dtos.FirstOrDefault(x => x.Name == name);
+            if (dto == null)
             {
-
+                throw new ConfigNotFoundException($"Requested {name}");
             }
-            return new AnalyzerConfig();
-            //var arduinoList = AnalyzerList.DeserializeFrom(configFile);
-            //var arduinoConfig = arduinoList.Analyzer.Single(x => x.Name == name);
-            //return new AnalyzerConfig
-            //{
-            //    Name = arduinoConfig.Name,
-            //    SubChunkSize = int.Parse(arduinoConfig.SubChunkSize),
-            //    ChannelsNumber = int.Parse(arduinoConfig.ChannelsNumber),
-            //    SampleRate = int.Parse(arduinoConfig.SampleRate),
-            //    Probes = arduinoConfig.Probe.Select(probe => new ProbeConfig()
-            //    {
-            //        Side = probe.Side.ToSide(),
-            //        InputChannel = int.Parse(probe.Input.Channel),
-            //        OutputChannel = int.Parse(probe.Output.Channel)
-            //    }).ToArray()
-            //};
+
+            return new AnalyzerConfig
+            {
+                Name = dto.Name,
+                SubChunkSize = dto.SubChunkSize,
+                ChannelsNumber = dto.Channels,
+                SampleRate = dto.SampleRate,
+                Probes = dto.Probes.Select(probe => new ProbeConfig()
+                {
+                    Side = probe.Side,
+                    InputChannel = probe.Input.Channel,
+                    OutputChannel = probe.Output.Channel
+                }).ToArray()
+            };
         }
 
         private static List<T> ExtractConfig<T>(IConfigurationRoot config, string sectionName) where T : class, new()
