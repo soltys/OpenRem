@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using System.Windows;
-using OpenRem.Common.Application;
+using OpenRem.Core;
 
 
 // Setting ComVisible to false makes the types in this assembly not visible
