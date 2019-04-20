@@ -1,21 +1,21 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
-
+using OpenRem.Common.Config;
 namespace OpenRem.Config
 {
     class AnalyzerConfigReader : IAnalyzerConfigReader
     {
-        private IConfigurationRoot configurationRoot;
+        private IConfiguration configuration;
 
-        public AnalyzerConfigReader(IConfigurationRoot configurationRoot)
+        public AnalyzerConfigReader(IConfiguration configuration)
         {
-            this.configurationRoot = configurationRoot;
+            this.configuration = configuration;
         }
 
         public AnalyzerConfig GetConfig(string name)
         {            
-            var dtos = ExtractConfig<AnalyzerDto>(configurationRoot, "AnalyzerCollection");
+            var dtos = configuration.BindAll<AnalyzerDto>("AnalyzerCollection");
 
             var dto = dtos.FirstOrDefault(x => x.Name == name);
             if (dto == null)
@@ -38,20 +38,6 @@ namespace OpenRem.Config
             };
         }
 
-        private static List<T> ExtractConfig<T>(IConfigurationRoot config, string sectionName) where T : class, new()
-        {
-            var entries = config.GetSection(sectionName)
-                                 .GetChildren();
-
-            var dtos = new List<T>(entries.Count());
-            foreach (var entry in entries)
-            {
-                var dto = new T();
-                entry.Bind(dto);
-                dtos.Add(dto);
-            }
-
-            return dtos;
-        }
+        
     }
 }

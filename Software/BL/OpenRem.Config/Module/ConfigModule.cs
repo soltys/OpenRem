@@ -18,7 +18,7 @@ namespace OpenRem.Config.Module
                 .SingleInstance();
 
             builder.Register(c => c.Resolve<IConfigurationRootProvider>().GetConfigurationRoot())
-                .As<IConfigurationRoot>()
+                .As<IConfiguration>()
                 .SingleInstance();
         }
     }

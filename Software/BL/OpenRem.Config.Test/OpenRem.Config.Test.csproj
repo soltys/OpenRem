@@ -17,9 +17,6 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SampleArduinoConfig.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\OpenRem.Config.Interfaces\OpenRem.Config.Interfaces.csproj" />
     <ProjectReference Include="..\OpenRem.Config\OpenRem.Config.csproj" />

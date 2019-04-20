@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Hardware Abstraction Layer", "4. Hardware Abstraction Layer", "{BD8FE923-DB01-44D3-9F65-78D68E100E5A}"
 EndProject
@@ -69,6 +69,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Server", "Service\OpenRem.Service.Server\OpenRem.Service.Server.csproj", "{FC05B523-D397-4B3B-93AA-0B50D7DAB80C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Server.Interface", "Service\OpenRem.Service.Server.Interface\OpenRem.Service.Server.Interface.csproj", "{66697ABB-C383-45B5-AFD4-CAD277A110DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Common.Config", "Common\OpenRem.Common.Config\OpenRem.Common.Config.csproj", "{E5795062-EACD-4774-A891-744AD62E06DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -221,6 +223,12 @@ Global
 		{66697ABB-C383-45B5-AFD4-CAD277A110DF}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66697ABB-C383-45B5-AFD4-CAD277A110DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66697ABB-C383-45B5-AFD4-CAD277A110DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5795062-EACD-4774-A891-744AD62E06DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5795062-EACD-4774-A891-744AD62E06DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5795062-EACD-4774-A891-744AD62E06DB}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5795062-EACD-4774-A891-744AD62E06DB}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5795062-EACD-4774-A891-744AD62E06DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5795062-EACD-4774-A891-744AD62E06DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -253,6 +261,7 @@ Global
 		{3531F909-6B4E-4362-B64E-CBB8E9767D8F} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 		{FC05B523-D397-4B3B-93AA-0B50D7DAB80C} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
 		{66697ABB-C383-45B5-AFD4-CAD277A110DF} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
+		{E5795062-EACD-4774-A891-744AD62E06DB} = {8A8E8C0F-B04A-4C2E-89D3-9BED018C6E23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AB9D05F-298B-4588-B2E0-9DAE6B079977}
