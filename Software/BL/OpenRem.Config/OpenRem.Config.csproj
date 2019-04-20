@@ -4,45 +4,34 @@
     <AssemblyTitle>OpenRem.Config</AssemblyTitle>
     <Product>OpenRem.Config</Product>
     <Copyright>Copyright ©  2019</Copyright>
-        
+      <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\_Result\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Config\Analyzer.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\Analyzer.json" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
+      <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.2.0" />
+     
     <PackageReference Include="Microsoft.CSharp" Version="4.*" />
     <PackageReference Include="System.Net.Http" Version="4.*" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ConfigFiles\OpenRem.Config.ConfigFiles.AnalyzerList.Serialization.generated.cs">
-      <DependentUpon>OpenRemXmlSerialization.tt</DependentUpon>
-    </Compile>
-    <Compile Update="ConfigFiles\OpenRemXmlSerialization.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OpenRemXmlSerialization.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.2" />
-    <PackageReference Include="PommaLabs.XsdClassGen" Version="0.7.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ConfigFiles\AnalyzerConfig.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ConfigFiles\AnalyzerConfig.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
     <ProjectReference Include="..\OpenRem.Config.Interfaces\OpenRem.Config.Interfaces.csproj" />
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties configfiles_4analyzerconfig_1json__JsonSchema="https://github.com/soltys/OpenRem/BL/AnalyzerConfig.schema.json" /></VisualStudio></ProjectExtensions>
 </Project>
