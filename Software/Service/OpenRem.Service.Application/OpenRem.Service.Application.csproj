@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net471</TargetFramework>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AssemblyTitle>Service</AssemblyTitle>
+    <Company>DGS</Company>
+    <Product>Service</Product>
+    <Copyright>Copyright © DGS 2019</Copyright>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\_Result\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.2" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.*" />
+    <PackageReference Include="System.Net.Http" Version="4.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\OpenRem.Common.Application\OpenRem.Common.Application.csproj" />
+    <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
+    <ProjectReference Include="..\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj" />
+    <ProjectReference Include="..\OpenRem.Service.Server.Interface\OpenRem.Service.Server.Interface.csproj" />
+  </ItemGroup>
+</Project>

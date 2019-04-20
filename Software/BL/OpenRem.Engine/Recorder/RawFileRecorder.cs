@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using OpenRem.Engine.OS;
 using OpenRem.HAL;
 
@@ -17,7 +18,7 @@ namespace OpenRem.Engine
             this.fileAccess = fileAccess;
         }
 
-        public void Start(Guid analyzerGuid, string fileName)
+        public Task StartAsync(Guid analyzerGuid, string fileName)
         {
             var analyzer = this.analyzerCollection[analyzerGuid];
             var probe = analyzer.AnalyzerConfig.Probes[0];
@@ -43,13 +44,15 @@ namespace OpenRem.Engine
 
 
             this.dataStream.Start();
+            return Task.CompletedTask;
         }
 
-        public void Stop()
+        public Task StopAsync()
         {
             this.writingAction.Dispose();
             this.dataStream.Stop();
             this.dataStream.Close();
+            return Task.CompletedTask;
         }
     }
 }

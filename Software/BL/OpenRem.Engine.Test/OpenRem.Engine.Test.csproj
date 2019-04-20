@@ -11,6 +11,8 @@
     <PackageReference Include="System.Net.Http" Version="4.*" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.*" />
     <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="NUnit" Version="3.11.0" />
     <PackageReference Include="NUnit.Console" Version="3.10.0" />
@@ -22,5 +24,8 @@
     <ProjectReference Include="..\..\HAL\OpenRem.Emulator.Interface\OpenRem.Emulator.Interface.csproj" />
     <ProjectReference Include="..\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj" />
     <ProjectReference Include="..\OpenRem.Engine\OpenRem.Engine.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ServiceModel" />
   </ItemGroup>
 </Project>

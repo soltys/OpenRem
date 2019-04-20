@@ -1,11 +1,10 @@
 ﻿using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace OpenRem.Engine
 {
-    [ServiceContract]
     public interface IDetectManager
     {
-        [OperationContract]
-        Analyzer[] GetAnalyzers();
+        Task<Analyzer[]> GetAnalyzersAsync();
     }
 }

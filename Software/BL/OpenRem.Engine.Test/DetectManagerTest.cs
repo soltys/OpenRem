@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 
@@ -31,9 +32,9 @@ namespace OpenRem.Engine.Test
         }
 
         [Test]
-        public void GetAnalyzers_NothingToBeFound_EmptyCollection()
+        public async Task GetAnalyzers_NothingToBeFound_EmptyCollection()
         {
-            var analyzers = this.sut.GetAnalyzers();
+            var analyzers = await this.sut.GetAnalyzersAsync();
             Assert.IsNotNull(analyzers);
             Assert.AreEqual(0, analyzers.Length);
             this.analyzerCollection.Verify(x => x.Add(It.IsAny<ArduinoDevice>()), Times.Never);
@@ -41,7 +42,7 @@ namespace OpenRem.Engine.Test
         }
 
         [Test]
-        public void GetAnalyzers_FindArduino()
+        public async Task GetAnalyzers_FindArduino()
         {
             var arduinoDevice = new ArduinoDevice
             {
@@ -56,7 +57,7 @@ namespace OpenRem.Engine.Test
             var arduinoGuid = Guid.NewGuid();
             this.analyzerCollection.Setup(x => x.Add(It.IsIn(arduinoDevice))).Returns(arduinoGuid);
 
-            var analyzers = this.sut.GetAnalyzers();
+            var analyzers = await this.sut.GetAnalyzersAsync();
 
             Assert.IsNotNull(analyzers);
             Assert.AreEqual(1, analyzers.Length);
@@ -69,7 +70,7 @@ namespace OpenRem.Engine.Test
 
 
         [Test]
-        public void GetAnalyzers_FindEmulator()
+        public async Task GetAnalyzers_FindEmulator()
         {
             var emulator = new Emulator()
             {
@@ -83,7 +84,7 @@ namespace OpenRem.Engine.Test
             var emulatorGuid = Guid.NewGuid();
             this.analyzerCollection.Setup(x => x.Add(It.IsIn(emulator))).Returns(emulatorGuid);
 
-            var analyzers = this.sut.GetAnalyzers();
+            var analyzers = await this.sut.GetAnalyzersAsync();
 
             Assert.IsNotNull(analyzers);
             Assert.AreEqual(1, analyzers.Length);

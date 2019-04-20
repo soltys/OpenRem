@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\_Result\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="OpenRemProtocol.proto" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc" Version="1.20.0" />
+    <PackageReference Include="Grpc.Tools" Version="1.20.0" PrivateAssets="All" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Protobuf Include="OpenRemProtocol.proto" />
+  </ItemGroup>
+</Project>
