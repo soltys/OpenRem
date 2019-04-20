@@ -12,4 +12,8 @@
     <PackageReference Include="Autofac" Version="4.9.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OpenRem.Core\OpenRem.Core.csproj" />
+  </ItemGroup>
+
 </Project>

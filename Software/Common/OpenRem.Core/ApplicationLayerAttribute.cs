@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenRem.Common.Application
+namespace OpenRem.Core
 {
     [AttributeUsage(AttributeTargets.Assembly)]
     public class ApplicationLayerAttribute : Attribute

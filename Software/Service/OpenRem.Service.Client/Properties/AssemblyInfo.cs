@@ -1,3 +1,3 @@
-﻿using OpenRem.Common.Application;
+﻿using OpenRem.Core;
 
 [assembly: ApplicationLayer]

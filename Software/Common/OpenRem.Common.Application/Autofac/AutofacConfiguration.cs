@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Autofac;
 using Autofac.Core;
+using OpenRem.Core;
 
 namespace OpenRem.Common.Application.Autofac
 {
