@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using OpenRem.Config.ConfigFiles;
 
 namespace OpenRem.Config
 {
@@ -16,21 +15,22 @@ namespace OpenRem.Config
         public AnalyzerConfig GetConfig(string name)
         {
             var configFile = this.embeddedConfig.GetConfigFile(ConfigName);
-            var arduinoList = AnalyzerList.DeserializeFrom(configFile);
-            var arduinoConfig = arduinoList.Analyzer.Single(x => x.Name == name);
-            return new AnalyzerConfig
-            {
-                Name = arduinoConfig.Name,
-                SubChunkSize = int.Parse(arduinoConfig.SubChunkSize),
-                ChannelsNumber = int.Parse(arduinoConfig.ChannelsNumber),
-                SampleRate = int.Parse(arduinoConfig.SampleRate),
-                Probes = arduinoConfig.Probe.Select(probe => new ProbeConfig()
-                {
-                    Side = probe.Side.ToSide(),
-                    InputChannel = int.Parse(probe.Input.Channel),
-                    OutputChannel = int.Parse(probe.Output.Channel)
-                }).ToArray()
-            };
+            return new AnalyzerConfig();
+            //var arduinoList = AnalyzerList.DeserializeFrom(configFile);
+            //var arduinoConfig = arduinoList.Analyzer.Single(x => x.Name == name);
+            //return new AnalyzerConfig
+            //{
+            //    Name = arduinoConfig.Name,
+            //    SubChunkSize = int.Parse(arduinoConfig.SubChunkSize),
+            //    ChannelsNumber = int.Parse(arduinoConfig.ChannelsNumber),
+            //    SampleRate = int.Parse(arduinoConfig.SampleRate),
+            //    Probes = arduinoConfig.Probe.Select(probe => new ProbeConfig()
+            //    {
+            //        Side = probe.Side.ToSide(),
+            //        InputChannel = int.Parse(probe.Input.Channel),
+            //        OutputChannel = int.Parse(probe.Output.Channel)
+            //    }).ToArray()
+            //};
         }
     }
 }
