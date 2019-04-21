@@ -13,14 +13,14 @@ namespace OpenRem.Config
         public BootstraperConfig GetBootstraperConfig()
         {
             var dto = new BootstraperConfig();
-            this.configuration.GetSection("BootstraperConfig").Bind(dto);
+            configuration.Bind("BootstrapperConfig", dto);
             return dto;
         }
 
         public ServiceConfig GetServiceConfig()
         {
             var dto = new ServiceConfig();
-            this.configuration.GetSection("BootstraperConfig").Bind(dto);
+            this.configuration.Bind("ServiceConfig", dto);
             return dto;
         }
     }
