@@ -1,0 +1,40 @@
+{
+    "AnalyzerCollection": [
+        {
+            "Name": "MKRZERO",
+            "SampleRate": 44100,
+            "SubChunkSize": 32,
+            "Channels": 2,
+            "Probes": [
+                {
+                    "Side": "Left",
+                    "Input": {
+                        "Channel": 0
+                    },
+                    "Output": {
+                        "Channel": 1
+                    }
+                }
+            ]
+
+        },
+        {
+            "Name": "Emulator",
+            "SampleRate": 44100,
+            "SubChunkSize": 32,
+            "Channels": 2,
+            "Probes": [
+                {
+                    "Side": "Left",
+                    "Input": {
+                        "Channel": 0
+                    },
+                    "Output": {
+                        "Channel": 1
+                    }
+                }
+            ]
+
+        }
+    ]
+}

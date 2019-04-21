@@ -4,45 +4,32 @@
     <AssemblyTitle>OpenRem.Config</AssemblyTitle>
     <Product>OpenRem.Config</Product>
     <Copyright>Copyright ©  2019</Copyright>
-        
+     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\_Result\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.*" />
-    <PackageReference Include="System.Net.Http" Version="4.*" />
+    <None Remove="Config\AnalyzerCollection.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ConfigFiles\OpenRem.Config.ConfigFiles.AnalyzerList.Serialization.generated.cs">
-      <DependentUpon>OpenRemXmlSerialization.tt</DependentUpon>
-    </Compile>
-    <Compile Update="ConfigFiles\OpenRemXmlSerialization.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OpenRemXmlSerialization.tt</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Config\AnalyzerCollection.json" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.9.2" />
-    <PackageReference Include="PommaLabs.XsdClassGen" Version="0.7.4" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.2.0" />
+     
+      <PackageReference Include="Microsoft.CSharp" Version="4.*" />
+      <PackageReference Include="System.Net.Http" Version="4.*" />
+      <PackageReference Include="Autofac" Version="4.9.2" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ConfigFiles\AnalyzerConfig.xml" />
-    <Content Include="ConfigFiles\OpenRemXmlSerialization.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>OpenRemXmlSerialization.generated.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ConfigFiles\AnalyzerConfig.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\..\Common\OpenRem.Common.Config\OpenRem.Common.Config.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
     <ProjectReference Include="..\OpenRem.Config.Interfaces\OpenRem.Config.Interfaces.csproj" />
-  </ItemGroup>
+  </ItemGroup>  
 </Project>

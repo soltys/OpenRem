@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Microsoft.Extensions.Configuration;
+using Moq;
 using NUnit.Framework;
 using OpenRem.Common;
 
@@ -8,24 +9,18 @@ namespace OpenRem.Config.Test
     public class AnalyzerConfigReaderTest
     {
         [Test]
-        public void GetConfig_For_MKRZero()
+        [TestCase("MKRZERO")]
+        [TestCase("Emulator")]
+        public void GetConfig(string configName)
         {
-            var embeddedConfig = new Mock<IEmbeddedConfig>();
-            var sut = new AnalyzerConfigReader(embeddedConfig.Object);
-            embeddedConfig.Setup(x => x.GetConfigFile("AnalyzerConfig.xml"))
-                .Returns(() => typeof(AnalyzerConfigReaderTest).Assembly.GetResourceStream("SampleArduinoConfig.xml"));
+            var crp = new BusinessLogicConfigurationProvider();
+            var sut = new AnalyzerCollectionConfigReader(crp.GetConfigurationRoot());
 
-            var config = sut.GetConfig("MKRZERO");
+            var config = sut.GetConfig(configName);
 
-            Assert.AreEqual("MKRZERO", config.Name);
-            Assert.AreEqual(44100, config.SampleRate);
-            Assert.AreEqual(32, config.SubChunkSize);
-            Assert.AreEqual(2, config.ChannelsNumber);
+            Assert.IsNotNull(config);
+            Assert.AreEqual(configName, config.Name);
 
-            Assert.AreEqual(1, config.Probes.Length);
-            Assert.AreEqual(Side.Left, config.Probes[0].Side);
-            Assert.AreEqual(0, config.Probes[0].InputChannel);
-            Assert.AreEqual(1, config.Probes[0].OutputChannel);
         }
     }
 }
