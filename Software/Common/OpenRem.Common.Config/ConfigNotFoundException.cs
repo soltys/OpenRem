@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace OpenRem.Config
 {
     [Serializable]
-    internal class ConfigNotFoundException : Exception
+    public class ConfigNotFoundException : Exception
     {
         
         public ConfigNotFoundException()
