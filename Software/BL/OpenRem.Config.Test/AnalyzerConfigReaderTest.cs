@@ -9,12 +9,18 @@ namespace OpenRem.Config.Test
     public class AnalyzerConfigReaderTest
     {
         [Test]
-        public void GetConfig_For_MKRZero()
+        [TestCase("MKRZERO")]
+        [TestCase("Emulator")]
+        public void GetConfig(string configName)
         {
-            var configuration = new Mock<IConfiguration>();
-            
-            var sut = new AnalyzerConfigReader(configuration.Object);
-            
+            var crp = new BusinessLogicConfigurationProvider();
+            var sut = new AnalyzerCollectionConfigReader(crp.GetConfigurationRoot());
+
+            var config = sut.GetConfig(configName);
+
+            Assert.IsNotNull(config);
+            Assert.AreEqual(configName, config.Name);
+
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using OpenRem.Common.Config;
 namespace OpenRem.Config
 {
-    class AnalyzerConfigReader : IAnalyzerConfigReader
+    class AnalyzerCollectionConfigReader : IAnalyzerConfigReader
     {
-        private IConfiguration configuration;
+        private IBusinessLogicConfiguration configuration;
 
-        public AnalyzerConfigReader(IConfiguration configuration)
+        public AnalyzerCollectionConfigReader(IBusinessLogicConfiguration configuration)
         {
             this.configuration = configuration;
         }

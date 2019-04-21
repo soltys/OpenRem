@@ -13,12 +13,12 @@ namespace OpenRem.Config.Module
             builder.RegisterAssemblyTypes(dataAccess)
                 .AsImplementedInterfaces();
 
-            builder.RegisterType<ConfigurationRootProvider>()
-                .As<IConfigurationRootProvider>()
+            builder.RegisterType<BusinessLogicConfigurationProvider>()
+                .As<IBusinessLogicConfigurationProvider>()
                 .SingleInstance();
 
-            builder.Register(c => c.Resolve<IConfigurationRootProvider>().GetConfigurationRoot())
-                .As<IConfiguration>()
+            builder.Register(c => c.Resolve<IBusinessLogicConfigurationProvider>().GetConfigurationRoot())
+                .As<IBusinessLogicConfiguration>()
                 .SingleInstance();
         }
     }
