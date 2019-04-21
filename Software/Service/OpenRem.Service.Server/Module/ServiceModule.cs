@@ -1,9 +1,5 @@
-﻿using System;
-using System.ServiceModel;
-using Autofac;
-using Autofac.Integration.Wcf;
+﻿using Autofac;
 using OpenRem.Service.Interface;
-using OpenRem.Service.Protocol;
 
 namespace OpenRem.Service.Module
 {
