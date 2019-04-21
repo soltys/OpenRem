@@ -30,6 +30,6 @@
     <ProjectReference Include="..\..\Common\OpenRem.Common.Config\OpenRem.Common.Config.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
-    <ProjectReference Include="..\OpenRem.Config.Interfaces\OpenRem.Config.Interfaces.csproj" />
+    <ProjectReference Include="..\OpenRem.Config.Interface\OpenRem.Config.Interface.csproj" />
   </ItemGroup>  
 </Project>

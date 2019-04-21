@@ -18,7 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
-    <ProjectReference Include="..\OpenRem.Config.Interfaces\OpenRem.Config.Interfaces.csproj" />
+    <ProjectReference Include="..\OpenRem.Config.Interface\OpenRem.Config.Interface.csproj" />
     <ProjectReference Include="..\OpenRem.Config\OpenRem.Config.csproj" />
   </ItemGroup>
 </Project>
