@@ -15,13 +15,7 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
     <PackageReference Include="Microsoft.CSharp" Version="4.*" />
     <PackageReference Include="System.Net.Http" Version="4.*" />
-    <PackageReference Include="Autofac.Wcf" Version="4.1.0" />
     <PackageReference Include="Autofac" Version="4.9.2" />
-    <PackageReference Include="Autofac.Wcf" Version="4.1.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Activation" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BL\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj" />
