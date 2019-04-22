@@ -66,6 +66,7 @@ namespace OpenRem.Common
             {
                 sideable.Left = source.Left;
             }
+
             if (source.Right != null)
             {
                 sideable.Right = source.Right;
@@ -79,7 +80,8 @@ namespace OpenRem.Common
         /// <typeparam name="TResult">The type of the value returned by <paramref name="selector" />.</typeparam>
         /// <param name="source">Sideable source</param>
         /// <param name="selector">A transform function to apply to each source element</param>
-        public static Sideable<TResult> Select<TSource, TResult>(this Sideable<TSource> source, Func<TSource, TResult> selector)
+        public static Sideable<TResult> Select<TSource, TResult>(this Sideable<TSource> source,
+            Func<TSource, TResult> selector)
         {
             return Select(source, (side, value) => selector(value));
         }
@@ -91,7 +93,8 @@ namespace OpenRem.Common
         /// <typeparam name="TResult">The type of the value returned by <paramref name="selector" />.</typeparam>
         /// <param name="source">Sideable source</param>
         /// <param name="selector">A transform function to apply to each source element</param>
-        public static Sideable<TResult> Select<TSource, TResult>(this Sideable<TSource> source, Func<Side, TSource, TResult> selector)
+        public static Sideable<TResult> Select<TSource, TResult>(this Sideable<TSource> source,
+            Func<Side, TSource, TResult> selector)
         {
             Contract.Requires(source != null);
             Contract.Requires(selector != null);
@@ -119,7 +122,8 @@ namespace OpenRem.Common
         /// <param name="valuesSource">source of value</param>
         /// <param name="sidesSource">Corresponding <see cref="Sideable{TSidesSource}"/></param>
         /// <returns>The value found at the specified side</returns>
-        public static IEnumerable<TValuesSource> ValuesForSides<TValuesSource, TSidesSource>(this Sideable<TValuesSource> valuesSource, Sideable<TSidesSource> sidesSource)
+        public static IEnumerable<TValuesSource> ValuesForSides<TValuesSource, TSidesSource>(
+            this Sideable<TValuesSource> valuesSource, Sideable<TSidesSource> sidesSource)
             where TValuesSource : class
             where TSidesSource : class
         {
@@ -207,7 +211,7 @@ namespace OpenRem.Common
             return sideable.Left != null && sideable.Right != null;
         }
 
-        public static bool HasAny<T>(this Sideable<T> sideable, Func<T,bool> predicate, Side[] sides)
+        public static bool HasAny<T>(this Sideable<T> sideable, Func<T, bool> predicate, Side[] sides)
         {
             return sides.Any(x => predicate(sideable.Value(x)));
         }

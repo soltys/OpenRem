@@ -21,7 +21,7 @@ namespace OpenRem.Common
         public static Stream GetResourceStream(this Assembly assembly, string resourceName)
         {
             var fullResourceName = assembly.GetManifestResourceNames()
-                                           .Single(str => str.EndsWith(resourceName));
+                .Single(str => str.EndsWith(resourceName));
             return assembly.GetManifestResourceStream(fullResourceName);
         }
     }

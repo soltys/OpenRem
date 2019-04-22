@@ -51,23 +51,26 @@ namespace OpenRem.CommonUI
         #region Attached properties
 
         #region FormattedToolTip
+
         public static string GetFormattedToolTip(DependencyObject obj)
         {
-            return (string)obj.GetValue(ToolTipExtensions.FormattedToolTipProperty);
+            return (string) obj.GetValue(ToolTipExtensions.FormattedToolTipProperty);
         }
+
         public static void SetFormattedToolTip(DependencyObject obj, string value)
         {
             obj.SetValue(ToolTipExtensions.FormattedToolTipProperty, value);
         }
+
         /// <summary>
         /// Allows text that contains formatting information like &lt;Bold&gt; or &lt;Italic&gt; to be used in a <see cref="TextBlock"/>.
         /// </summary>
         public static readonly DependencyProperty FormattedToolTipProperty =
             DependencyProperty.RegisterAttached("FormattedToolTip",
-                                                typeof(string),
-                                                typeof(ToolTipExtensions),
-                                                new PropertyMetadata(null, OnFormattedToolTipChanged)
-                                               );
+                typeof(string),
+                typeof(ToolTipExtensions),
+                new PropertyMetadata(null, OnFormattedToolTipChanged)
+            );
 
         private static void OnFormattedToolTipChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -77,14 +80,16 @@ namespace OpenRem.CommonUI
         #endregion FormattedToolTip
 
         #region InlineStyles
+
         /// <summary>
         /// Gets the collection of styles for inline elements of this textblock.
         /// The method never returns null. If collection has not been set the method does it here (sets the empty collection).
         /// </summary>
         public static InlineStyles GetInlineStyles(DependencyObject obj)
         {
-            return (InlineStyles)obj.GetValue(ToolTipExtensions.InlineStylesProperty);
+            return (InlineStyles) obj.GetValue(ToolTipExtensions.InlineStylesProperty);
         }
+
         /// <summary>
         /// For the given textblock sets the collection of styles for inline elements.
         /// </summary>
@@ -92,6 +97,7 @@ namespace OpenRem.CommonUI
         {
             obj.SetValue(ToolTipExtensions.InlineStylesProperty, value);
         }
+
         /// <summary>
         /// Attached property with special name. This is done intentionally to allow adding elements of the colleciton in XAML directly
         /// without specyfying the collection object itself.
@@ -100,12 +106,13 @@ namespace OpenRem.CommonUI
         /// </summary>
         public static readonly DependencyProperty InlineStylesProperty =
             DependencyProperty.RegisterAttached("InlineStyles", typeof(InlineStyles), typeof(ToolTipExtensions),
-            new PropertyMetadata(null, OnInlineStylesChanged));
+                new PropertyMetadata(null, OnInlineStylesChanged));
 
         private static void OnInlineStylesChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             UpdateInlines(d);
         }
+
         #endregion InlineStyles
 
         private static void UpdateInlines(DependencyObject d)
@@ -121,8 +128,9 @@ namespace OpenRem.CommonUI
                 inlines.Add(Traverse(textBlock, textWithFormattingInfo));
             }
 
-            ((FrameworkElement)d).ToolTip = textBlock;
+            ((FrameworkElement) d).ToolTip = textBlock;
         }
+
         #endregion Attached properties
 
         /// <summary>
@@ -136,8 +144,10 @@ namespace OpenRem.CommonUI
         /// </remarks>
         /// <param name="targetObject">The text object (TextBlock or Inline) to with the extension is attached</param>
         /// <param name="value">The text string, which may contain embedded formatting markup characters</param>
-        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Documents.Run.#ctor(System.String)")]
-        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "FxCop 2015 does not like multiple case statements in a switch statement. But we are ok with these.")]
+        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId =
+            "System.Windows.Documents.Run.#ctor(System.String)")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification =
+            "FxCop 2015 does not like multiple case statements in a switch statement. But we are ok with these.")]
         public static Inline Traverse(DependencyObject targetObject, string value)
         {
             // Get the sections/inlines
@@ -154,9 +164,9 @@ namespace OpenRem.CommonUI
                 if (GetTokenInfo(section, out token, out tokenStart, out tokenEnd))
                 {
                     // Get the content for further examination
-                    string content = token.Length.Equals(tokenEnd - tokenStart) ?
-                        null :
-                        section.Substring(token.Length, section.Length - 1 - token.Length * 2);
+                    string content = token.Length.Equals(tokenEnd - tokenStart)
+                        ? null
+                        : section.Substring(token.Length, section.Length - 1 - token.Length * 2);
 
                     switch (token)
                     {
@@ -211,6 +221,7 @@ namespace OpenRem.CommonUI
                             {
                                 return SetStyle(targetObject, Traverse(targetObject, content), token);
                             }
+
                             return new Run(section);
                     }
                 }
@@ -301,7 +312,6 @@ namespace OpenRem.CommonUI
                 {
                     return false;
                 }
-
             } while (nesting > 0);
 
             endIndex = pos;
@@ -343,7 +353,8 @@ namespace OpenRem.CommonUI
 
         private static Inline SetStyle(DependencyObject targetObject, Inline content, string token)
         {
-            var startIndex = token.IndexOf(ToolTipExtensions.StyleIdPrefix, StringComparison.Ordinal) + ToolTipExtensions.StyleIdPrefix.Length;
+            var startIndex = token.IndexOf(ToolTipExtensions.StyleIdPrefix, StringComparison.Ordinal) +
+                             ToolTipExtensions.StyleIdPrefix.Length;
             var indices = new[]
             {
                 token.IndexOf("/", StringComparison.Ordinal),
@@ -352,8 +363,9 @@ namespace OpenRem.CommonUI
             };
             var endIndex = indices.Where(index => index > 0).Min();
             var styleId = token.Substring(startIndex, endIndex - startIndex);
-            var style = GetInlineStyles(targetObject)?.Styles.FirstOrDefault(inlineStyle => inlineStyle.Id == styleId)?.Style;
-            return style != null ? new Span(content) { Style = style } : content;
+            var style = GetInlineStyles(targetObject)?.Styles.FirstOrDefault(inlineStyle => inlineStyle.Id == styleId)
+                ?.Style;
+            return style != null ? new Span(content) {Style = style} : content;
         }
     }
 
@@ -374,27 +386,29 @@ namespace OpenRem.CommonUI
         /// </summary>
         public string Id
         {
-            get { return (string)GetValue(InlineStyle.IdProperty); }
+            get { return (string) GetValue(InlineStyle.IdProperty); }
             set { SetValue(InlineStyle.IdProperty, value); }
         }
+
         /// <summary>
         /// Dependency property storing the inline's id.
         /// </summary>
         public static readonly DependencyProperty IdProperty =
-             DependencyProperty.Register("Id", typeof(string), typeof(InlineStyle));
+            DependencyProperty.Register("Id", typeof(string), typeof(InlineStyle));
 
         /// <summary>
         /// Style for the inline.
         /// </summary>
         public Style Style
         {
-            get { return (Style)GetValue(InlineStyle.StyleProperty); }
+            get { return (Style) GetValue(InlineStyle.StyleProperty); }
             set { SetValue(InlineStyle.StyleProperty, value); }
         }
+
         /// <summary>
         /// Dependency property storing the style for the inline.
         /// </summary>
         public static readonly DependencyProperty StyleProperty =
-             DependencyProperty.Register("Style", typeof(Style), typeof(InlineStyle));
+            DependencyProperty.Register("Style", typeof(Style), typeof(InlineStyle));
     }
 }

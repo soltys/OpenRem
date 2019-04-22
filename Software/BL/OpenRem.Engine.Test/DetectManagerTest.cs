@@ -52,7 +52,7 @@ namespace OpenRem.Engine.Test
 
             this.deviceFinder.Setup(x => x.GetArduinoDevices()).Returns(() => new[]
             {
-               arduinoDevice
+                arduinoDevice
             });
             var arduinoGuid = Guid.NewGuid();
             this.analyzerCollection.Setup(x => x.Add(It.IsIn(arduinoDevice))).Returns(arduinoGuid);

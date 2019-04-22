@@ -17,7 +17,7 @@ namespace OpenRem.CommonUI
                 return DependencyProperty.UnsetValue;
             }
 
-            return !(bool)value;
+            return !(bool) value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter,

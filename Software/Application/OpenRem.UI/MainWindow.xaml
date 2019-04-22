@@ -8,33 +8,28 @@
         Height="450"
         Width="800"
         DataContext="{Binding MainWindow,
-                              Source={StaticResource ViewModelLocator}}"
-        >
+                              Source={StaticResource ViewModelLocator}}">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel>
             <Button Command="{Binding LoadAnalyzers}"
                     Content="Load Analyzers"
-                    Margin="0,0,0,10"
-                    />
+                    Margin="0,0,0,10" />
             <ComboBox MinWidth="100"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center"
                       DisplayMemberPath="Name"
                       ItemsSource="{Binding Analyzers}"
-                      SelectedItem="{Binding SelectedAnalyzer}"
-                      />
+                      SelectedItem="{Binding SelectedAnalyzer}" />
             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
                 <Button Command="{Binding SelectFile}" Content="Select output" />
                 <TextBlock Margin="10,0,0,0" Text="{Binding OutputFilename}" />
             </StackPanel>
             <Button Command="{Binding StartRecording}"
                     Content="Start Recording"
-                    Margin="0,10,0,0"
-                    />
+                    Margin="0,10,0,0" />
             <Button Command="{Binding StopRecording}"
                     Content="Stop Recording"
-                    Margin="0,10,0,0"
-                    />
+                    Margin="0,10,0,0" />
         </StackPanel>
     </Grid>
 </Window>

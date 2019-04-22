@@ -6,7 +6,7 @@ namespace OpenRem.Service.Client
     {
         private readonly Config.ServiceConfig config;
 
-        public ServiceConfig(IServiceConfigReader configReader)
+        public ServiceConfig(IApplicationConfigReader configReader)
         {
             config = configReader.GetServiceConfig();
         }

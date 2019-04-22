@@ -1,6 +1,6 @@
 ﻿namespace OpenRem.Config
 {
-    public class BootstraperConfig
+    public class BootstrapperConfig
     {
         public LayerSeparation LayerSeparation { get; set; }
     }

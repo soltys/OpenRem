@@ -51,8 +51,6 @@ namespace OpenRem.Emulator
                         GetFileByte(this.offset + 7),
                     };
                 });
-
-
         }
 
         private byte GetFileByte(int byteNumber)
@@ -61,6 +59,7 @@ namespace OpenRem.Emulator
             {
                 return 0;
             }
+
             return this.fileContent[byteNumber];
         }
 

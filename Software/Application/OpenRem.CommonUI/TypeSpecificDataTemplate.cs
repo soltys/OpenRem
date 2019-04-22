@@ -9,11 +9,12 @@ namespace OpenRem.CommonUI
         public bool IsDefault { get; set; }
 
         public static readonly DependencyProperty DataTemplateProperty = DependencyProperty.Register(
-            "DataTemplate", typeof(DataTemplate), typeof(TypeSpecificDataTemplate), new PropertyMetadata(default(DataTemplate)));
+            "DataTemplate", typeof(DataTemplate), typeof(TypeSpecificDataTemplate),
+            new PropertyMetadata(default(DataTemplate)));
 
         public DataTemplate DataTemplate
         {
-            get { return (DataTemplate)GetValue(TypeSpecificDataTemplate.DataTemplateProperty); }
+            get { return (DataTemplate) GetValue(TypeSpecificDataTemplate.DataTemplateProperty); }
             set { SetValue(TypeSpecificDataTemplate.DataTemplateProperty, value); }
         }
     }

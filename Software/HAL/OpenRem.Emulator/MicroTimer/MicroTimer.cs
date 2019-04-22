@@ -8,6 +8,7 @@ namespace OpenRem.Emulator
         public delegate void MicroTimerElapsedEventHandler(
             object sender,
             MicroTimerEventArgs e);
+
         public event MicroTimerElapsedEventHandler MicroTimerElapsed;
 
         System.Threading.Thread _threadTimer = null;
@@ -65,10 +66,7 @@ namespace OpenRem.Emulator
                     Stop();
                 }
             }
-            get
-            {
-                return (this._threadTimer != null && this._threadTimer.IsAlive);
-            }
+            get { return (this._threadTimer != null && this._threadTimer.IsAlive); }
         }
 
         public void Start()
@@ -80,7 +78,7 @@ namespace OpenRem.Emulator
 
             this._stopTimer = false;
 
-            System.Threading.ThreadStart threadStart = delegate ()
+            System.Threading.ThreadStart threadStart = delegate()
             {
                 NotificationTimer(ref this._timerIntervalInMicroSec,
                     ref this._ignoreEventIfLateBy,

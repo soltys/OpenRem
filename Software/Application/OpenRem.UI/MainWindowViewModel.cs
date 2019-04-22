@@ -18,6 +18,7 @@ namespace OpenRem.UI
         public UICollection<Analyzer> Analyzers { get; } = new UICollection<Analyzer>();
 
         private Analyzer selectedAnalyzer;
+
         public Analyzer SelectedAnalyzer
         {
             get => this.selectedAnalyzer;
@@ -43,19 +44,22 @@ namespace OpenRem.UI
 
         private void AddCommands()
         {
-            LoadAnalyzers = new RelayCommand( async () =>
+            LoadAnalyzers = new RelayCommand(async () =>
             {
                 Analyzers.AddRange(await this.detectManager.GetAnalyzersAsync());
                 SelectedAnalyzer = Analyzers.FirstOrDefault();
             });
             SelectFile = new RelayCommand(ShowSaveFileDialog);
-            StartRecording = new RelayCommand(async () => { await this.rawFileRecorder.StartAsync(SelectedAnalyzer.Id, OutputFilename); });
+            StartRecording = new RelayCommand(async () =>
+            {
+                await this.rawFileRecorder.StartAsync(SelectedAnalyzer.Id, OutputFilename);
+            });
             StopRecording = new RelayCommand(async () => { await this.rawFileRecorder.StopAsync(); });
         }
 
         private void ShowSaveFileDialog()
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog { Filter = "raw|*.raw", Title = "Record to raw file" };
+            SaveFileDialog saveFileDialog = new SaveFileDialog {Filter = "raw|*.raw", Title = "Record to raw file"};
             saveFileDialog.ShowDialog();
 
             OutputFilename = saveFileDialog.FileName;

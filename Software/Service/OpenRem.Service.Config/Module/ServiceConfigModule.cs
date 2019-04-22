@@ -1,8 +1,7 @@
 ﻿using System.Reflection;
 using Autofac;
-using Microsoft.Extensions.Configuration;
 
-namespace OpenRem.Config.Module
+namespace OpenRem.Service.Config
 {
     class ServiceConfigModule : Autofac.Module
     {

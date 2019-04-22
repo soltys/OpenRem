@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-
-namespace OpenRem.Config
+﻿namespace OpenRem.Config.Infrastructure
 {
     internal interface IBusinessLogicConfigurationProvider
     {

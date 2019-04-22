@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.FileProviders;
-using OpenRem.Common.Config;
-namespace OpenRem.Config
+
+namespace OpenRem.Service.Config
 {
     class ServiceConfigurationProvider : IServiceConfigurationProvider
     {
@@ -12,7 +11,5 @@ namespace OpenRem.Config
                 .Build()
                 .ToApplicationConfiguration();
         }
-
-
     }
 }

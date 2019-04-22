@@ -9,6 +9,7 @@
         /// Left side
         /// </summary>
         Left,
+
         /// <summary>
         /// Right side
         /// </summary>

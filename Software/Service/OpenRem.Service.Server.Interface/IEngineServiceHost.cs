@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace OpenRem.Service.Interface
+namespace OpenRem.Service.Server
 {
     public interface IEngineServiceHost
     {

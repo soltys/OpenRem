@@ -29,6 +29,5 @@ namespace OpenRem.Emulator
             TimerLateBy = timerLateBy;
             CallbackFunctionExecutionTime = callbackFunctionExecutionTime;
         }
-
     }
 }

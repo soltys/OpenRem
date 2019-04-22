@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-
-namespace OpenRem.Config
+﻿namespace OpenRem.Application.Config
 {
     internal interface IApplicationConfigurationProvider
     {

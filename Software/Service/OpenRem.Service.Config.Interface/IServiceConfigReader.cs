@@ -1,4 +1,4 @@
-﻿namespace OpenRem.Config
+﻿namespace OpenRem.Service.Config
 {
     public interface IServiceConfigReader
     {

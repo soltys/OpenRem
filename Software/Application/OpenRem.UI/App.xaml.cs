@@ -6,7 +6,7 @@ using CommonServiceLocator;
 using OpenRem.Common;
 using OpenRem.Common.Application.Autofac;
 using OpenRem.Config;
-using OpenRem.Service.Interface;
+using OpenRem.Service.Server;
 
 namespace OpenRem.UI
 {

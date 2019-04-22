@@ -25,6 +25,7 @@ namespace OpenRem.CommonUI
                 SingleAppInstance.singleAppMutex = mx;
                 return true;
             }
+
             return false;
         }
 
@@ -38,7 +39,9 @@ namespace OpenRem.CommonUI
             {
                 SingleAppInstance.singleAppMutex?.ReleaseMutex();
             }
-            catch { }
+            catch
+            {
+            }
         }
     }
 }

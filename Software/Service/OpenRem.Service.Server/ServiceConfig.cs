@@ -1,6 +1,6 @@
-﻿using OpenRem.Config;
+﻿using OpenRem.Service.Config;
 
-namespace OpenRem.Service
+namespace OpenRem.Service.Server
 {
     public class ServiceConfig
     {

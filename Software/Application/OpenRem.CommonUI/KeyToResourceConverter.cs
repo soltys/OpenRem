@@ -5,7 +5,7 @@ using System.Windows.Data;
 
 namespace OpenRem.CommonUI
 {
-    public class KeyToResourceConverter: IValueConverter
+    public class KeyToResourceConverter : IValueConverter
     {
         public string Prefix { get; set; }
 
@@ -21,6 +21,7 @@ namespace OpenRem.CommonUI
             {
                 return Application.Current.Resources[key];
             }
+
             throw new InvalidOperationException($"Key not found: {key}");
         }
 

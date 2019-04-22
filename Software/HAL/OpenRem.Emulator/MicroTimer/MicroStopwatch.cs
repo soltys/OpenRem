@@ -19,6 +19,6 @@ namespace OpenRem.Emulator
             }
         }
 
-        public long ElapsedMicroseconds => (long)(ElapsedTicks * this._microSecPerTick);
+        public long ElapsedMicroseconds => (long) (ElapsedTicks * this._microSecPerTick);
     }
 }

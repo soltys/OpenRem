@@ -27,6 +27,7 @@ namespace OpenRem.CommonUI
             {
                 return;
             }
+
             if (AssociatedObject.Visibility == Visibility.Visible)
             {
                 AssociatedObject.Focus();
@@ -41,10 +42,7 @@ namespace OpenRem.CommonUI
 
         private void OnMouseLeftUp(object sender, MouseButtonEventArgs e)
         {
-            Dispatcher.BeginInvoke(new Action(() =>
-            {
-                AssociatedObject.SelectAll();
-            }), DispatcherPriority.Background);
+            Dispatcher.BeginInvoke(new Action(() => { AssociatedObject.SelectAll(); }), DispatcherPriority.Background);
         }
 
         private void AssociatedObject_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -54,6 +52,7 @@ namespace OpenRem.CommonUI
                 AssociatedObject.SelectAll();
                 e.Handled = true;
             }
+
             this.isKeyboardUsed = true;
         }
 

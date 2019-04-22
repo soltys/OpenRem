@@ -29,7 +29,7 @@ namespace OpenRem.Common.Application.Autofac
         private static IEnumerable<string> GetAssemblyNames(string path)
         {
             List<string> assemblyNames = new List<string>();
-            foreach (var searchPattern in new[] { "OpenRem*.dll", "OpenRem*.exe" })
+            foreach (var searchPattern in new[] {"OpenRem*.dll", "OpenRem*.exe"})
             {
                 assemblyNames.AddRange(Directory.GetFiles(path, searchPattern, SearchOption.TopDirectoryOnly));
             }
@@ -53,7 +53,7 @@ namespace OpenRem.Common.Application.Autofac
 
                 var modules = assembly.GetTypes()
                     .Where(p => typeof(IModule).IsAssignableFrom(p) && !p.IsAbstract)
-                    .Select(p => (IModule)Activator.CreateInstance(p));
+                    .Select(p => (IModule) Activator.CreateInstance(p));
 
                 foreach (var module in modules)
                 {

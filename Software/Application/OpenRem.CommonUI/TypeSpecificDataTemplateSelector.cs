@@ -28,20 +28,23 @@ namespace OpenRem.CommonUI
             {
                 return null;
             }
+
             // Default template used when no type specific templates were found
             var defaultTemplate = Templates.FirstOrDefault(template => template != null && template.IsDefault);
 
             // Try to find type specific template
-            var otherTemplates = Templates.Except(new[] { defaultTemplate });
-            var foundTemplate = otherTemplates.
-                Where(template => template.DataTemplate != null && ((Type)template.DataTemplate.DataType).IsInstanceOfType(item)).
-                OrderByDescending(template => (Type)template.DataTemplate.DataType, new TypeComparer()).
-                FirstOrDefault();
+            var otherTemplates = Templates.Except(new[] {defaultTemplate});
+            var foundTemplate = otherTemplates
+                .Where(template => template.DataTemplate != null &&
+                                   ((Type) template.DataTemplate.DataType).IsInstanceOfType(item))
+                .OrderByDescending(template => (Type) template.DataTemplate.DataType, new TypeComparer())
+                .FirstOrDefault();
 
             if (foundTemplate != null)
             {
                 return foundTemplate.DataTemplate;
             }
+
             return defaultTemplate != null ? defaultTemplate.DataTemplate : null;
         }
 

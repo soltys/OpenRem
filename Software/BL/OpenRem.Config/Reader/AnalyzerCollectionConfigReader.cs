@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using OpenRem.Common.Config;
-namespace OpenRem.Config
+using OpenRem.Config.Infrastructure;
+using OpenRem.Config.Model.AnalyzerCollection;
+
+namespace OpenRem.Config.Reader
 {
     class AnalyzerCollectionConfigReader : IAnalyzerConfigReader
     {
@@ -14,7 +15,7 @@ namespace OpenRem.Config
         }
 
         public AnalyzerConfig GetConfig(string name)
-        {            
+        {
             var dtos = configuration.BindAll<AnalyzerDto>("AnalyzerCollection");
 
             var dto = dtos.FirstOrDefault(x => x.Name == name);
@@ -37,7 +38,5 @@ namespace OpenRem.Config
                 }).ToArray()
             };
         }
-
-        
     }
 }

@@ -4,9 +4,9 @@ using Grpc.Core;
 using OpenRem.Engine;
 using OpenRem.Service.Protocol;
 
-namespace OpenRem.Service
+namespace OpenRem.Service.Server
 {
-    class RawFileRecorderImpl: Protocol.RawFileRecorder.RawFileRecorderBase
+    class RawFileRecorderImpl : Protocol.RawFileRecorder.RawFileRecorderBase
     {
         private IRawFileRecorder real;
 

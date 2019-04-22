@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <RootNamespace>OpenRem.Config</RootNamespace>
+    <RootNamespace>OpenRem.Service.Config</RootNamespace>
     <TargetFramework>net471</TargetFramework>
     <AssemblyTitle>OpenRem.Config.Interfaces</AssemblyTitle>
     <Product>OpenRem.Config.Interfaces</Product>

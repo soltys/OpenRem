@@ -1,16 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Autofac;
 using Grpc.Core;
 using OpenRem.Engine;
-using OpenRem.Service.Interface;
 using OpenRem.Service.Protocol;
 
-namespace OpenRem.Service
+namespace OpenRem.Service.Server
 {
     public class EngineServiceHost : IEngineServiceHost
     {
-        private Server server;
+        private Grpc.Core.Server server;
         private ILifetimeScope scope;
         private readonly ServiceConfig config;
 
@@ -26,15 +24,14 @@ namespace OpenRem.Service
 
         public void Start()
         {
-            
-            this.server = new Server
+            this.server = new Grpc.Core.Server
             {
                 Services =
                 {
                     DetectManager.BindService(new DetectManagerImpl(this.scope.Resolve<IDetectManager>())),
                     RawFileRecorder.BindService(new RawFileRecorderImpl(this.scope.Resolve<IRawFileRecorder>()))
                 },
-                Ports = { new ServerPort(config.HostName, config.ServicePort, ServerCredentials.Insecure) }
+                Ports = {new ServerPort(config.HostName, config.ServicePort, ServerCredentials.Insecure)}
             };
             this.server.Start();
         }

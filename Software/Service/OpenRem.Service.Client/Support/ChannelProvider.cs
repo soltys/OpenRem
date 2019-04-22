@@ -2,7 +2,7 @@
 
 namespace OpenRem.Service.Client
 {
-    class ChannelProvider: IChannelProvider
+    class ChannelProvider : IChannelProvider
     {
         private ServiceConfig config;
 

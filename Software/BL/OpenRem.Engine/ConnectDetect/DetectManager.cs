@@ -10,7 +10,8 @@ namespace OpenRem.Engine
         private readonly IEmulatorFinder emulatorFinder;
         private readonly IAnalyzerCollection analyzerCollection;
 
-        public DetectManager(IAnalyzerCollection analyzerCollection, IDeviceFinder deviceFinder, IEmulatorFinder emulatorFinder)
+        public DetectManager(IAnalyzerCollection analyzerCollection, IDeviceFinder deviceFinder,
+            IEmulatorFinder emulatorFinder)
         {
             this.analyzerCollection = analyzerCollection;
             this.deviceFinder = deviceFinder;
@@ -45,7 +46,7 @@ namespace OpenRem.Engine
         {
             return new Analyzer
             {
-                Id =  id,
+                Id = id,
                 Name = arduinoDevice.Name
             };
         }

@@ -1,4 +1,4 @@
-﻿namespace OpenRem.Service.Config
+﻿namespace OpenRem.Config
 {
     public class ServiceConfig
     {

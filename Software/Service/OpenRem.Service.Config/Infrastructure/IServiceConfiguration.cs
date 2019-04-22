@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace OpenRem.Config
+namespace OpenRem.Service.Config
 {
     public interface ISerivceConfiguration : IConfiguration
     {

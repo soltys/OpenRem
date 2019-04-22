@@ -4,7 +4,7 @@ using Grpc.Core;
 using OpenRem.Engine;
 using OpenRem.Service.Protocol;
 
-namespace OpenRem.Service
+namespace OpenRem.Service.Server
 {
     class DetectManagerImpl : Protocol.DetectManager.DetectManagerBase
     {
@@ -25,7 +25,7 @@ namespace OpenRem.Service
                 Id = x.Id.ToString(),
                 Name = x.Name
             }));
-            
+
             return response;
         }
     }

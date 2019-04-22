@@ -9,27 +9,29 @@ namespace OpenRem.CommonUI
     {
         public ItemsControl Target
         {
-            get => (ItemsControl)GetValue(AutoScrollOnItemsChange.TargetProperty);
+            get => (ItemsControl) GetValue(AutoScrollOnItemsChange.TargetProperty);
             set => SetValue(AutoScrollOnItemsChange.TargetProperty, value);
         }
 
         public static readonly DependencyProperty TargetProperty =
-            DependencyProperty.Register("Target", typeof(ItemsControl), typeof(AutoScrollOnItemsChange), new PropertyMetadata(OnTargetChanged));
+            DependencyProperty.Register("Target", typeof(ItemsControl), typeof(AutoScrollOnItemsChange),
+                new PropertyMetadata(OnTargetChanged));
 
         private static void OnTargetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((AutoScrollOnItemsChange)d).UnHook(e.OldValue as ItemsControl);
-            ((AutoScrollOnItemsChange)d).Hook();
+            ((AutoScrollOnItemsChange) d).UnHook(e.OldValue as ItemsControl);
+            ((AutoScrollOnItemsChange) d).Hook();
         }
 
         public bool ScrollLock
         {
-            get => (bool)GetValue(AutoScrollOnItemsChange.ScrollLockProperty);
+            get => (bool) GetValue(AutoScrollOnItemsChange.ScrollLockProperty);
             set => SetValue(AutoScrollOnItemsChange.ScrollLockProperty, value);
         }
 
         public static readonly DependencyProperty ScrollLockProperty =
-            DependencyProperty.Register("ScrollLock", typeof(bool), typeof(AutoScrollOnItemsChange), new PropertyMetadata(false));
+            DependencyProperty.Register("ScrollLock", typeof(bool), typeof(AutoScrollOnItemsChange),
+                new PropertyMetadata(false));
 
 
         private void UnHook(ItemsControl itemsControl)

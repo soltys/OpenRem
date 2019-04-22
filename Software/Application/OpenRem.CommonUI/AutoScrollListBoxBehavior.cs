@@ -4,9 +4,10 @@ using System.Windows.Interactivity;
 
 namespace OpenRem.CommonUI
 {
-    public class AutoScrollListBoxBehavior: Behavior<ListBox>
+    public class AutoScrollListBoxBehavior : Behavior<ListBox>
     {
         private ScrollViewer scrollViewer;
+
         private ScrollViewer ScrollViewer
         {
             get
@@ -15,19 +16,21 @@ namespace OpenRem.CommonUI
                 {
                     this.scrollViewer = VisualTreeUtilities.FindVisualChild<ScrollViewer>(AssociatedObject);
                 }
+
                 return this.scrollViewer;
             }
         }
+
         protected override void OnAttached()
         {
             base.OnAttached();
-            ((INotifyCollectionChanged)AssociatedObject.Items).CollectionChanged += OnCollectionChanged;
+            ((INotifyCollectionChanged) AssociatedObject.Items).CollectionChanged += OnCollectionChanged;
         }
 
         protected override void OnDetaching()
         {
             base.OnDetaching();
-            ((INotifyCollectionChanged)AssociatedObject.Items).CollectionChanged -= OnCollectionChanged;
+            ((INotifyCollectionChanged) AssociatedObject.Items).CollectionChanged -= OnCollectionChanged;
         }
 
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

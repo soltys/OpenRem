@@ -19,7 +19,7 @@ namespace OpenRem.Engine
 
             if (match.Success)
             {
-                return (ArduinoType)Enum.Parse(typeof(ArduinoType), match.Groups[1].Value);
+                return (ArduinoType) Enum.Parse(typeof(ArduinoType), match.Groups[1].Value);
             }
             else
             {

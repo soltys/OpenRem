@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace OpenRem.Config
+namespace OpenRem.Application.Config
 {
     public interface IApplicationConfiguration : IConfiguration
     {

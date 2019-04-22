@@ -17,6 +17,7 @@ namespace OpenRem.CommonUI
                         return (dblVal / 1000) + " k";
                     }
                 }
+
                 return strVal;
             }
 

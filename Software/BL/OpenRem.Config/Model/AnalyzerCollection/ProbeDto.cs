@@ -1,6 +1,6 @@
 ﻿using OpenRem.Common;
 
-namespace OpenRem.Config
+namespace OpenRem.Config.Model.AnalyzerCollection
 {
     class ProbeDto
     {

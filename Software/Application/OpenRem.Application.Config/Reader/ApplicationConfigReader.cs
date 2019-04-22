@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
-namespace OpenRem.Config
+using OpenRem.Config;
+
+namespace OpenRem.Application.Config
 {
     class ApplicationConfigReader : IApplicationConfigReader
     {
@@ -10,10 +12,17 @@ namespace OpenRem.Config
             this.configuration = configuration;
         }
 
-        public BootstraperConfig GetBootstraperConfig()
+        public BootstrapperConfig GetBootstrapperConfig()
         {
-            var dto = new BootstraperConfig();
+            var dto = new BootstrapperConfig();
             configuration.Bind("BootstrapperConfig", dto);
+            return dto;
+        }
+
+        public ServiceConfig GetServiceConfig()
+        {
+            var dto = new ServiceConfig();
+            this.configuration.Bind("ServiceConfig", dto);
             return dto;
         }
     }
