@@ -22,10 +22,10 @@ namespace OpenRem.CommonUI
         /// </summary>
         public ObservableSideable()
         {
-
         }
 
         private T left;
+
         /// <summary>
         /// Value for the <c>Left</c> side.
         /// When changed raises PropertyChanged event.
@@ -37,6 +37,7 @@ namespace OpenRem.CommonUI
         }
 
         private T right;
+
         /// <summary>
         /// Value for the <c>Right</c> side.
         /// When changed raises PropertyChanged event.
@@ -98,6 +99,7 @@ namespace OpenRem.CommonUI
                 {
                     yield return Side.Left;
                 }
+
                 if (HasRight)
                 {
                     yield return Side.Right;

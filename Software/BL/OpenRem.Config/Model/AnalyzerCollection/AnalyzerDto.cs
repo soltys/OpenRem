@@ -1,4 +1,4 @@
-﻿namespace OpenRem.Config
+﻿namespace OpenRem.Config.Model.AnalyzerCollection
 {
     class AnalyzerDto
     {

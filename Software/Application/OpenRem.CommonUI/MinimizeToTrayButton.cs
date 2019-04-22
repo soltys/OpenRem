@@ -53,7 +53,8 @@ namespace OpenRem.CommonUI
         }
 
         public static readonly DependencyProperty TrayContextMenuProperty = DependencyProperty.Register(
-            "TrayContextMenu", typeof(FrameworkElement), typeof(MinimizeToTrayButton), new PropertyMetadata(default(FrameworkElement)));
+            "TrayContextMenu", typeof(FrameworkElement), typeof(MinimizeToTrayButton),
+            new PropertyMetadata(default(FrameworkElement)));
 
         public FrameworkElement TrayContextMenu
         {

@@ -19,10 +19,13 @@ namespace OpenRem.CommonUI
     public class UICollection<T> : ObservableCollection<T>
     {
         #region Constructors
+
         /// <summary>
         /// Initializes a new instance.
         /// </summary>
-        public UICollection() { }
+        public UICollection()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance that contains elements copied from the specified collection.
@@ -31,10 +34,14 @@ namespace OpenRem.CommonUI
         /// <exception cref="System.ArgumentNullException">
         /// The collection parameter cannot be null.
         /// </exception>
-        public UICollection(IEnumerable<T> collection) : base(collection) { }
+        public UICollection(IEnumerable<T> collection) : base(collection)
+        {
+        }
+
         #endregion Constructors
 
         #region Public methods
+
         /// <summary>
         /// Adds the elements of the specified range to the end of the collection
         /// </summary>
@@ -49,6 +56,7 @@ namespace OpenRem.CommonUI
             {
                 Items.Add(item);
             }
+
             FireChangedEvents(toAddList, new List<T>());
         }
 
@@ -81,13 +89,16 @@ namespace OpenRem.CommonUI
             {
                 Items.Add(item);
             }
+
             FireChangedEvents(toAddList, toRemoveList);
         }
+
         #endregion Public methods
 
         #region CollectionChanged event overrride
 
         public override event NotifyCollectionChangedEventHandler CollectionChanged;
+
         protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
         {
             var handlers = CollectionChanged;
@@ -110,6 +121,7 @@ namespace OpenRem.CommonUI
         #endregion
 
         #region Private helpers
+
         /// <summary>
         /// Fires events informing that the whole collection is changed.
         /// </summary>
@@ -121,6 +133,7 @@ namespace OpenRem.CommonUI
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(
                 NotifyCollectionChangedAction.Replace, newItems, oldItems));
         }
+
         #endregion Private helpers
     }
 }

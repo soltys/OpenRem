@@ -7,7 +7,7 @@ namespace OpenRem.Service.Client
 {
     class RawFileRecorderClient : RpcClient<RawFileRecorder.RawFileRecorderClient>, IRawFileRecorder
     {
-        public RawFileRecorderClient(IChannelProvider channelProvider):base (channelProvider)
+        public RawFileRecorderClient(IChannelProvider channelProvider) : base(channelProvider)
         {
             this.Client = new RawFileRecorder.RawFileRecorderClient(this.Channel);
         }
@@ -21,9 +21,9 @@ namespace OpenRem.Service.Client
             });
         }
 
-        public async Task  StopAsync()
+        public async Task StopAsync()
         {
-           await this.Client.StopAsync(new EmptyRequest());
+            await this.Client.StopAsync(new EmptyRequest());
         }
     }
 }

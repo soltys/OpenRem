@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Primitives;
 
-namespace OpenRem.Config
+namespace OpenRem.Config.Infrastructure
 {
     class BusinessLogicConfigurationAdapter : IBusinessLogicConfiguration
     {

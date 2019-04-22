@@ -41,13 +41,13 @@ namespace OpenRem.CommonUI
         /// </summary>
         public ICommand Command
         {
-            get { return (ICommand)GetValue(CommandBehavior.CommandProperty); }
+            get { return (ICommand) GetValue(CommandBehavior.CommandProperty); }
             set { SetValue(CommandBehavior.CommandProperty, value); }
         }
 
         private static void OnCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var cmdBehavior = (CommandBehavior)d;
+            var cmdBehavior = (CommandBehavior) d;
             cmdBehavior.UnsubscribeCommandEvent(e.OldValue as ICommand);
             cmdBehavior.SubscribeCommandEvent(e.NewValue as ICommand);
         }
@@ -111,7 +111,8 @@ namespace OpenRem.CommonUI
             }
             else
             {
-                WeakEventManager<FrameworkElement, MouseButtonEventArgs>.RemoveHandler(AssociatedObject, "MouseUp", OnMouseUp);
+                WeakEventManager<FrameworkElement, MouseButtonEventArgs>.RemoveHandler(AssociatedObject, "MouseUp",
+                    OnMouseUp);
             }
         }
 
@@ -129,7 +130,8 @@ namespace OpenRem.CommonUI
             }
             else
             {
-                WeakEventManager<FrameworkElement, MouseButtonEventArgs>.AddHandler(AssociatedObject, "MouseUp", OnMouseUp);
+                WeakEventManager<FrameworkElement, MouseButtonEventArgs>.AddHandler(AssociatedObject, "MouseUp",
+                    OnMouseUp);
             }
         }
 

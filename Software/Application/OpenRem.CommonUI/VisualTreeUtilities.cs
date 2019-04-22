@@ -16,7 +16,8 @@ namespace OpenRem.CommonUI
         /// <param name="parent">Visual tree root object to start the search from</param>
         /// <param name="deepSearch">Indicates whether the method should search also inside the returned childeren</param>
         /// <returns>IEnumerable of type T that have the indicated name</returns>
-        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject parent, bool deepSearch = true) where T : FrameworkElement
+        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject parent, bool deepSearch = true)
+            where T : FrameworkElement
         {
             return FindVisualChildrenRecursive<T>(parent, null, true, deepSearch);
         }
@@ -28,12 +29,15 @@ namespace OpenRem.CommonUI
         /// <param name="parent">Visual tree root object to start the search from</param>
         /// <param name="childName">Name of the control(s) to search for</param>
         /// <returns>IEnumerable of type T that have the indicated name</returns>
-        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject parent, string childName) where T : FrameworkElement
+        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject parent, string childName)
+            where T : FrameworkElement
         {
             if (String.IsNullOrEmpty(childName))
             {
-                throw new ArgumentNullException(nameof(childName), "childName must specify a valid framework element name");
+                throw new ArgumentNullException(nameof(childName),
+                    "childName must specify a valid framework element name");
             }
+
             return FindVisualChildrenRecursive<T>(parent, childName, true);
         }
 
@@ -47,8 +51,10 @@ namespace OpenRem.CommonUI
         {
             if (String.IsNullOrEmpty(childName))
             {
-                throw new ArgumentNullException(nameof(childName), "childName must contain a valid framework element name");
+                throw new ArgumentNullException(nameof(childName),
+                    "childName must contain a valid framework element name");
             }
+
             return FindVisualChildrenRecursive<FrameworkElement>(parent, childName, false);
         }
 
@@ -58,11 +64,12 @@ namespace OpenRem.CommonUI
         /// <typeparam name="T">The type of element to find.</typeparam>
         /// <param name="parent">The parent element.</param>
         /// <returns>The first occurance of a child of the indicated type</returns>
-        public static T FindVisualChild<T>(DependencyObject parent, Func<DependencyObject, bool> filter = null) where T : DependencyObject
+        public static T FindVisualChild<T>(DependencyObject parent, Func<DependencyObject, bool> filter = null)
+            where T : DependencyObject
         {
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
             {
-                var child = (Visual)VisualTreeHelper.GetChild(parent, i);
+                var child = (Visual) VisualTreeHelper.GetChild(parent, i);
                 if (child != null)
                 {
                     T correctlyTyped = child as T;
@@ -72,6 +79,7 @@ namespace OpenRem.CommonUI
                         {
                             return correctlyTyped;
                         }
+
                         if (filter == null)
                         {
                             return correctlyTyped;
@@ -85,6 +93,7 @@ namespace OpenRem.CommonUI
                         {
                             return descendent;
                         }
+
                         if (filter == null)
                         {
                             return descendent;
@@ -114,7 +123,8 @@ namespace OpenRem.CommonUI
         /// <typeparam name="T">the type of the visual parent we are looking for</typeparam>
         /// <param name="child">the child item whose parent we are trying to find</param>
         /// <returns>the visual parent of the indicated type that is the closest ancestor of the item, or null if there is no such parent.</returns>
-        public static T FindVisualParent<T>(DependencyObject child, Func<DependencyObject, bool> filter = null) where T : DependencyObject
+        public static T FindVisualParent<T>(DependencyObject child, Func<DependencyObject, bool> filter = null)
+            where T : DependencyObject
         {
             var parentObject = VisualTreeHelper.GetParent(child);
             if (parentObject == null)
@@ -125,6 +135,7 @@ namespace OpenRem.CommonUI
             {
                 return parent ?? FindVisualParent<T>(parentObject);
             }
+
             return parent != null && filter(parent) ? parent : FindVisualParent<T>(parentObject, filter);
         }
 
@@ -142,10 +153,12 @@ namespace OpenRem.CommonUI
             {
                 return null;
             }
+
             if (parentObject.Name == name)
             {
                 return parentObject;
             }
+
             return FindVisualParent<T>(parentObject, name);
         }
 
@@ -167,7 +180,6 @@ namespace OpenRem.CommonUI
         }
 
 
-
         /// <summary>
         /// FindChildrenRecursive does the actual recursive search of the visual tree for children with the indicated name and possibly type.
         /// </summary>
@@ -177,9 +189,11 @@ namespace OpenRem.CommonUI
         /// <param name="checkType">True to enforce the constraint that the children are of the indicated type, false otherwise</param>
         /// <param name="deepSearch">Indicates whether the method should search also inside the returned childeren</param>
         /// <returns>IEnumerable of type T that match the name</returns>
-        private static IEnumerable<T> FindVisualChildrenRecursive<T>(DependencyObject parent, string childName, bool checkType, bool deepSearch = true) where T : FrameworkElement
+        private static IEnumerable<T> FindVisualChildrenRecursive<T>(DependencyObject parent, string childName,
+            bool checkType, bool deepSearch = true) where T : FrameworkElement
         {
-            Debug.Assert(checkType || typeof(T) == typeof(FrameworkElement), "If you don't want to check the type, you must specify 'FrameworkElement' as the T parameter.");
+            Debug.Assert(checkType || typeof(T) == typeof(FrameworkElement),
+                "If you don't want to check the type, you must specify 'FrameworkElement' as the T parameter.");
 
             if (parent != null)
             {
@@ -191,12 +205,13 @@ namespace OpenRem.CommonUI
                     {
                         continue;
                     }
+
                     // If the child is the requested child type (or we are ignoring the child type), see if it has the desired name.
                     if (child is T || !checkType)
                     {
                         if (childName == null || child.Name == childName)
                         {
-                            yield return (T)child;
+                            yield return (T) child;
                             if (!deepSearch)
                             {
                                 continue;

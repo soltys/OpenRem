@@ -18,7 +18,7 @@ namespace OpenRem.CommonUI
                 return DependencyProperty.UnsetValue;
             }
 
-            var booleanValue = (bool)value;
+            var booleanValue = (bool) value;
 
 
             return booleanValue ? TrueValue : FalseValue;

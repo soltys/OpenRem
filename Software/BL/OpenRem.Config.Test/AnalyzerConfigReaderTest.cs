@@ -2,6 +2,8 @@
 using Moq;
 using NUnit.Framework;
 using OpenRem.Common;
+using OpenRem.Config.Infrastructure;
+using OpenRem.Config.Reader;
 
 namespace OpenRem.Config.Test
 {
@@ -20,7 +22,6 @@ namespace OpenRem.Config.Test
 
             Assert.IsNotNull(config);
             Assert.AreEqual(configName, config.Name);
-
         }
     }
 }

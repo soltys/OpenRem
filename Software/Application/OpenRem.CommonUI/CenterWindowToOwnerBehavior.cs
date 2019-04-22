@@ -30,9 +30,10 @@ namespace OpenRem.CommonUI
     public class FlipVerticalyBasedOnMousePostion : Behavior<UIElement>
     {
         private ScaleTransform scaleTransform;
+
         protected override void OnAttached()
         {
-            AssociatedObject.RenderTransformOrigin = new Point(0.5,0.5);
+            AssociatedObject.RenderTransformOrigin = new Point(0.5, 0.5);
             this.scaleTransform = new ScaleTransform(1, 1, 0, 0);
             AssociatedObject.RenderTransform = this.scaleTransform;
             base.OnAttached();
@@ -49,7 +50,7 @@ namespace OpenRem.CommonUI
         {
             var windowWidth = Application.Current.MainWindow.Width;
             var position = e.GetPosition(Application.Current.MainWindow);
-            if (position.X > windowWidth/2)
+            if (position.X > windowWidth / 2)
             {
                 this.scaleTransform.ScaleX = -1;
             }

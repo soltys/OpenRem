@@ -1,8 +1,8 @@
 ﻿using System;
 using Autofac;
 using OpenRem.Common.Application.Autofac;
-using OpenRem.Service.Interface;
 using OpenRem.Service.Protocol;
+using OpenRem.Service.Server;
 
 namespace OpenRem.Service.Application
 {
@@ -15,7 +15,8 @@ namespace OpenRem.Service.Application
             var serviceWrapper = container.Resolve<IEngineServiceHost>();
             serviceWrapper.Start();
 
-            Console.WriteLine($"Running OpenRem service on {ServiceConfig.HostName}:{ServiceConfig.ServicePort}. Press Enter to close...");
+            Console.WriteLine(
+                $"Running OpenRem service on {serviceWrapper.HostName}:{serviceWrapper.Port}. Press Enter to close...");
             Console.ReadLine();
 
             serviceWrapper.StopAsync();

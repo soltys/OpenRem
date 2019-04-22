@@ -14,7 +14,8 @@ namespace OpenRem.Engine
         private readonly IArduinoFactory arduinoFactory;
         private readonly IAnalyzerConfigReader analyzerConfigReader;
 
-        public AnalyzerCollection(IEmulatorFactory emulatorFactory, IArduinoFactory arduinoFactory, IAnalyzerConfigReader analyzerConfigReader)
+        public AnalyzerCollection(IEmulatorFactory emulatorFactory, IArduinoFactory arduinoFactory,
+            IAnalyzerConfigReader analyzerConfigReader)
         {
             this.emulatorFactory = emulatorFactory;
             this.arduinoFactory = arduinoFactory;
@@ -36,7 +37,7 @@ namespace OpenRem.Engine
                     Factory = () => this.arduinoFactory.Create(arduinoDevice.ComPort, arduinoType),
                     AnalyzerConfig = this.analyzerConfigReader.GetConfig(arduinoType.ToString())
                 });
-           
+
             return guid;
         }
 

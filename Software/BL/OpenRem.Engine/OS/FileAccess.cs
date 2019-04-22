@@ -10,6 +10,7 @@ namespace OpenRem.Engine.OS
             {
                 File.Delete(fileName);
             }
+
             return new FileStream(fileName, FileMode.CreateNew);
         }
     }

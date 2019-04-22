@@ -19,6 +19,7 @@ namespace OpenRem.CommonUI
             {
                 return TextWrapping.Wrap;
             }
+
             return TextWrapping.NoWrap;
         }
 
@@ -30,10 +31,11 @@ namespace OpenRem.CommonUI
                 return DependencyProperty.UnsetValue;
             }
 
-            if ((TextWrapping)value == TextWrapping.NoWrap)
+            if ((TextWrapping) value == TextWrapping.NoWrap)
             {
                 return false;
             }
+
             return true;
         }
     }

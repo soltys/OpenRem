@@ -69,13 +69,13 @@ namespace OpenRem.Arduino
 
         private void SendStartMessage()
         {
-            var message = new byte[] { 1 };
+            var message = new byte[] {1};
             this.serialPort.Write(message, 0, message.Length);
         }
 
         private void SendStopMessage()
         {
-            var message = new byte[] { 0 };
+            var message = new byte[] {0};
             this.serialPort.Write(message, 0, message.Length);
         }
     }

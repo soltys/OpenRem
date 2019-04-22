@@ -22,13 +22,13 @@ namespace OpenRem.CommonUI
 
         public object Target
         {
-            get { return (object)GetValue(DoubleClickToClipboardBehavior.TargetProperty); }
+            get { return (object) GetValue(DoubleClickToClipboardBehavior.TargetProperty); }
             set { SetValue(DoubleClickToClipboardBehavior.TargetProperty, value); }
         }
 
-       public static readonly DependencyProperty TargetProperty =
-            DependencyProperty.Register("Target", typeof(object), typeof(DoubleClickToClipboardBehavior), new PropertyMetadata(null));
-
+        public static readonly DependencyProperty TargetProperty =
+            DependencyProperty.Register("Target", typeof(object), typeof(DoubleClickToClipboardBehavior),
+                new PropertyMetadata(null));
 
 
         private void OnMouseLeftDown(object sender, MouseButtonEventArgs e)

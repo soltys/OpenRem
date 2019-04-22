@@ -9,7 +9,7 @@ namespace OpenRem.Common.Config
         public static IEnumerable<T> BindAll<T>(this IConfiguration config, string sectionName) where T : class, new()
         {
             var entries = config.GetSection(sectionName)
-                                 .GetChildren();
+                .GetChildren();
 
             var dtos = new List<T>(entries.Count());
             foreach (var entry in entries)

@@ -25,6 +25,7 @@ namespace OpenRem.Engine
                 {
                     continue;
                 }
+
                 Regex nameRegex = new Regex(@"([\w ]+) \((COM\d+)\)");
                 var match = nameRegex.Match(deviceName);
                 if (match.Success)
@@ -37,7 +38,6 @@ namespace OpenRem.Engine
                         }
                     );
                 }
-
             }
 
             return recognizedDevices.ToArray();

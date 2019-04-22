@@ -7,7 +7,8 @@ namespace OpenRem.Engine
 {
     public static class ObservableExtensions
     {
-        public static IObservable<AudioSample> GetSample(this IObservable<byte> observable, PcmEncoding encoding, int channelsCount)
+        public static IObservable<AudioSample> GetSample(this IObservable<byte> observable, PcmEncoding encoding,
+            int channelsCount)
         {
             int bytesPerSide = PcmEncodingHelper.ToByteLength(encoding);
             int bufferSize = bytesPerSide * channelsCount;
@@ -21,7 +22,7 @@ namespace OpenRem.Engine
 
         public static IObservable<AudioSample> ChannelSample(this IObservable<AudioSample> observable, int channel)
         {
-            if (channel < 0  || channel > 1  )
+            if (channel < 0 || channel > 1)
             {
                 throw new InvalidOperationException("Currently not supported channel higher than two");
             }

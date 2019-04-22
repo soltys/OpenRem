@@ -10,17 +10,23 @@ namespace OpenRem.CommonUI
     {
         public object TitlePlaceableContent
         {
-            get => (object)GetValue(MyWindow.TitlePlaceableContentProperty);
+            get => (object) GetValue(MyWindow.TitlePlaceableContentProperty);
             set => SetValue(MyWindow.TitlePlaceableContentProperty, value);
         }
-        public static readonly DependencyProperty TitlePlaceableContentProperty = DependencyProperty.Register("TitlePlaceableContent", typeof(object), typeof(MyWindow), new PropertyMetadata(null));
+
+        public static readonly DependencyProperty TitlePlaceableContentProperty =
+            DependencyProperty.Register("TitlePlaceableContent", typeof(object), typeof(MyWindow),
+                new PropertyMetadata(null));
 
         protected MyWindow()
         {
             CommandBindings.Add(new CommandBinding(SystemCommands.CloseWindowCommand, OnCloseWindow));
-            CommandBindings.Add(new CommandBinding(SystemCommands.MaximizeWindowCommand, OnMaximizeWindow, OnCanResizeWindow));
-            CommandBindings.Add(new CommandBinding(SystemCommands.MinimizeWindowCommand, OnMinimizeWindow, OnCanMinimizeWindow));
-            CommandBindings.Add(new CommandBinding(SystemCommands.RestoreWindowCommand, OnRestoreWindow, OnCanResizeWindow));
+            CommandBindings.Add(new CommandBinding(SystemCommands.MaximizeWindowCommand, OnMaximizeWindow,
+                OnCanResizeWindow));
+            CommandBindings.Add(new CommandBinding(SystemCommands.MinimizeWindowCommand, OnMinimizeWindow,
+                OnCanMinimizeWindow));
+            CommandBindings.Add(new CommandBinding(SystemCommands.RestoreWindowCommand, OnRestoreWindow,
+                OnCanResizeWindow));
             Loaded += OnWindowLoaded;
         }
 
@@ -32,7 +38,8 @@ namespace OpenRem.CommonUI
 
         private void OnCanResizeWindow(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = (ResizeMode == ResizeMode.CanResize || ResizeMode == ResizeMode.CanResizeWithGrip) && Owner == null;
+            e.CanExecute = (ResizeMode == ResizeMode.CanResize || ResizeMode == ResizeMode.CanResizeWithGrip) &&
+                           Owner == null;
         }
 
         private void OnCanMinimizeWindow(object sender, CanExecuteRoutedEventArgs e)
@@ -64,6 +71,7 @@ namespace OpenRem.CommonUI
         {
             [DllImport("user32")]
             internal static extern bool GetMonitorInfo(IntPtr hMonitor, MONITORINFO lpmi);
+
             [DllImport("user32")]
             internal static extern IntPtr MonitorFromWindow(IntPtr handle, int flags);
 
@@ -90,7 +98,12 @@ namespace OpenRem.CommonUI
             {
                 public int x;
                 public int y;
-                public POINT(int x, int y) { this.x = x; this.y = y; }
+
+                public POINT(int x, int y)
+                {
+                    this.x = x;
+                    this.y = y;
+                }
             }
 
             [StructLayout(LayoutKind.Sequential)]
@@ -122,9 +135,9 @@ namespace OpenRem.CommonUI
         {
             switch (msg)
             {
-                case 0x0024:    // WM_GETMINMAXINFO
+                case 0x0024: // WM_GETMINMAXINFO
                     NativeMethods.MINMAXINFO mmi =
-                            (NativeMethods.MINMAXINFO)Marshal.PtrToStructure(lParam, typeof(NativeMethods.MINMAXINFO));
+                        (NativeMethods.MINMAXINFO) Marshal.PtrToStructure(lParam, typeof(NativeMethods.MINMAXINFO));
 
                     // Adjust the maximized size and position
                     // to fit the work area of the correct monitor
@@ -133,7 +146,6 @@ namespace OpenRem.CommonUI
 
                     if (monitor != IntPtr.Zero)
                     {
-
                         NativeMethods.MONITORINFO monitorInfo = new NativeMethods.MONITORINFO();
                         NativeMethods.GetMonitorInfo(monitor, monitorInfo);
                         NativeMethods.RECT rcWorkArea = monitorInfo.rcWork;
@@ -146,18 +158,19 @@ namespace OpenRem.CommonUI
                             Math.Abs(rcWorkArea.right - rcWorkArea.left);
                         mmi.ptMaxSize.y =
                             Math.Abs(rcWorkArea.bottom - rcWorkArea.top);
-                        mmi.ptMinTrackSize.x = (int)MinWidth;
-                        mmi.ptMinTrackSize.y = (int)MinHeight;
-
+                        mmi.ptMinTrackSize.x = (int) MinWidth;
+                        mmi.ptMinTrackSize.y = (int) MinHeight;
                     }
+
                     Marshal.StructureToPtr(mmi, lParam, true);
                     handled = true;
                     break;
             }
-            return (IntPtr)0;
+
+            return (IntPtr) 0;
         }
 
- 
+
         void OnWindowLoaded(object sender, RoutedEventArgs e)
         {
             HwndSource source = HwndSource.FromHwnd(new WindowInteropHelper(this).Handle);
@@ -183,6 +196,5 @@ namespace OpenRem.CommonUI
 
             return IntPtr.Zero;
         }
-
     }
 }

@@ -26,7 +26,7 @@ namespace OpenRem.Engine.Test
             });
             var possibleArduinoDevice = this.sut.GetArduinoDevices();
 
-            Assert.AreEqual(1,possibleArduinoDevice.Length);
+            Assert.AreEqual(1, possibleArduinoDevice.Length);
             Assert.AreEqual("Arduino Leonardo", possibleArduinoDevice[0].Name);
             Assert.AreEqual("COM10", possibleArduinoDevice[0].ComPort);
         }

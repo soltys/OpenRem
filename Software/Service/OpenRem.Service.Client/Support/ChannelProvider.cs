@@ -1,13 +1,19 @@
 ﻿using Grpc.Core;
-using OpenRem.Service.Protocol;
 
 namespace OpenRem.Service.Client
 {
-    class ChannelProvider: IChannelProvider
+    class ChannelProvider : IChannelProvider
     {
+        private ServiceConfig config;
+
+        public ChannelProvider(ServiceConfig config)
+        {
+            this.config = config;
+        }
+
         public Channel GetChannel()
         {
-            return new Channel(ServiceConfig.HostName, ServiceConfig.ServicePort, ChannelCredentials.Insecure);
+            return new Channel(this.config.HostName, this.config.ServicePort, ChannelCredentials.Insecure);
         }
     }
 }

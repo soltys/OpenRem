@@ -31,11 +31,11 @@ namespace OpenRem.Engine.Test
             const string sampleName = "emulator.raw";
             this.embeddedSampleMock.Setup(x => x.GetSamples()).Returns(() => new[]
             {
-               sampleName
+                sampleName
             });
 
             var emulators = this.sut.GetEmulators();
-            
+
             Assert.AreEqual(1, emulators.Length);
             Assert.AreEqual(sampleName, emulators[0].SignalName);
             Assert.AreEqual(true, emulators[0].EmbeddedSignal);

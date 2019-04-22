@@ -100,7 +100,8 @@ namespace OpenRem.CommonUI
         {
             this.timer.Tick -= OnTick;
             this.timer.Stop();
-            Dispatcher.BeginInvoke(new Action(() => { InvokeActions(SizeChange.Finished); }), DispatcherPriority.Background);
+            Dispatcher.BeginInvoke(new Action(() => { InvokeActions(SizeChange.Finished); }),
+                DispatcherPriority.Background);
         }
 
         private void UnsubscribeFromWindowEvents()

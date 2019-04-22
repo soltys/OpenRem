@@ -8,9 +8,10 @@ namespace OpenRem.Engine.Test
         [TestCase(PcmEncoding.PCM32Bit, 32)]
         [TestCase(PcmEncoding.PCM16Bit, 16)]
         [TestCase(PcmEncoding.PCM8Bit, 8)]
-        public void PcmEncoding_IsConvertibleToInt_WithExpectedValues_HowManyBytesPerSample(PcmEncoding encoding, int expectedValue)
+        public void PcmEncoding_IsConvertibleToInt_WithExpectedValues_HowManyBytesPerSample(PcmEncoding encoding,
+            int expectedValue)
         {
-            Assert.AreEqual(expectedValue, (int)encoding);
+            Assert.AreEqual(expectedValue, (int) encoding);
         }
 
         [TestCase(PcmEncoding.PCM32Bit, 4)]

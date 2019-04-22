@@ -10,13 +10,15 @@ namespace OpenRem.CommonUI
             typeof(ToggleButtonExtensions),
             new FrameworkPropertyMetadata("")
         );
+
         public static void SetCheckedContent(DependencyObject element, string value)
         {
             element.SetValue(ToggleButtonExtensions.CheckedContentProperty, value);
         }
+
         public static string GetCheckedContent(DependencyObject element)
         {
-            return (string)element.GetValue(ToggleButtonExtensions.CheckedContentProperty);
+            return (string) element.GetValue(ToggleButtonExtensions.CheckedContentProperty);
         }
 
         public static readonly DependencyProperty UncheckedContentProperty = DependencyProperty.RegisterAttached(
@@ -25,13 +27,15 @@ namespace OpenRem.CommonUI
             typeof(ToggleButtonExtensions),
             new FrameworkPropertyMetadata("")
         );
+
         public static void SetUncheckedContent(DependencyObject element, string value)
         {
             element.SetValue(ToggleButtonExtensions.UncheckedContentProperty, value);
         }
+
         public static string GetUncheckedContent(DependencyObject element)
         {
-            return (string)element.GetValue(ToggleButtonExtensions.UncheckedContentProperty);
+            return (string) element.GetValue(ToggleButtonExtensions.UncheckedContentProperty);
         }
     }
 }
