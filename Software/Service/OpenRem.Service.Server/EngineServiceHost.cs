@@ -12,14 +12,21 @@ namespace OpenRem.Service
     {
         private Server server;
         private ILifetimeScope scope;
+        private readonly ServiceConfig config;
 
         public EngineServiceHost(ILifetimeScope scope)
         {
             this.scope = scope;
+            this.config = this.scope.Resolve<ServiceConfig>();
         }
+
+        public string HostName => this.config.HostName;
+
+        public int Port => this.config.ServicePort;
 
         public void Start()
         {
+            
             this.server = new Server
             {
                 Services =
@@ -27,7 +34,7 @@ namespace OpenRem.Service
                     DetectManager.BindService(new DetectManagerImpl(this.scope.Resolve<IDetectManager>())),
                     RawFileRecorder.BindService(new RawFileRecorderImpl(this.scope.Resolve<IRawFileRecorder>()))
                 },
-                Ports = { new ServerPort(ServiceConfig.HostName, ServiceConfig.ServicePort, ServerCredentials.Insecure) }
+                Ports = { new ServerPort(config.HostName, config.ServicePort, ServerCredentials.Insecure) }
             };
             this.server.Start();
         }

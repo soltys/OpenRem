@@ -17,6 +17,7 @@
     <ProjectReference Include="..\..\BL\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common.Application\OpenRem.Common.Application.csproj" />
     <ProjectReference Include="..\..\Service\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj" />
+    <ProjectReference Include="..\OpenRem.Service.Config.Interface\OpenRem.Service.Config.Interface.csproj" />
   </ItemGroup>
 
 </Project>

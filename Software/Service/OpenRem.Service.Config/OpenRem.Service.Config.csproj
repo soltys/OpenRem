@@ -4,6 +4,7 @@
     <AssemblyTitle>OpenRem.Config</AssemblyTitle>
     <Product>OpenRem.Config</Product>
     <Copyright>Copyright ©  2019</Copyright>
+     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\_Result\</OutputPath>
@@ -26,11 +27,14 @@
     <ProjectReference Include="..\..\Common\OpenRem.Common.Config\OpenRem.Common.Config.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
-    <ProjectReference Include="..\OpenRem.Application.Config.Interface\OpenRem.Application.Config.Interface.csproj" />
+    <ProjectReference Include="..\OpenRem.Service.Config.Interface\OpenRem.Service.Config.Interface.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Config\ApplicationConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Config\ServiceConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>  
 </Project>

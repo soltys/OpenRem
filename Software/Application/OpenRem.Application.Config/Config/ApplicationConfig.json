@@ -1,9 +1,5 @@
 {
     "BootstrapperConfig": {
         "LayerSeparation": "SelfHostedService"
-    },
-    "ServiceConfig": {
-        "HostName": "localhost",
-        "Port": 321
     }
 }

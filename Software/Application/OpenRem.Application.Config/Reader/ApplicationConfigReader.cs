@@ -16,12 +16,5 @@ namespace OpenRem.Config
             configuration.Bind("BootstrapperConfig", dto);
             return dto;
         }
-
-        public ServiceConfig GetServiceConfig()
-        {
-            var dto = new ServiceConfig();
-            this.configuration.Bind("ServiceConfig", dto);
-            return dto;
-        }
     }
 }

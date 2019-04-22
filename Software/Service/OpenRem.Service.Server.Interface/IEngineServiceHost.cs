@@ -6,5 +6,8 @@ namespace OpenRem.Service.Interface
     {
         void Start();
         Task StopAsync();
+
+        string HostName { get; }
+        int Port { get; }
     }
 }

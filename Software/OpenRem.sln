@@ -80,6 +80,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Application.Config.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Config.Interface", "BL\OpenRem.Config.Interface\OpenRem.Config.Interface.csproj", "{3D6F210D-9F10-4435-A505-EA4E02451665}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{B577F716-17AA-4B62-9DBE-25402F2AADB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Config", "Service\OpenRem.Service.Config\OpenRem.Service.Config.csproj", "{86D983CA-DDB1-429B-9FCC-520A261294FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Config.Interface", "Service\OpenRem.Service.Config.Interface\OpenRem.Service.Config.Interface.csproj", "{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Config.Test", "Service\OpenRem.Service.Config.Test\OpenRem.Service.Config.Test.csproj", "{9E71393A-4575-41BA-B5E9-877FFE05852C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +263,24 @@ Global
 		{3D6F210D-9F10-4435-A505-EA4E02451665}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D6F210D-9F10-4435-A505-EA4E02451665}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D6F210D-9F10-4435-A505-EA4E02451665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D983CA-DDB1-429B-9FCC-520A261294FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D983CA-DDB1-429B-9FCC-520A261294FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D983CA-DDB1-429B-9FCC-520A261294FE}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D983CA-DDB1-429B-9FCC-520A261294FE}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D983CA-DDB1-429B-9FCC-520A261294FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D983CA-DDB1-429B-9FCC-520A261294FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -292,6 +318,10 @@ Global
 		{B45CB392-889F-4373-9F53-72F9051ADDA2} = {34CBB0FF-073E-4166-AAF2-E35C328085A7}
 		{4D9B8BC1-A2B0-457C-BD60-18B599831D59} = {34CBB0FF-073E-4166-AAF2-E35C328085A7}
 		{3D6F210D-9F10-4435-A505-EA4E02451665} = {F74C8612-4E18-4DB6-801E-F04D8B4032B2}
+		{B577F716-17AA-4B62-9DBE-25402F2AADB2} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
+		{86D983CA-DDB1-429B-9FCC-520A261294FE} = {B577F716-17AA-4B62-9DBE-25402F2AADB2}
+		{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96} = {B577F716-17AA-4B62-9DBE-25402F2AADB2}
+		{9E71393A-4575-41BA-B5E9-877FFE05852C} = {B577F716-17AA-4B62-9DBE-25402F2AADB2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AB9D05F-298B-4588-B2E0-9DAE6B079977}

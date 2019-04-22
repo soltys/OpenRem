@@ -3,6 +3,5 @@
     public interface IApplicationConfigReader
     {
         BootstraperConfig GetBootstraperConfig();
-        ServiceConfig GetServiceConfig();
     }
 }

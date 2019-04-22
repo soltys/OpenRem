@@ -9,6 +9,7 @@ namespace OpenRem.Service.Client
         {
             var dataAccess = Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(dataAccess).AsImplementedInterfaces();
+            builder.RegisterType<ServiceConfig>().AsSelf().SingleInstance();
         }
     }
 }
