@@ -16,7 +16,7 @@ namespace OpenRem.Config.Reader
 
         public AnalyzerConfig GetConfig(string name)
         {
-            var dtos = configuration.BindAll<AnalyzerDto>("AnalyzerCollection");
+            var dtos = this.configuration.BindAll<AnalyzerDto>("AnalyzerCollection");
 
             var dto = dtos.FirstOrDefault(x => x.Name == name);
             if (dto == null)

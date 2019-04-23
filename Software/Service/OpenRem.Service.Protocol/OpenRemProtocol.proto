@@ -2,19 +2,25 @@ syntax = "proto3";
 
 package OpenRem.Service.Protocol;
 
+// Service for Detect Manger
 service DetectManager {
 	// Get Analyzers
 	rpc GetAnalyzers (EmptyRequest) returns (GetAnalyzerResponse) {}
 }
 
+// Service for RawFileRecorder
 service RawFileRecorder {
+    // Starts recording raw file
 	rpc Start (StartRecordingRequest) returns (EmptyResponse) {}
+    // Stops recording raw file
 	rpc Stop (EmptyRequest) returns (EmptyResponse) {}
 }
 
+// Empty request (parameterless)
 message EmptyRequest {	
 }
 
+// Empty Response (AKA void)
 message EmptyResponse {	
 }
 

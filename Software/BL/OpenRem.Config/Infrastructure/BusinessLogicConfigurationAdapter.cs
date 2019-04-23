@@ -15,8 +15,8 @@ namespace OpenRem.Config.Infrastructure
 
         public string this[string key]
         {
-            get => configuration[key];
-            set => configuration[key] = value;
+            get => this.configuration[key];
+            set => this.configuration[key] = value;
         }
 
         public IEnumerable<IConfigurationSection> GetChildren()

@@ -6,7 +6,8 @@ using OpenRem.Service.Protocol;
 
 namespace OpenRem.Service.Server
 {
-    class DetectManagerImpl : Protocol.DetectManager.DetectManagerBase
+    [ServiceImplementation(typeof(DetectManager))]
+    class DetectManagerImpl : DetectManager.DetectManagerBase
     {
         private IDetectManager real;
 
@@ -18,7 +19,7 @@ namespace OpenRem.Service.Server
         public override async Task<GetAnalyzerResponse> GetAnalyzers(EmptyRequest request, ServerCallContext context)
         {
             var analyzers = await this.real.GetAnalyzersAsync();
-
+            
             var response = new GetAnalyzerResponse();
             response.Analyzers.AddRange(analyzers.Select(x => new GetAnalyzerResponse.Types.AnalyzerDTO()
             {
