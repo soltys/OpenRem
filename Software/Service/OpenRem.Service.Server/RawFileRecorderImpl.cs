@@ -6,7 +6,8 @@ using OpenRem.Service.Protocol;
 
 namespace OpenRem.Service.Server
 {
-    class RawFileRecorderImpl : Protocol.RawFileRecorder.RawFileRecorderBase
+    [ServiceImplementation(typeof(RawFileRecorder))]
+    class RawFileRecorderImpl : RawFileRecorder.RawFileRecorderBase
     {
         private IRawFileRecorder real;
 

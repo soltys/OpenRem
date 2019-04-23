@@ -15,7 +15,7 @@ namespace OpenRem.Application.Config
         public BootstrapperConfig GetBootstrapperConfig()
         {
             var dto = new BootstrapperConfig();
-            configuration.Bind("BootstrapperConfig", dto);
+            this.configuration.Bind("BootstrapperConfig", dto);
             return dto;
         }
 

@@ -8,10 +8,10 @@ namespace OpenRem.Service.Server
 
         public ServiceConfig(IServiceConfigReader configReader)
         {
-            config = configReader.GetServiceConfig();
+            this.config = configReader.GetServiceConfig();
         }
 
-        public int ServicePort => config.Port;
-        public string HostName => config.HostName;
+        public int ServicePort => this.config.Port;
+        public string HostName => this.config.HostName;
     }
 }
