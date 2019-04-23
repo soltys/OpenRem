@@ -7,6 +7,7 @@
     <Company>DGS</Company>
     <Product>AsService</Product>
     <Copyright>Copyright © DGS 2019</Copyright>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>

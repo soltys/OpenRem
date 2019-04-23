@@ -6,6 +6,7 @@
     <Product>OpenRem.Service.Interface</Product>
     <Copyright>Copyright © DGS 2019</Copyright>
     <RootNamespace>OpenRem.Service.Server</RootNamespace>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\_Result\</OutputPath>

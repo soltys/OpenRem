@@ -4,7 +4,8 @@
     <AssemblyTitle>OpenRem.Config</AssemblyTitle>
     <Product>OpenRem.Config</Product>
     <Copyright>Copyright ©  2019</Copyright>
-     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\_Result\</OutputPath>

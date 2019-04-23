@@ -4,6 +4,7 @@
     <AssemblyTitle>OpenRem.Emulator.Test</AssemblyTitle>
     <Product>OpenRem.Emulator.Test</Product>
     <Copyright>Copyright ©  2019</Copyright>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
