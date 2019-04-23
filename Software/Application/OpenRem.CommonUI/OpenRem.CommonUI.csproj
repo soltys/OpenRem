@@ -6,7 +6,7 @@
     <AssemblyTitle>OpenRem.CommonUI</AssemblyTitle>
     <Product>OpenRem.CommonUI</Product>
     <Copyright>Copyright ©  2017</Copyright>
-        
+    <DebugType>Full</DebugType>
     <ExtrasEnableWpfProjectSetup>true</ExtrasEnableWpfProjectSetup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

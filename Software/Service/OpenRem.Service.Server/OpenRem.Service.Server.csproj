@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net471</TargetFramework>
-    <AssemblyTitle>OpenRem.Service</AssemblyTitle>
+    <AssemblyTitle>OpenRem.Service.Server</AssemblyTitle>
     <Company>DGS</Company>
     <Product>OpenRem.Service</Product>
     <Copyright>Copyright © DGS 2019</Copyright>
     <AssemblyName>OpenRem.Service.Server</AssemblyName>
     <RootNamespace>OpenRem.Service.Server</RootNamespace>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\_Result\</OutputPath>

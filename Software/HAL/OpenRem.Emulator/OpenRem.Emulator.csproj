@@ -4,7 +4,7 @@
     <AssemblyTitle>OpenRem.Emulator</AssemblyTitle>
     <Product>OpenRem.Emulator</Product>
     <Copyright>Copyright ©  2019</Copyright>
-        
+    <DebugType>Full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\_Result\</OutputPath>
