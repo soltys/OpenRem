@@ -19,18 +19,31 @@ namespace OpenRem.UI
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            var applicationContainer = AutofacConfiguration.BuildContainer(AssemblyFilter.OnlyApplicationLayer);
-            var csl = new AutofacServiceLocator(applicationContainer);
-            ServiceLocator.SetLocatorProvider(() => csl);
 
-            var serviceContainer = AutofacConfiguration.BuildContainer(AssemblyFilter.OnlyLogic);
-            this.serviceWrapper = serviceContainer.Resolve<IEngineServiceHost>();
-            this.serviceWrapper.Start();
+            Debugger.Launch();
+
+            var applicationContainer = Bootstraper.BuildContainer(AssemblyFilter.OnlyApplicationLayer);
+            var configReader = applicationContainer.Resolve<IApplicationConfigReader>();
+            var bootstrapperConfig = configReader.GetBootstrapperConfig();
+
+            if (bootstrapperConfig.LayerSeparation == LayerSeparation.Binary)
+            {
+                var container = Bootstraper.BuildContainer(AssemblyFilter.OmitServiceLayer);
+                ServiceLocator.SetLocatorProvider(() => new AutofacServiceLocator(container));
+                return;
+            }
+            else if (bootstrapperConfig.LayerSeparation == LayerSeparation.SelfHostedService)
+            {
+                ServiceLocator.SetLocatorProvider(() => new AutofacServiceLocator(applicationContainer));
+                var serviceContainer = Bootstraper.BuildContainer(AssemblyFilter.OnlyLogic);
+                this.serviceWrapper = serviceContainer.Resolve<IEngineServiceHost>();
+                this.serviceWrapper.Start();
+            }
         }
 
         protected override void OnExit(ExitEventArgs e)
         {
-            this.serviceWrapper.StopAsync();
+            this.serviceWrapper?.StopAsync();
 
             base.OnExit(e);
         }
