@@ -2,6 +2,6 @@
 {
     public class BootstrapperConfig
     {
-        public LayerSeparation LayerSeparation { get; set; }
+        public LogicSeparation LogicSeparation { get; set; }
     }
 }

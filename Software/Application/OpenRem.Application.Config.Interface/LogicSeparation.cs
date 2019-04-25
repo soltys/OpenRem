@@ -1,6 +1,6 @@
 ﻿namespace OpenRem.Config
 {
-    public enum LayerSeparation
+    public enum LogicSeparation
     {
         Unknown = 0,
         SelfHostedService,

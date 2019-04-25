@@ -1,6 +1,6 @@
 {
     "BootstrapperConfig": {
-        "LayerSeparation": "SelfHostedService"
+        "LogicSeparation": "SelfHostedService"
     },
 
     "ServiceConfig": {
