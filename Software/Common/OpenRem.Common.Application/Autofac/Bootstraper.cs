@@ -9,7 +9,7 @@ using OpenRem.Core;
 
 namespace OpenRem.Common.Application.Autofac
 {
-    public static class AutofacConfiguration
+    public static class Bootstraper
     {
         public static IContainer BuildContainer(AssemblyFilter assemblyFilter)
         {
@@ -29,7 +29,7 @@ namespace OpenRem.Common.Application.Autofac
         private static IEnumerable<string> GetAssemblyNames(string path)
         {
             List<string> assemblyNames = new List<string>();
-            foreach (var searchPattern in new[] {"OpenRem*.dll", "OpenRem*.exe"})
+            foreach (var searchPattern in new[] { "OpenRem*.dll", "OpenRem*.exe" })
             {
                 assemblyNames.AddRange(Directory.GetFiles(path, searchPattern, SearchOption.TopDirectoryOnly));
             }
@@ -49,11 +49,11 @@ namespace OpenRem.Common.Application.Autofac
 
             foreach (var assembly in assemblies)
             {
-                if (FilterAssembly(assemblyFilter, assembly)) continue;
+                if (OmitAssembly(assemblyFilter, assembly)) continue;
 
                 var modules = assembly.GetTypes()
                     .Where(p => typeof(IModule).IsAssignableFrom(p) && !p.IsAbstract)
-                    .Select(p => (IModule) Activator.CreateInstance(p));
+                    .Select(p => (IModule)Activator.CreateInstance(p));
 
                 foreach (var module in modules)
                 {
@@ -62,12 +62,21 @@ namespace OpenRem.Common.Application.Autofac
             }
         }
 
-        private static bool FilterAssembly(AssemblyFilter assemblyFilter, Assembly assembly)
+        private static bool OmitAssembly(AssemblyFilter assemblyFilter, Assembly assembly)
         {
             if (assemblyFilter != AssemblyFilter.Everything)
             {
-                var attributes = assembly.GetCustomAttributes<ApplicationLayerAttribute>().ToArray();
-                if (attributes.Length > 0)
+                if (assemblyFilter == AssemblyFilter.OmitServiceLayer)
+                {
+                    var serviceLayerAttribute = assembly.GetCustomAttribute<ServiceLayerAttribute>();
+                    if (serviceLayerAttribute != null)
+                    {
+                        return true;
+                    }
+                }
+
+                var attribute = assembly.GetCustomAttribute<ApplicationLayerAttribute>();
+                if (attribute != null)
                 {
                     if (assemblyFilter == AssemblyFilter.OnlyLogic)
                     {

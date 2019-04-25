@@ -10,7 +10,7 @@ namespace OpenRem.Service.Application
     {
         static void Main(string[] args)
         {
-            var container = AutofacConfiguration.BuildContainer(AssemblyFilter.OnlyLogic);
+            var container = Bootstraper.BuildContainer(AssemblyFilter.OnlyLogic);
 
             var serviceWrapper = container.Resolve<IEngineServiceHost>();
             serviceWrapper.Start();

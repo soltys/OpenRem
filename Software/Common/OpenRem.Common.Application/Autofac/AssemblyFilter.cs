@@ -4,6 +4,7 @@
     {
         Everything,
         OnlyApplicationLayer,
-        OnlyLogic
+        OnlyLogic,
+        OmitServiceLayer
     }
 }
