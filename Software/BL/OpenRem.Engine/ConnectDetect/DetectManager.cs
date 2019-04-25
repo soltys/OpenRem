@@ -22,7 +22,6 @@ namespace OpenRem.Engine
         {
             var analyzers = new List<Analyzer>();
 
-            this.analyzerCollection.Clear();
             var arduinoDevices = this.deviceFinder.GetArduinoDevices();
             foreach (var arduinoDevice in arduinoDevices)
             {
