@@ -11,7 +11,6 @@ namespace OpenRem.Engine
             var dataAccess = Assembly.GetExecutingAssembly();
 
             builder.RegisterType<DetectManager>().As<IDetectManager>();
-
             builder.RegisterAssemblyTypes(dataAccess).AsImplementedInterfaces();
             builder.RegisterAssemblyTypes(dataAccess).AsSelf();
 

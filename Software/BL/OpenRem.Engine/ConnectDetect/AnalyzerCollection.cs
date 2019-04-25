@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using OpenRem.Arduino;
 using OpenRem.Config;
 using OpenRem.Emulator;
@@ -8,7 +9,7 @@ namespace OpenRem.Engine
 {
     class AnalyzerCollection : IAnalyzerCollection
     {
-        private readonly Dictionary<Guid, AnalyzerData> inMemoryAnalyzers = new Dictionary<Guid, AnalyzerData>();
+        private readonly HashSet<AnalyzerData> inMemoryAnalyzers = new HashSet<AnalyzerData>();
 
         private readonly IEmulatorFactory emulatorFactory;
         private readonly IArduinoFactory arduinoFactory;
@@ -21,40 +22,52 @@ namespace OpenRem.Engine
             this.arduinoFactory = arduinoFactory;
             this.analyzerConfigReader = analyzerConfigReader;
         }
-
-        public void Clear()
-        {
-            this.inMemoryAnalyzers.Clear();
-        }
-
+        
         public Guid Add(ArduinoDevice arduinoDevice)
         {
+            var hardwareKey = new HardwareKey(arduinoDevice.Name + arduinoDevice.ComPort);
+
+            var alreadyExists = this.inMemoryAnalyzers.FirstOrDefault(x => x.HardwareKey.Equals(hardwareKey));
+            if (alreadyExists != null)
+            {
+                return alreadyExists.Id;
+            }
+
             var guid = Guid.NewGuid();
             var arduinoType = ArduinoNameParser.ToArduinoType(arduinoDevice.Name);
-            this.inMemoryAnalyzers.Add(guid,
-                new AnalyzerData()
-                {
-                    Factory = () => this.arduinoFactory.Create(arduinoDevice.ComPort, arduinoType),
-                    AnalyzerConfig = this.analyzerConfigReader.GetConfig(arduinoType.ToString())
-                });
+            var analyzerData = new AnalyzerData(guid, hardwareKey)
+            {
+                Factory = () => this.arduinoFactory.Create(arduinoDevice.ComPort, arduinoType),
+                AnalyzerConfig = this.analyzerConfigReader.GetConfig(arduinoType.ToString())
+            };
+            this.inMemoryAnalyzers.Add(analyzerData);
 
             return guid;
         }
 
         public Guid Add(Emulator emulator)
         {
-            var guid = Guid.NewGuid();
+            var hardwareKey = new HardwareKey("Emulator" + emulator.SignalName);
 
-            this.inMemoryAnalyzers.Add(guid,
-                new AnalyzerData()
-                {
-                    Factory = () => this.emulatorFactory.Create(emulator.SignalName),
-                    AnalyzerConfig = this.analyzerConfigReader.GetConfig("Emulator")
-                });
+            var alreadyExists = this.inMemoryAnalyzers.FirstOrDefault(x => x.HardwareKey.Equals(hardwareKey));
+            if (alreadyExists != null)
+            {
+                return alreadyExists.Id;
+            }
+
+
+            var guid = Guid.NewGuid();
+            var analyzerData = new AnalyzerData(guid, hardwareKey)
+            {
+                Factory = () => this.emulatorFactory.Create(emulator.SignalName),
+                AnalyzerConfig = this.analyzerConfigReader.GetConfig("Emulator")
+            };
+
+            this.inMemoryAnalyzers.Add(analyzerData);
 
             return guid;
         }
 
-        public AnalyzerData this[Guid guid] => this.inMemoryAnalyzers[guid];
+        public AnalyzerData this[Guid id]  => this.inMemoryAnalyzers.FirstOrDefault(x => x.Id == id);
     }
 }

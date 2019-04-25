@@ -46,7 +46,7 @@ namespace OpenRem.UI
         {
             LoadAnalyzers = new RelayCommand(async () =>
             {
-                Analyzers.AddRange(await this.detectManager.GetAnalyzersAsync());
+                Analyzers.Reset(await this.detectManager.GetAnalyzersAsync());
                 SelectedAnalyzer = Analyzers.FirstOrDefault();
             });
             SelectFile = new RelayCommand(ShowSaveFileDialog);
