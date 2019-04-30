@@ -4,8 +4,4 @@
     <TargetFramework>net471</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Gass.Service.Protocol\Gass.Service.Protocol.csproj" />
-  </ItemGroup>
-
 </Project>

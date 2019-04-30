@@ -1,8 +1,8 @@
 ﻿using Grpc.Core;
 
-namespace OpenRem.Service.Client
+namespace OpenRem.Common.Service
 {
-    internal class RpcClient<TRpcClient>
+    public class RpcClient<TRpcClient>
     {
         protected TRpcClient Client;
         protected readonly Channel Channel;

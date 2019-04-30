@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Grpc.Core;
+using OpenRem.Common.Service;
 using OpenRem.Engine;
 using OpenRem.Service.Protocol;
 

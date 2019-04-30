@@ -8,8 +8,10 @@
         Title="MainWindow"
         Height="450"
         Width="800"
+        Closed="MainWindow_OnClosed"
         DataContext="{Binding MainWindow,
                               Source={StaticResource ViewModelLocator}}"
+        Loaded="MainWindow_OnLoaded"
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -40,9 +42,13 @@
                     Content="Stop Recording"
                     Margin="0,10,0,0"
                     />
+            <Button Command="{Binding SendData}"
+                    Content="Send data"
+                    Margin="0,10,0,0"
+                    />
         </StackPanel>
 
-        <ui:NotepadControl x:Name="NotepadControl" Grid.Column="1" />
+        <ui:GaasControl x:Name="GaasControl" Grid.Column="1" />
 
     </Grid>
 </Window>

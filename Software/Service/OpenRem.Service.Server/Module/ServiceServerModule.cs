@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 using Autofac;
+using OpenRem.Common.Service;
 
 namespace OpenRem.Service.Server.Module
 {

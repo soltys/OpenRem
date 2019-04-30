@@ -1,10 +1,11 @@
 ﻿using Grpc.Core;
+using OpenRem.Common.Service;
 
 namespace OpenRem.Service.Client
 {
     class ChannelProvider : IChannelProvider
     {
-        private ServiceConfig config;
+        private readonly ServiceConfig config;
 
         public ChannelProvider(ServiceConfig config)
         {

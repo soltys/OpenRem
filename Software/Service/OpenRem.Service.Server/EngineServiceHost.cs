@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Grpc.Core;
+using OpenRem.Common.Service;
 using OpenRem.Engine;
 using OpenRem.Service.Protocol;
 

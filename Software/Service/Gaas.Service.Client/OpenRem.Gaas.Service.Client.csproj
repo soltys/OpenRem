@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+      <OutputPath>..\..\_Result\</OutputPath>
+      <RootNamespace>OpenRem.Gaas.Service.Client</RootNamespace>
+      <AssemblyName>OpenRem.Gaas.Service.Client</AssemblyName>
+  </PropertyGroup>
+  
+      
+  
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\OpenRem.Common.Service\OpenRem.Common.Service.csproj" />
+    <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
+    <ProjectReference Include="..\Gaas.Service.Client.Interface\OpenRem.Gaas.Service.Client.Interface.csproj" />
+    <ProjectReference Include="..\Gass.Service.Protocol\OpenRem.Gass.Service.Protocol.csproj" />
+  </ItemGroup>
+
+</Project>
