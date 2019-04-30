@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.202
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Hardware Abstraction Layer", "4. Hardware Abstraction Layer", "{BD8FE923-DB01-44D3-9F65-78D68E100E5A}"
 EndProject
@@ -87,6 +87,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Config.Interface", "Service\OpenRem.Service.Config.Interface\OpenRem.Service.Config.Interface.csproj", "{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Service.Config.Test", "Service\OpenRem.Service.Config.Test\OpenRem.Service.Config.Test.csproj", "{9E71393A-4575-41BA-B5E9-877FFE05852C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gass.Service.Protocol", "Service\Gass.Service.Protocol\Gass.Service.Protocol.csproj", "{C97CDD43-F24F-41EC-9C3B-7F4ABC144448}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaas.Service.Client", "Service\Gaas.Service.Client\Gaas.Service.Client.csproj", "{FF8F25E5-EEDD-4571-B6DA-5A0FB4E1EC3E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRem.Common.Service", "Common\OpenRem.Common.Service\OpenRem.Common.Service.csproj", "{047F494D-CE86-46CC-B492-4FD1300D9F3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -281,6 +287,24 @@ Global
 		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E71393A-4575-41BA-B5E9-877FFE05852C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C97CDD43-F24F-41EC-9C3B-7F4ABC144448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C97CDD43-F24F-41EC-9C3B-7F4ABC144448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C97CDD43-F24F-41EC-9C3B-7F4ABC144448}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C97CDD43-F24F-41EC-9C3B-7F4ABC144448}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C97CDD43-F24F-41EC-9C3B-7F4ABC144448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C97CDD43-F24F-41EC-9C3B-7F4ABC144448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF8F25E5-EEDD-4571-B6DA-5A0FB4E1EC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8F25E5-EEDD-4571-B6DA-5A0FB4E1EC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8F25E5-EEDD-4571-B6DA-5A0FB4E1EC3E}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8F25E5-EEDD-4571-B6DA-5A0FB4E1EC3E}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8F25E5-EEDD-4571-B6DA-5A0FB4E1EC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8F25E5-EEDD-4571-B6DA-5A0FB4E1EC3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{047F494D-CE86-46CC-B492-4FD1300D9F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047F494D-CE86-46CC-B492-4FD1300D9F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047F494D-CE86-46CC-B492-4FD1300D9F3E}.Installer_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047F494D-CE86-46CC-B492-4FD1300D9F3E}.Installer_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047F494D-CE86-46CC-B492-4FD1300D9F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047F494D-CE86-46CC-B492-4FD1300D9F3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -322,6 +346,9 @@ Global
 		{86D983CA-DDB1-429B-9FCC-520A261294FE} = {B577F716-17AA-4B62-9DBE-25402F2AADB2}
 		{BC5FFB0F-7076-4DF5-8A26-61AB52B3DE96} = {B577F716-17AA-4B62-9DBE-25402F2AADB2}
 		{9E71393A-4575-41BA-B5E9-877FFE05852C} = {B577F716-17AA-4B62-9DBE-25402F2AADB2}
+		{C97CDD43-F24F-41EC-9C3B-7F4ABC144448} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
+		{FF8F25E5-EEDD-4571-B6DA-5A0FB4E1EC3E} = {B6027F6E-F507-4755-B1D7-9AD418A11F1A}
+		{047F494D-CE86-46CC-B492-4FD1300D9F3E} = {8A8E8C0F-B04A-4C2E-89D3-9BED018C6E23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AB9D05F-298B-4588-B2E0-9DAE6B079977}

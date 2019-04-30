@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package gaas;
+
+option csharp_namespace="Gaas.Service.Protocol";
+
+// Enables changing graph stuff
+service Graph {
+  // Sets graph title
+  rpc SetGraphTitle (SetGraphTitleRequest) returns (SetGraphTitleResponse) {}
+  rpc SetAxisTitle (SetAxisTitleRequest) returns (SetAxisTitleResponse) {}
+  rpc DisplayData (DisplayDataRequest) returns (DisplayDataResponse) {}
+}
+
+// Request for changing graph title
+message SetGraphTitleRequest {
+  string title = 1;
+}
+
+// Response for changing graph title
+message SetGraphTitleResponse {
+  string old_title = 1;
+}
+
+// Request for changing axis X or Y title
+message SetAxisTitleRequest {
+  string title = 1;
+  Axis axis = 2;
+}
+
+// Response for changing axis (X or Y) title
+message SetAxisTitleResponse {
+  string old_title = 1;  
+}
+
+enum Axis {
+  X = 0;
+  Y = 1;
+}
+
+// Request to Display data 
+message DisplayDataRequest {
+
+  //Series name
+  string name = 1;
+
+  // Graph points
+  repeated GraphPoint graph_points = 2;
+
+  message GraphPoint {
+    // X value
+    double X = 1;
+    // Y value
+    double Y = 2;
+  }
+}
+
+message DisplayDataResponse {
+
+}

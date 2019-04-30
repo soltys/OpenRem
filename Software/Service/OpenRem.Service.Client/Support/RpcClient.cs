@@ -7,7 +7,7 @@ namespace OpenRem.Service.Client
         protected TRpcClient Client;
         protected readonly Channel Channel;
 
-        public RpcClient(IChannelProvider channelProvider)
+        protected RpcClient(IChannelProvider channelProvider)
         {
             this.Channel = channelProvider.GetChannel();
         }

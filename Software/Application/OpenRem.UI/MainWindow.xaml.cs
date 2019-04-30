@@ -60,7 +60,7 @@ namespace OpenRem.UI
         public void Open()
         {
 
-            ProcessStartInfo psi = new ProcessStartInfo("notepad.exe");
+            ProcessStartInfo psi = new ProcessStartInfo("audio.exe");
             this._process = Process.Start(psi);
             this._process.WaitForInputIdle();
             SetParent(this._process.MainWindowHandle, this._panel.Handle);
