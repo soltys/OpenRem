@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BL\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj" />
-    <ProjectReference Include="..\..\Common\OpenRem.Common.Service\OpenRem.Common.Service.csproj" />
+    <ProjectReference Include="..\..\Common\OpenRem.Common.Grpc\OpenRem.Common.Grpc.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\OpenRem.Service.Config.Interface\OpenRem.Service.Config.Interface.csproj" />
     <ProjectReference Include="..\OpenRem.Service.Protocol\OpenRem.Service.Protocol.csproj" />

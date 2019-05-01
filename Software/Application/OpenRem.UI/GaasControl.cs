@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,8 +45,8 @@ namespace OpenRem.UI
 
         public void Open()
         {
-
-            ProcessStartInfo psi = new ProcessStartInfo("gaas.exe",)
+            var gaasLocation= Path.Combine(Directory.GetCurrentDirectory(), "gaas\\gaas.exe");
+            ProcessStartInfo psi = new ProcessStartInfo(gaasLocation);
             this._process = Process.Start(psi);
             this._process.WaitForInputIdle(3000);
 
@@ -65,7 +67,10 @@ namespace OpenRem.UI
 
         public void Close()
         {
-            _process?.Kill();
+            if (!_process.HasExited)
+            {
+                _process?.Kill();
+            }
         }
 
         private void ResizeEmbeddedApp()

@@ -14,10 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\OpenRem.Common.Service\OpenRem.Common.Service.csproj" />
+    <ProjectReference Include="..\..\Common\OpenRem.Common.Grpc\OpenRem.Common.Grpc.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
-    <ProjectReference Include="..\Gaas.Service.Client.Interface\OpenRem.Gaas.Service.Client.Interface.csproj" />
-    <ProjectReference Include="..\Gass.Service.Protocol\OpenRem.Gass.Service.Protocol.csproj" />
+    <ProjectReference Include="..\Gass.Protocol\Gass.Protocol.csproj" />
+    <ProjectReference Include="..\OpenRem.Gaas.Client.Interface\OpenRem.Gaas.Client.Interface.csproj" />
   </ItemGroup>
 
 </Project>

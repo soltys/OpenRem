@@ -62,9 +62,9 @@ namespace OpenRem.UI
             if (send)
             {
                 var dataPoints = new List<DataPoint>();
-                for (double i = 0; i < 99; i += 0.05)
+                for (double i = 3; i < 99; i += 0.05)
                 {
-                    dataPoints.Add(new DataPoint(i, Math.Sin(i + offset)));
+                    dataPoints.Add(new DataPoint(i + offset, Math.Log(2, i + offset)));
 
                 }
 
