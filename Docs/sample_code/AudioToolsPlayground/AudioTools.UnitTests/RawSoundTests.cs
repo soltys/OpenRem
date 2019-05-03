@@ -27,7 +27,7 @@ namespace AudioTools.UnitTests
         }
     
         [Test]
-        public void RawSound_PlaybackFinishedSubscription_IsHandled()
+        public void RawSound_OnSubscribe_IsCallback()
         {
             // ARRANGE
             bool isCallback = false;
@@ -45,13 +45,17 @@ namespace AudioTools.UnitTests
         public void RawSound_OnUnsubscribe_NoCallback()
         {
             // ARRANGE
-            
+            bool isCallback = false;
+            EventHandler<EventArgs> onPlaybackFinished = (sender, args) => { isCallback = true; };
+            _sut.PlaybackFinished += onPlaybackFinished;
             
             // ACT
-            
+            _sut.PlaybackFinished -= onPlaybackFinished;
+            _sut.Play();
+            Thread.Sleep(100);
             
             // ASSERT
-            throw new NotImplementedException();
+            Assert.IsFalse(isCallback);
         }
     }
 }
