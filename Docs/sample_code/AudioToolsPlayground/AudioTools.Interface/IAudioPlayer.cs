@@ -8,6 +8,7 @@ namespace AudioTools.Interface
         /// Plays a sound using dedicated interface
         /// </summary>
         /// <param name="sound"></param>
+        /// <returns>Sound instance</returns>
         ISound PlaySound(ISound sound);
 
         /// <summary>
@@ -17,6 +18,7 @@ namespace AudioTools.Interface
         /// <param name="samplingRate">In other words - Samples per second</param>
         /// <param name="bitDepth">Bits per sample</param>
         /// <param name="channels">Mono/Stereo</param>
+        /// <returns>Sound instance</returns>
         ISound PlaySound(Stream stream, int samplingRate, BitDepth bitDepth, Channels channels);
 
         /// <summary>
@@ -26,6 +28,7 @@ namespace AudioTools.Interface
         /// <param name="samplingRate">In other words - Samples per second</param>
         /// <param name="bitDepth">Bits per sample</param>
         /// <param name="channels">Mono/Stereo</param>
+        /// <returns>Sound instance</returns>
         ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels);
     }
 }
