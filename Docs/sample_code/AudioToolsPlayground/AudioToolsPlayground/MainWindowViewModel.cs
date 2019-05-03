@@ -24,10 +24,7 @@ namespace AudioToolsPlayground
             _audioPlayer = new AudioPlayer();
         }
 
-        public ICommand PlaySoundCommand
-        {
-            get { return new DelegateCommand(PlaySound); }
-        }
+        public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
 
         private void PlaySound()
         {
