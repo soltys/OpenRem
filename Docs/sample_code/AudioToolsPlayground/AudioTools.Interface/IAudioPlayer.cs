@@ -8,7 +8,7 @@ namespace AudioTools.Interface
         /// Plays a sound using dedicated interface
         /// </summary>
         /// <param name="sound"></param>
-        void PlaySound(ISound sound);
+        ISound PlaySound(ISound sound);
 
         /// <summary>
         /// Plays a sound using stream
@@ -17,8 +17,8 @@ namespace AudioTools.Interface
         /// <param name="samplingRate">In other words - Samples per second</param>
         /// <param name="bitDepth">Bits per sample</param>
         /// <param name="channels">Mono/Stereo</param>
-        void PlaySound(Stream stream, int samplingRate, BitDepth bitDepth, Channels channels);
-        
+        ISound PlaySound(Stream stream, int samplingRate, BitDepth bitDepth, Channels channels);
+
         /// <summary>
         /// Plays a sound using byte array
         /// </summary>
@@ -26,6 +26,6 @@ namespace AudioTools.Interface
         /// <param name="samplingRate">In other words - Samples per second</param>
         /// <param name="bitDepth">Bits per sample</param>
         /// <param name="channels">Mono/Stereo</param>
-        void PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels);
+        ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels);
     }
 }
