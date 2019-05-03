@@ -18,24 +18,27 @@ namespace AudioTools
             throw new NotImplementedException();
         }
 
-        public void AddSample(byte[] sample)
+        public ISound AddSample(byte[] sample)
         {
             throw new NotImplementedException();
         }
 
-        public void Pause()
+        public ISound Pause()
         {
             _waveOutEvent.Pause();
+            return this;
         }
 
-        public void Play()
+        public ISound Play()
         {
             _waveOutEvent.Play();
+            return this;
         }
 
-        public void Stop()
+        public ISound Stop()
         {
             _waveOutEvent.Stop();
+            return this;
         }
 
         /// <summary>

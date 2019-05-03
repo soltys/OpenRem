@@ -6,10 +6,10 @@ namespace AudioTools.Interface
     {
         event EventHandler<EventArgs> PlaybackFinished;
         
-        void AddSample(byte[] sample);
-        void Pause();
-        void Play();
-        void Stop();
+        ISound AddSample(byte[] sample);
+        ISound Pause();
+        ISound Play();
+        ISound Stop();
 
     }
 }
