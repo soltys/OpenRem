@@ -10,6 +10,7 @@ using OpenRem.CommonUI;
 using OpenRem.Engine;
 using Microsoft.Win32;
 using OpenRem.Gaas.Service.Client.Interface;
+using OpenRem.Common;
 
 namespace OpenRem.UI
 {
@@ -58,7 +59,6 @@ namespace OpenRem.UI
 
         private async void SendCallback(object state)
         {
-
             if (send)
             {
                 var dataPoints = new List<DataPoint>();
@@ -67,7 +67,7 @@ namespace OpenRem.UI
                     dataPoints.Add(new DataPoint(i + offset, Math.Log(2, i + offset)));
 
                 }
-
+                
                 await this.gsc.DisplayDataAsync("name", dataPoints);
                 offset += 0.5;
             }
