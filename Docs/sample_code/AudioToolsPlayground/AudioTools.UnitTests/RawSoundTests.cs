@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using NAudio.Wave;
 using NUnit.Framework;
 
@@ -43,20 +42,23 @@ namespace AudioTools.UnitTests
         }
 
         [Test]
-        public void RawSound_OnUnsubscribe_NoCallback()
+        [TestCase(0,1,1)]
+        [TestCase(1,3,2)]
+        [TestCase(3,5,2)]
+        public void RawSound_UnsubscribeFromPlaybackFished_WorksAsExpected(int expectedCount, int subscribeCount, int unsubscribeCount)
         {
             // ARRANGE
-            bool isCallback = false;
-            EventHandler<EventArgs> onPlaybackFinished = (sender, args) => { isCallback = true; };
-            _sut.PlaybackFinished += onPlaybackFinished;
-            
+            int callbacksCount = 0;
+            EventHandler<EventArgs> onPlaybackFinished = (sender, args) => { callbacksCount++; };
+
             // ACT
-            _sut.PlaybackFinished -= onPlaybackFinished;
+            for (var i = 0; i < subscribeCount; i++) _sut.PlaybackFinished += onPlaybackFinished;
+            for (var i = 0; i < unsubscribeCount; i++) _sut.PlaybackFinished -= onPlaybackFinished;
             _sut.Play();
             Thread.Sleep(100);
             
             // ASSERT
-            Assert.IsFalse(isCallback);
+            Assert.AreEqual(expectedCount, callbacksCount);
         }
     }
 }
