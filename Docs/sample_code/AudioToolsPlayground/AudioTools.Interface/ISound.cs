@@ -2,7 +2,7 @@ using System;
 
 namespace AudioTools.Interface
 {
-    public interface ISound
+    public interface ISound : IDisposable
     {
         event EventHandler<EventArgs> PlaybackFinished;
         
@@ -10,6 +10,5 @@ namespace AudioTools.Interface
         ISound Pause();
         ISound Play();
         ISound Stop();
-
     }
 }

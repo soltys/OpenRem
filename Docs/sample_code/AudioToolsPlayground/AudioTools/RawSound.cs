@@ -49,5 +49,10 @@ namespace AudioTools
             add => _waveOutEvent.PlaybackStopped += new EventHandler<StoppedEventArgs>(value);
             remove => _waveOutEvent.PlaybackStopped -= new EventHandler<StoppedEventArgs>(value);
         }
+
+        public void Dispose()
+        {
+            _waveOutEvent?.Dispose();
+        }
     }
 }
