@@ -21,7 +21,7 @@ namespace AudioToolsPlayground
 
         public MainWindowViewModel()
         {
-            _audioPlayer = new AudioPlayer();
+            _audioPlayer = new WaveOutAudioPlayer();
         }
 
         public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);

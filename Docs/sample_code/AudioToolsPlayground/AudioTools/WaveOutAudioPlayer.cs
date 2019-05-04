@@ -4,7 +4,7 @@ using NAudio.Wave;
 
 namespace AudioTools
 {
-    public class AudioPlayer : IAudioPlayer
+    public class WaveOutAudioPlayer : IAudioPlayer
     {
         public ISound PlaySound(ISound sound)
         {
