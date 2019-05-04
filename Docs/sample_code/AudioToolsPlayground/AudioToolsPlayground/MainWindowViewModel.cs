@@ -21,20 +21,17 @@ namespace AudioToolsPlayground
 
         public MainWindowViewModel()
         {
-            _audioPlayer = new AudioPlayer();
+            _audioPlayer = new WaveOutAudioPlayer();
         }
 
-        public ICommand PlaySoundCommand
-        {
-            get { return new DelegateCommand(PlaySound); }
-        }
+        public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
 
         private void PlaySound()
         {
             var sampleRate = 16000;
             var frequency = 500;
             var amplitude = 0.2;
-            var seconds = 5;
+            var seconds = 1;
 
             var raw = new byte[sampleRate * seconds * 2];
 

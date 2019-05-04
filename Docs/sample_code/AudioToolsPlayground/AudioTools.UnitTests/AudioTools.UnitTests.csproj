@@ -4,11 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EA332E76-587D-41AF-93A9-E180954FB6E7}</ProjectGuid>
+    <ProjectGuid>{4ECB006A-C2BD-49DA-924B-DC689AC161C4}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AudioTools</RootNamespace>
-    <AssemblyName>AudioTools</AssemblyName>
+    <RootNamespace>AudioTools.UnitTests</RootNamespace>
+    <AssemblyName>AudioTools.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,20 +41,26 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WaveOutAudioPlayer.cs" />
+    <Compile Include="RawSoundTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RawSound.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AudioTools.Interface\AudioTools.Interface.csproj">
       <Project>{06761de3-3e8d-45a8-80fe-7c5ca463bfdb}</Project>
       <Name>AudioTools.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AudioTools\AudioTools.csproj">
+      <Project>{ea332e76-587d-41af-93a9-e180954fb6e7}</Project>
+      <Name>AudioTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
