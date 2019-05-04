@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using NAudio.Wave;
@@ -42,23 +43,33 @@ namespace AudioTools.UnitTests
         }
 
         [Test]
-        [TestCase(0,1,1)]
-        [TestCase(1,3,2)]
-        [TestCase(3,5,2)]
-        public void RawSound_UnsubscribeFromPlaybackFished_WorksAsExpected(int expectedCount, int subscribeCount, int unsubscribeCount)
+        [TestCase(1,1)]
+        [TestCase(2,0)]
+        [TestCase(2,1)]
+        [TestCase(5,1)]
+        [TestCase(5,4)]
+        public void RawSound_SubscribeAndUnsubscribe_WorksAsExpected(int subscribeCount, int unsubscribeCount)
         {
             // ARRANGE
-            int callbacksCount = 0;
-            EventHandler<EventArgs> onPlaybackFinished = (sender, args) => { callbacksCount++; };
+            Assert.GreaterOrEqual(subscribeCount, unsubscribeCount, "Subscribe count must be greater or equal than unsubscribe count");
 
-            // ACT
+            var expectedCallbacksCount = subscribeCount - unsubscribeCount;
+            var countdownCallbackEvent = new CountdownEvent(subscribeCount);
+            EventHandler<EventArgs> onPlaybackFinished = (sender, args) =>
+            {
+                Assert.IsFalse(countdownCallbackEvent.IsSet, "Count of callbacks exceeded");
+                countdownCallbackEvent.Signal();
+            };
+
+            // ACT (Subscribe, Unsubscribe, Play and Wait)
             for (var i = 0; i < subscribeCount; i++) _sut.PlaybackFinished += onPlaybackFinished;
             for (var i = 0; i < unsubscribeCount; i++) _sut.PlaybackFinished -= onPlaybackFinished;
             _sut.Play();
-            Thread.Sleep(100);
+            countdownCallbackEvent.Wait(50);
             
-            // ASSERT
-            Assert.AreEqual(expectedCount, callbacksCount);
+            // ASSERT (Verify count of callbacks)
+            var actualCallbacksCount = countdownCallbackEvent.InitialCount - countdownCallbackEvent.CurrentCount;
+            Assert.AreEqual(expectedCallbacksCount, actualCallbacksCount);
         }
     }
 }
