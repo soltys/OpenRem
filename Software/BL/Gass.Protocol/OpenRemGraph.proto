@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package gaas;
+
+service GraphRegistar {
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+}
+
+message RegisterRequest {
+    string name = 1;
+    repeated string series_names = 2;
+    int32 port = 3;
+}
+
+message RegisterResponse {
+}

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading;
-using System.Windows.Documents;
 using Gaas.Service.Client.Interface;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
