@@ -31,7 +31,7 @@ namespace AudioToolsPlayground
             var sampleRate = 16000;
             var frequency = 500;
             var amplitude = 0.2;
-            var seconds = 5;
+            var seconds = 1;
 
             var raw = new byte[sampleRate * seconds * 2];
 
