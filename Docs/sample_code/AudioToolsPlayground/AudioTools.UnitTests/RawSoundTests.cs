@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using NAudio.Wave;
@@ -25,21 +24,6 @@ namespace AudioTools.UnitTests
         public void SetUp()
         {
             _sut = CreateSystemUnderTest();
-        }
-    
-        [Test]
-        public void RawSound_OnSubscribe_IsCallback()
-        {
-            // ARRANGE
-            bool isCallback = false;
-            _sut.PlaybackFinished += (sender, args) => { isCallback = true; };
-
-            // ACT
-            _sut.Play();
-            Thread.Sleep(100);
-
-            // ASSERT
-            Assert.IsTrue(isCallback);
         }
 
         [Test]
