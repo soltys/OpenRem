@@ -15,19 +15,42 @@ namespace AudioToolsPlayground
     {
         private readonly IAudioPlayer _audioPlayer;
         private readonly IAudioDeviceDetector _deviceDetector;
+        private IAudioDevice _selectedAudioDevice;
+        private IEnumerable<IAudioDevice> _audioOutputDevices;
 
         public MainWindowViewModel()
         {
             _audioPlayer = new WaveOutAudioPlayer();
             _deviceDetector = new MMAudioDeviceDetector();
-            SelectedAudioDevice = _deviceDetector.GetDefaultOutputDevice();
         }
+
+        #region Binded Properties
 
         public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
 
-        public IEnumerable<IAudioDevice> AudioOutputDevices => _deviceDetector.GetOutputDevices();
+        public IEnumerable<IAudioDevice> AudioOutputDevices
+        {
+            get
+            {
+                if (_audioOutputDevices == null)
+                {
+                    _audioOutputDevices = _deviceDetector.GetOutputDevices();
+                }
 
-        public IAudioDevice SelectedAudioDevice { get; set; }
+                return _audioOutputDevices;
+            }
+        }
+
+        public IAudioDevice SelectedAudioDevice
+        {
+            get => _selectedAudioDevice;
+            set {
+                _selectedAudioDevice = value; 
+                OnPropertyChanged(nameof(SelectedAudioDevice));
+            }
+        }
+
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 

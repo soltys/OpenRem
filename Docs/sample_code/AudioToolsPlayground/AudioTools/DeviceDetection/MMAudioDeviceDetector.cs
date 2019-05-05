@@ -12,7 +12,7 @@ namespace AudioTools.DeviceDetection
             var mmDeviceEnumerator = new MMDeviceEnumerator();
             var mmDeviceCollection = mmDeviceEnumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
 
-            var devices = mmDeviceCollection.Select(device => new MMAudioDevice(device));
+            var devices = mmDeviceCollection.Select(device => new MMAudioDevice(device)).ToList();
             return devices;
         }
 
@@ -20,8 +20,8 @@ namespace AudioTools.DeviceDetection
         {
             var mmDeviceEnumerator = new MMDeviceEnumerator();
             var mmDeviceCollection = mmDeviceEnumerator.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.Active);
-
-            var devices = mmDeviceCollection.Select(device => new MMAudioDevice(device));
+            
+            var devices = mmDeviceCollection.Select(device => new MMAudioDevice(device)).ToList();
             return devices;
         }
 
