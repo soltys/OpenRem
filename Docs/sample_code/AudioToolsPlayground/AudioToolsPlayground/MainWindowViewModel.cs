@@ -13,26 +13,23 @@ namespace AudioToolsPlayground
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        private IAudioPlayer _audioPlayer;
-        private IAudioDeviceDetector _deviceDetector;
-        private IAudioDevice _selectedAudioDevice;
+        private readonly IAudioPlayer _audioPlayer;
+        private readonly IAudioDeviceDetector _deviceDetector;
 
         public MainWindowViewModel()
         {
             _audioPlayer = new WaveOutAudioPlayer();
             _deviceDetector = new MMAudioDeviceDetector();
-            _selectedAudioDevice = _deviceDetector.GetActiveOutputDevice();
+            SelectedAudioDevice = _deviceDetector.GetDefaultOutputDevice();
         }
 
         public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
 
         public IEnumerable<IAudioDevice> AudioOutputDevices => _deviceDetector.GetOutputDevices();
 
-        public IAudioDevice SelectedAudioDevice
-        {
-            get => _selectedAudioDevice;
-            set => _selectedAudioDevice = value;
-        }
+        public IAudioDevice SelectedAudioDevice { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void PlaySound()
         {
@@ -43,21 +40,19 @@ namespace AudioToolsPlayground
 
             var raw = new byte[sampleRate * seconds * 2];
 
-            var multiple = 2.0*frequency/sampleRate;
-            for (int n = 0; n < sampleRate * seconds; n++)
+            var multiple = 2.0 * frequency / sampleRate;
+            for (var n = 0; n < sampleRate * seconds; n++)
             {
-                var sampleSaw = ((n*multiple)%2) - 1;
+                var sampleSaw = n * multiple % 2 - 1;
                 var sampleValue = sampleSaw > 0 ? amplitude : -amplitude;
-                var sample = (short)(sampleValue * Int16.MaxValue);
+                var sample = (short) (sampleValue * short.MaxValue);
                 var bytes = BitConverter.GetBytes(sample);
-                raw[n*2] = bytes[0];
-                raw[n*2 + 1] = bytes[1];
+                raw[n * 2] = bytes[0];
+                raw[n * 2 + 1] = bytes[1];
             }
-            
+
             _audioPlayer.PlaySound(raw, sampleRate, BitDepth.Of16, Channels.Mono);
         }
-        
-        public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

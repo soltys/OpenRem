@@ -25,7 +25,7 @@ namespace AudioTools.DeviceDetection
             return devices;
         }
 
-        public IAudioDevice GetActiveOutputDevice()
+        public IAudioDevice GetDefaultOutputDevice()
         {
             var mmDeviceEnumerator = new MMDeviceEnumerator();
             var defaultAudioEndpoint = mmDeviceEnumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
