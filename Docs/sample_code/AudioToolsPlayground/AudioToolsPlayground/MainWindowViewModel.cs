@@ -22,6 +22,7 @@ namespace AudioToolsPlayground
         {
             _audioPlayer = new WaveOutAudioPlayer();
             _deviceDetector = new MMAudioDeviceDetector();
+            SelectedAudioDevice = _deviceDetector.GetDefaultOutputDevice();
         }
 
         #region Binded Properties

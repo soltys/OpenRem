@@ -13,6 +13,10 @@ namespace AudioTools.DeviceDetection
         }
         
         public string Name => _mmDevice.FriendlyName;
+        
+        public DeviceType DeviceType => (DeviceType)_mmDevice.DataFlow;
+        
+        public string ID => _mmDevice.ID;
 
         public override string ToString()
         {

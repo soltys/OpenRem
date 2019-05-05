@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="BitDepth.cs" />
     <Compile Include="Channels.cs" />
+    <Compile Include="DeviceDetection\DeviceType.cs" />
     <Compile Include="DeviceDetection\IAudioDevice.cs" />
     <Compile Include="DeviceDetection\IAudioDeviceDetector.cs" />
     <Compile Include="IAudioPlayer.cs" />

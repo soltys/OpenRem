@@ -7,29 +7,44 @@ namespace AudioTools.DeviceDetection
 {
     public class MMAudioDeviceDetector : IAudioDeviceDetector
     {
+        public MMAudioDeviceDetector()
+        {
+            Refresh();
+        }
+
+        private IEnumerable<MMAudioDevice> AllDevices { get; set; }
+
         public IEnumerable<IAudioDevice> GetAllDevices()
         {
-            var mmDeviceEnumerator = new MMDeviceEnumerator();
-            var mmDeviceCollection = mmDeviceEnumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
+            if (AllDevices == null)
+                Refresh();
 
-            var devices = mmDeviceCollection.Select(device => new MMAudioDevice(device)).ToList();
-            return devices;
+            return AllDevices;
         }
 
         public IEnumerable<IAudioDevice> GetOutputDevices()
         {
-            var mmDeviceEnumerator = new MMDeviceEnumerator();
-            var mmDeviceCollection = mmDeviceEnumerator.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.Active);
-            
-            var devices = mmDeviceCollection.Select(device => new MMAudioDevice(device)).ToList();
+            if (AllDevices == null)
+                Refresh();
+
+            var devices = AllDevices.Where(device => device.DeviceType == DeviceType.Output).ToList();
             return devices;
         }
 
         public IAudioDevice GetDefaultOutputDevice()
         {
-            var mmDeviceEnumerator = new MMDeviceEnumerator();
-            var defaultAudioEndpoint = mmDeviceEnumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
-            return new MMAudioDevice(defaultAudioEndpoint);
+            if (AllDevices == null)
+                Refresh();
+
+            var defaultAudioEndpoint = new MMDeviceEnumerator().GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+            return AllDevices.First(device => device.ID == defaultAudioEndpoint.ID);
+        }
+
+        public void Refresh()
+        {
+            var mmDeviceCollection = new MMDeviceEnumerator().EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
+
+            AllDevices = mmDeviceCollection.Select(device => new MMAudioDevice(device)).ToList();
         }
     }
 }
