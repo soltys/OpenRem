@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using AudioTools;
+using AudioTools.DeviceDetection;
 using AudioTools.Interface;
+using AudioTools.Interface.DeviceDetection;
 using AudioToolsPlayground.Commands;
 
 namespace AudioToolsPlayground
@@ -11,20 +14,17 @@ namespace AudioToolsPlayground
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         private IAudioPlayer _audioPlayer;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        private IAudioDeviceDetector _deviceDetector;
 
         public MainWindowViewModel()
         {
             _audioPlayer = new WaveOutAudioPlayer();
+            _deviceDetector = new MMAudioDeviceDetector();
         }
 
         public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
+
+        public IEnumerable<IAudioDevice> AudioOutputDevices => _deviceDetector.GetOutputDevices();
 
         private void PlaySound()
         {
@@ -47,6 +47,13 @@ namespace AudioToolsPlayground
             }
             
             _audioPlayer.PlaySound(raw, sampleRate, BitDepth.Of16, Channels.Mono);
+        }
+        
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
