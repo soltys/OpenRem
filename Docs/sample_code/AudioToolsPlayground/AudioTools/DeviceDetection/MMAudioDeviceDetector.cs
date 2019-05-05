@@ -31,7 +31,7 @@ namespace AudioTools.DeviceDetection
             return devices;
         }
 
-        public IAudioDevice GetDefaultOutputDevice()
+        public IAudioDevice GetDeviceSelectedInSystem()
         {
             if (AllDevices == null)
                 Refresh();

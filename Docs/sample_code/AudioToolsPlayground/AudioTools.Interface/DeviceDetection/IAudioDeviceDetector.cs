@@ -8,7 +8,7 @@ namespace AudioTools.Interface.DeviceDetection
 
         IEnumerable<IAudioDevice> GetOutputDevices();
 
-        IAudioDevice GetDefaultOutputDevice();
+        IAudioDevice GetDeviceSelectedInSystem();
 
         void Refresh();
     }
