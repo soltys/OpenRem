@@ -9,7 +9,7 @@
     
     <StackPanel>
         <Label>Choose your output device</Label>
-        <ComboBox ItemsSource="{Binding AudioOutputDevices}"></ComboBox>
+        <ComboBox ItemsSource="{Binding AudioOutputDevices}" SelectedItem="{Binding SelectedAudioDevice}"></ComboBox>
         <Label>Here you can play some sound</Label>
         <Button Command="{Binding PlaySoundCommand}">Play!</Button>
     </StackPanel>

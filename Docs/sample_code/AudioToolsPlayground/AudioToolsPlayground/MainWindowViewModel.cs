@@ -15,16 +15,24 @@ namespace AudioToolsPlayground
     {
         private IAudioPlayer _audioPlayer;
         private IAudioDeviceDetector _deviceDetector;
+        private IAudioDevice _selectedAudioDevice;
 
         public MainWindowViewModel()
         {
             _audioPlayer = new WaveOutAudioPlayer();
             _deviceDetector = new MMAudioDeviceDetector();
+            _selectedAudioDevice = _deviceDetector.GetActiveOutputDevice();
         }
 
         public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
 
         public IEnumerable<IAudioDevice> AudioOutputDevices => _deviceDetector.GetOutputDevices();
+
+        public IAudioDevice SelectedAudioDevice
+        {
+            get => _selectedAudioDevice;
+            set => _selectedAudioDevice = value;
+        }
 
         private void PlaySound()
         {
