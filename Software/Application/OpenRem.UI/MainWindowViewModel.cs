@@ -38,7 +38,6 @@ namespace OpenRem.UI
         private IGraphServiceClient gsc;
 
         private bool send = false;
-        private double offset = 0;
         private Timer timer;
 
         public string OutputFilename
@@ -57,19 +56,21 @@ namespace OpenRem.UI
             AddCommands();
         }
 
+        readonly Random randomGenerator = new Random();
         private async void SendCallback(object state)
         {
-            if (send)
+            if (this.send)
             {
                 var dataPoints = new List<DataPoint>();
-                for (double i = 3; i < 99; i += 0.05)
+                for (int i = 0; i < 1000; i++)
                 {
-                    dataPoints.Add(new DataPoint(i + offset, Math.Log(2, i + offset)));
+                    dataPoints.Add(new DataPoint(this.randomGenerator.Next(230,4000), this.randomGenerator.Next(70, 80)));
 
                 }
+
+                dataPoints = dataPoints.OrderBy(x => x.X).ToList();
                 
                 await this.gsc.DisplayDataAsync("name", dataPoints);
-                offset += 0.5;
             }
         }
 
@@ -88,7 +89,7 @@ namespace OpenRem.UI
             StopRecording = new RelayCommand(async () => { await this.rawFileRecorder.StopAsync(); });
             SendData = new RelayCommand(() =>
            {
-               send = !send;
+               this.send = !this.send;
            });
         }
 
