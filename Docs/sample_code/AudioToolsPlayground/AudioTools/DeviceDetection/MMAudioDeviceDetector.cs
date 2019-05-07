@@ -37,7 +37,7 @@ namespace AudioTools.DeviceDetection
                 Refresh();
 
             var defaultAudioEndpoint = new MMDeviceEnumerator().GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
-            return AllDevices.First(device => device.ID == defaultAudioEndpoint.ID);
+            return AllDevices.First(device => device.Id == defaultAudioEndpoint.ID);
         }
 
         public void Refresh()

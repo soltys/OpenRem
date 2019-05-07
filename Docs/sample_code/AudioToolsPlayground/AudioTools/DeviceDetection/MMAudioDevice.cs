@@ -16,7 +16,7 @@ namespace AudioTools.DeviceDetection
         
         public DeviceType DeviceType => (DeviceType)_mmDevice.DataFlow;
         
-        public string ID => _mmDevice.ID;
+        public string Id => _mmDevice.ID;
 
         public override string ToString()
         {

@@ -20,8 +20,8 @@ namespace AudioToolsPlayground
 
         public MainWindowViewModel()
         {
-            _audioPlayer = new WaveOutAudioPlayer();
             _deviceDetector = new MMAudioDeviceDetector();
+            _audioPlayer = new WASAPIAudioPlayer();
             SelectedAudioDevice = _deviceDetector.GetDeviceSelectedInSystem();
         }
 
@@ -75,7 +75,7 @@ namespace AudioToolsPlayground
                 raw[n * 2 + 1] = bytes[1];
             }
 
-            _audioPlayer.PlaySound(raw, sampleRate, BitDepth.Of16, Channels.Mono);
+            _audioPlayer.PlaySound(raw, sampleRate, BitDepth.Of16, Channels.Mono, _selectedAudioDevice.Id);
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

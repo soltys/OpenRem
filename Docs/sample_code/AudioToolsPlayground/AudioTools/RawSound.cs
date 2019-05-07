@@ -6,11 +6,11 @@ namespace AudioTools
 {
     public class RawSound : ISound
     {
-        private readonly WaveOutEvent _waveOutEvent;
+        private readonly IWavePlayer _wavePlayer;
 
-        public RawSound(WaveOutEvent waveOutEvent)
+        public RawSound(IWavePlayer wavePlayer)
         {
-            _waveOutEvent = waveOutEvent;
+            _wavePlayer = wavePlayer;
         }
         
         private RawSound(byte[] data, int bitRate, Channels channels)
@@ -25,19 +25,19 @@ namespace AudioTools
 
         public ISound Pause()
         {
-            _waveOutEvent.Pause();
+            _wavePlayer.Pause();
             return this;
         }
 
         public ISound Play()
         {
-            _waveOutEvent.Play();
+            _wavePlayer.Play();
             return this;
         }
 
         public ISound Stop()
         {
-            _waveOutEvent.Stop();
+            _wavePlayer.Stop();
             return this;
         }
 
@@ -46,13 +46,13 @@ namespace AudioTools
         /// </summary>
         public event EventHandler<EventArgs> PlaybackFinished
         {
-            add => _waveOutEvent.PlaybackStopped += new EventHandler<StoppedEventArgs>(value);
-            remove => _waveOutEvent.PlaybackStopped -= new EventHandler<StoppedEventArgs>(value);
+            add => _wavePlayer.PlaybackStopped += new EventHandler<StoppedEventArgs>(value);
+            remove => _wavePlayer.PlaybackStopped -= new EventHandler<StoppedEventArgs>(value);
         }
 
         public void Dispose()
         {
-            _waveOutEvent?.Dispose();
+            _wavePlayer?.Dispose();
         }
     }
 }

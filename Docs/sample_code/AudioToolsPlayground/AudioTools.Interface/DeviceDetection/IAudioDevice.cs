@@ -6,6 +6,6 @@ namespace AudioTools.Interface.DeviceDetection
 
         DeviceType DeviceType { get; }
 
-        string ID { get; }
+        string Id { get; }
     }
 }

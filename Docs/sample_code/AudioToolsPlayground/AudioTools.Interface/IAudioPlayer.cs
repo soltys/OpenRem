@@ -18,8 +18,9 @@ namespace AudioTools.Interface
         /// <param name="samplingRate">In other words - Samples per second</param>
         /// <param name="bitDepth">Bits per sample</param>
         /// <param name="channels">Mono/Stereo</param>
+        /// <param name="audioDeviceId">I</param>
         /// <returns>Sound instance</returns>
-        ISound PlaySound(Stream stream, int samplingRate, BitDepth bitDepth, Channels channels);
+        ISound PlaySound(Stream stream, int samplingRate, BitDepth bitDepth, Channels channels, string audioDeviceId = null);
 
         /// <summary>
         /// Plays a sound using byte array
@@ -28,7 +29,10 @@ namespace AudioTools.Interface
         /// <param name="samplingRate">In other words - Samples per second</param>
         /// <param name="bitDepth">Bits per sample</param>
         /// <param name="channels">Mono/Stereo</param>
+        /// <param name="audioDeviceId"></param>
         /// <returns>Sound instance</returns>
-        ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels);
+        ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels, string audioDeviceId = null);
+
+        string DeviceId { get; set; }
     }
 }
