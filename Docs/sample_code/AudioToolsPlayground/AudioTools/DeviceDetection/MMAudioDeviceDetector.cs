@@ -5,14 +5,16 @@ using NAudio.CoreAudioApi;
 
 namespace AudioTools.DeviceDetection
 {
-    public class MMAudioDeviceDetector : IAudioDeviceDetector
+    public class MmAudioDeviceDetector : IAudioDeviceDetector
     {
-        public MMAudioDeviceDetector()
+        private MMDeviceEnumerator _deviceEnumerator;
+        private MMDeviceEnumerator DeviceEnumerator => _deviceEnumerator ?? (_deviceEnumerator = new MMDeviceEnumerator());
+        private IEnumerable<MMAudioDevice> AllDevices { get; set; }
+
+        public MmAudioDeviceDetector()
         {
             Refresh();
         }
-
-        private IEnumerable<MMAudioDevice> AllDevices { get; set; }
 
         public IEnumerable<IAudioDevice> GetAllDevices()
         {
@@ -36,13 +38,13 @@ namespace AudioTools.DeviceDetection
             if (AllDevices == null)
                 Refresh();
 
-            var defaultAudioEndpoint = new MMDeviceEnumerator().GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+            var defaultAudioEndpoint = DeviceEnumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
             return AllDevices.First(device => device.Id == defaultAudioEndpoint.ID);
         }
 
         public void Refresh()
         {
-            var mmDeviceCollection = new MMDeviceEnumerator().EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
+            var mmDeviceCollection = DeviceEnumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
 
             AllDevices = mmDeviceCollection.Select(device => new MMAudioDevice(device)).ToList();
         }
