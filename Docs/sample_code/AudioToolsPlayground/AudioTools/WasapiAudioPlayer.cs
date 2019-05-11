@@ -25,13 +25,10 @@ namespace AudioTools
             var rawWaveStream = new RawSourceWaveStream(stream,
                 new WaveFormat(soundConfig.SamplingRate, (int) soundConfig.BitDepth, (int) soundConfig.Channels));
 
-            WasapiOut wasapiOut;
             var deviceId = soundConfig.AudioDeviceId ?? DeviceId;
-            if (deviceId != null)
-                wasapiOut = new WasapiOut(new MMDeviceEnumerator().GetDevice(deviceId), AudioClientShareMode.Shared,
-                    false, 300);
-            else
-                wasapiOut = new WasapiOut(AudioClientShareMode.Shared, false, 300);
+            var wasapiOut = deviceId != null
+                ? new WasapiOut(new MMDeviceEnumerator().GetDevice(deviceId), AudioClientShareMode.Shared, false, 300)
+                : new WasapiOut(AudioClientShareMode.Shared, false, 300);
             wasapiOut.Init(rawWaveStream);
 
             var sound = new RawSound(wasapiOut);
