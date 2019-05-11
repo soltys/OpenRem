@@ -21,7 +21,7 @@ namespace AudioToolsPlayground
         public MainWindowViewModel()
         {
             _deviceDetector = new MmAudioDeviceDetector();
-            _audioPlayer = new WASAPIAudioPlayer();
+            _audioPlayer = new WasapiAudioPlayer();
             SelectedAudioDevice = _deviceDetector.GetDeviceSelectedInSystem();
         }
 

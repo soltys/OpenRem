@@ -10,6 +10,11 @@ namespace AudioTools.UnitTests
     [TestFixture]
     public class Tests
     {
+        /// <summary>
+        /// Wraps given type into RawSound
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         private RawSound CreateSystemUnderTest<T>() where T : IWavePlayer, new()
         {
             var rawWaveStream = new RawSourceWaveStream(new MemoryStream(new byte[] { }), new WaveFormat(100, 16, 1));
