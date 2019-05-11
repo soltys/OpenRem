@@ -11,7 +11,7 @@ using AudioToolsPlayground.Commands;
 
 namespace AudioToolsPlayground
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public sealed class MainWindowViewModel : INotifyPropertyChanged
     {
         private readonly IAudioPlayer _audioPlayer;
         private readonly IAudioDeviceDetector _deviceDetector;
@@ -78,7 +78,7 @@ namespace AudioToolsPlayground
             _audioPlayer.PlaySound(raw, new SoundConfig(sampleRate, BitDepth.Of16, Channels.Mono, _selectedAudioDevice.Id));
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
