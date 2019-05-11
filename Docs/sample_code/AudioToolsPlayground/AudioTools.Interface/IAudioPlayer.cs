@@ -15,10 +15,7 @@ namespace AudioTools.Interface
         /// Plays a sound using stream
         /// </summary>
         /// <param name="stream">More in MSDN</param>
-        /// <param name="samplingRate">In other words - Samples per second</param>
-        /// <param name="bitDepth">Bits per sample</param>
-        /// <param name="channels">Mono/Stereo</param>
-        /// <param name="audioDeviceId">I</param>
+        /// <param name="soundConfig"></param>
         /// <returns>Sound instance</returns>
         ISound PlaySound(Stream stream, SoundConfig soundConfig);
 
