@@ -3,7 +3,7 @@ using System.Linq;
 using AudioTools.Interface.DeviceDetection;
 using NAudio.CoreAudioApi;
 
-namespace AudioTools.DeviceDetection
+namespace AudioTools.Devices
 {
     public class MmAudioDeviceDetector : IAudioDeviceDetector
     {

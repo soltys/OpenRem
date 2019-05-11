@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using AudioTools;
-using AudioTools.DeviceDetection;
+using AudioTools.Devices;
 using AudioTools.Interface;
 using AudioTools.Interface.Config;
 using AudioTools.Interface.DeviceDetection;
