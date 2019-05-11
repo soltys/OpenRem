@@ -14,14 +14,15 @@ namespace AudioTools
         }
 
         /// <summary>
-        /// Creates WasapiOut, initializes, wraps it in RawSound, plays it and returns.
+        ///     Creates WasapiOut, initializes, wraps it in RawSound, plays it and returns.
         /// </summary>
         /// <param name="stream"></param>
         /// <param name="soundConfig">audioDeviceId inside should be provided by MMDeviceEnumerator or its derivatives</param>
         /// <returns></returns>
         public ISound PlaySound(Stream stream, SoundConfig soundConfig)
         {
-            var rawWaveStream = new RawSourceWaveStream(stream, new WaveFormat(soundConfig.SamplingRate, (int) soundConfig.BitDepth, (int) soundConfig.Channels));
+            var rawWaveStream = new RawSourceWaveStream(stream,
+                new WaveFormat(soundConfig.SamplingRate, (int) soundConfig.BitDepth, (int) soundConfig.Channels));
 
             WasapiOut wasapiOut;
             var deviceId = soundConfig.AudioDeviceId ?? DeviceId;

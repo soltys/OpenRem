@@ -15,7 +15,7 @@ namespace AudioTools
         }
 
         /// <summary>
-        /// Plays PCM sound
+        ///     Plays PCM sound
         /// </summary>
         /// <param name="stream"></param>
         /// <param name="soundConfig">audioDeviceId inside should be provided by WaveOut Capabilities (ProductGuid)</param>
@@ -23,7 +23,8 @@ namespace AudioTools
         public ISound PlaySound(Stream stream, SoundConfig soundConfig)
         {
             // create WaveOutEvent and Init using NAudio
-            var rawWaveStream = new RawSourceWaveStream(stream, new WaveFormat(soundConfig.SamplingRate, (int) soundConfig.BitDepth, (int) soundConfig.Channels));
+            var rawWaveStream = new RawSourceWaveStream(stream,
+                new WaveFormat(soundConfig.SamplingRate, (int) soundConfig.BitDepth, (int) soundConfig.Channels));
             var waveOutEvent = new WaveOutEvent();
 
             if (soundConfig.AudioDeviceId != null)
@@ -39,7 +40,7 @@ namespace AudioTools
         }
 
         /// <summary>
-        /// Plays PCM sound
+        ///     Plays PCM sound
         /// </summary>
         /// <param name="data"></param>
         /// <param name="soundConfig">audioDeviceId inside should be provided by WaveOut Capabilities (ProductGuid)</param>
@@ -50,12 +51,12 @@ namespace AudioTools
         }
 
         /// <summary>
-        /// Compatible with ProductGuid from WaveOut Capabilities
+        ///     Compatible with ProductGuid from WaveOut Capabilities
         /// </summary>
         public string DeviceId { get; set; }
 
         #region Private helpers
-        
+
         private int DeviceIdToNumber(string audioDeviceId)
         {
             var devices = Enumerable.Range(0, WaveOut.DeviceCount).Select(i => WaveOut.GetCapabilities(i)).ToList();
