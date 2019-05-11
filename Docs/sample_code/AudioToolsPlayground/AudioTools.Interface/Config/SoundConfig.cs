@@ -1,4 +1,4 @@
-namespace AudioTools.Interface
+namespace AudioTools.Interface.Config
 {
     public class SoundConfig
     {

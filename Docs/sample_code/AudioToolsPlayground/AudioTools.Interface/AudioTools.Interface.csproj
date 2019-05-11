@@ -40,13 +40,13 @@
   <ItemGroup>
     <Compile Include="BitDepth.cs" />
     <Compile Include="Channels.cs" />
+    <Compile Include="Config\SoundConfig.cs" />
     <Compile Include="DeviceDetection\DeviceType.cs" />
     <Compile Include="DeviceDetection\IAudioDevice.cs" />
     <Compile Include="DeviceDetection\IAudioDeviceDetector.cs" />
     <Compile Include="IAudioPlayer.cs" />
     <Compile Include="ISound.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SoundConfig.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

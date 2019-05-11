@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using AudioTools.Interface;
+using AudioTools.Interface.Config;
 using NAudio.CoreAudioApi;
 using NAudio.Wave;
 

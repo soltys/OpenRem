@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using AudioTools.Interface.Config;
 
 namespace AudioTools.Interface
 {
@@ -25,10 +26,7 @@ namespace AudioTools.Interface
         ///     Plays a sound using byte array
         /// </summary>
         /// <param name="data"></param>
-        /// <param name="samplingRate">In other words - Samples per second</param>
-        /// <param name="bitDepth">Bits per sample</param>
-        /// <param name="channels">Mono/Stereo</param>
-        /// <param name="audioDeviceId"></param>
+        /// <param name="soundConfig"></param>
         /// <returns>Sound instance</returns>
         ISound PlaySound(byte[] data, SoundConfig soundConfig);
     }

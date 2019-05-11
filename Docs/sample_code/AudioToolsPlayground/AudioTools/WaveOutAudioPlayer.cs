@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using AudioTools.Interface;
+using AudioTools.Interface.Config;
 using NAudio.Wave;
 
 namespace AudioTools

@@ -6,6 +6,7 @@ using System.Windows.Input;
 using AudioTools;
 using AudioTools.DeviceDetection;
 using AudioTools.Interface;
+using AudioTools.Interface.Config;
 using AudioTools.Interface.DeviceDetection;
 using AudioToolsPlayground.Commands;
 
