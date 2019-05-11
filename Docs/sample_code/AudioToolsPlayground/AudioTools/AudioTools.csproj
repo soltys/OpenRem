@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeviceDetection\MMAudioDevice.cs" />
-    <Compile Include="DeviceDetection\MMAudioDeviceDetector.cs" />
+    <Compile Include="DeviceDetection\MmAudioDevice.cs" />
+    <Compile Include="DeviceDetection\MmAudioDeviceDetector.cs" />
     <Compile Include="WasapiAudioPlayer.cs" />
     <Compile Include="WaveOutAudioPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -3,11 +3,11 @@ using NAudio.CoreAudioApi;
 
 namespace AudioTools.DeviceDetection
 {
-    public class MMAudioDevice : IAudioDevice
+    public class MmAudioDevice : IAudioDevice
     {
         private readonly MMDevice _mmDevice;
 
-        public MMAudioDevice(MMDevice mmDevice)
+        public MmAudioDevice(MMDevice mmDevice)
         {
             _mmDevice = mmDevice;
         }
