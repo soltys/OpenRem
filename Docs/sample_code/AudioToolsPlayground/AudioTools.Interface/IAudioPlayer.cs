@@ -31,7 +31,7 @@ namespace AudioTools.Interface
         /// <param name="channels">Mono/Stereo</param>
         /// <param name="audioDeviceId"></param>
         /// <returns>Sound instance</returns>
-        ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels, string audioDeviceId = null);
+        ISound PlaySound(byte[] data, SoundConfig soundConfig);
 
         string DeviceId { get; set; }
     }

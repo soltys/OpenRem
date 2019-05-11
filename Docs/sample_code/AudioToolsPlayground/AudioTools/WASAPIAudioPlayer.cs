@@ -37,9 +37,9 @@ namespace AudioTools
             return sound;
         }
 
-        public ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels, string audioDeviceId = null)
+        public ISound PlaySound(byte[] data, SoundConfig soundConfig)
         {
-            return PlaySound(new MemoryStream(data), new SoundConfig(samplingRate, bitDepth, channels, audioDeviceId));
+            return PlaySound(new MemoryStream(data), new SoundConfig(soundConfig.SamplingRate, soundConfig.BitDepth, soundConfig.Channels, soundConfig.AudioDeviceId));
         }
 
         public string DeviceId { get; set; }

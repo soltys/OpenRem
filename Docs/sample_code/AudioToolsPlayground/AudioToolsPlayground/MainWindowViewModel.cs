@@ -75,7 +75,7 @@ namespace AudioToolsPlayground
                 raw[n * 2 + 1] = bytes[1];
             }
 
-            _audioPlayer.PlaySound(raw, sampleRate, BitDepth.Of16, Channels.Mono, _selectedAudioDevice.Id);
+            _audioPlayer.PlaySound(raw, new SoundConfig(sampleRate, BitDepth.Of16, Channels.Mono, _selectedAudioDevice.Id));
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

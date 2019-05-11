@@ -42,16 +42,11 @@ namespace AudioTools
         /// Plays PCM sound
         /// </summary>
         /// <param name="data"></param>
-        /// <param name="samplingRate"></param>
-        /// <param name="bitDepth"></param>
-        /// <param name="channels"></param>
-        /// <param name="audioDeviceId">It should be provided by WaveOut Capabilities (ProductGuid)</param>
-        /// <param name="stream"></param>
+        /// <param name="soundConfig">audioDeviceId inside should be provided by WaveOut Capabilities (ProductGuid)</param>
         /// <returns></returns>
-        public ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels,
-            string audioDeviceId = null)
+        public ISound PlaySound(byte[] data, SoundConfig soundConfig)
         {
-            return PlaySound(new MemoryStream(data), new SoundConfig(samplingRate, bitDepth, channels, audioDeviceId));
+            return PlaySound(new MemoryStream(data), new SoundConfig(soundConfig.SamplingRate, soundConfig.BitDepth, soundConfig.Channels, soundConfig.AudioDeviceId));
         }
 
         /// <summary>
