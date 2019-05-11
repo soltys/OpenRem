@@ -5,7 +5,7 @@ using AudioTools.Interface.Config;
 using NAudio.CoreAudioApi;
 using NAudio.Wave;
 
-namespace AudioTools
+namespace AudioTools.Player
 {
     public class WasapiAudioPlayer : IAudioPlayer
     {

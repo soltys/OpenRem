@@ -5,7 +5,7 @@ using AudioTools.Interface;
 using AudioTools.Interface.Config;
 using NAudio.Wave;
 
-namespace AudioTools
+namespace AudioTools.Player
 {
     [Obsolete("Using WASAPI version is recommended.")]
     public class WaveOutAudioPlayer : IAudioPlayer

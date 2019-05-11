@@ -8,6 +8,7 @@ using AudioTools.Devices;
 using AudioTools.Interface;
 using AudioTools.Interface.Config;
 using AudioTools.Interface.DeviceDetection;
+using AudioTools.Player;
 using AudioToolsPlayground.Commands;
 
 namespace AudioToolsPlayground
