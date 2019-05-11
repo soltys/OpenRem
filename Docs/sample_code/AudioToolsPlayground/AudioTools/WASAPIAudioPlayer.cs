@@ -17,17 +17,14 @@ namespace AudioTools
         /// Creates WasapiOut, initializes, wraps it in RawSound, plays it and returns.
         /// </summary>
         /// <param name="stream"></param>
-        /// <param name="samplingRate"></param>
-        /// <param name="bitDepth"></param>
-        /// <param name="channels"></param>
-        /// <param name="audioDeviceId">ID should be provided by MMDeviceEnumerator or its derivatives</param>
+        /// <param name="soundConfig">audioDeviceId inside should be provided by MMDeviceEnumerator or its derivatives</param>
         /// <returns></returns>
-        public ISound PlaySound(Stream stream, int samplingRate, BitDepth bitDepth, Channels channels, string audioDeviceId = null)
+        public ISound PlaySound(Stream stream, SoundConfig soundConfig)
         {
-            var rawWaveStream = new RawSourceWaveStream(stream, new WaveFormat(samplingRate, (int) bitDepth, (int) channels));
+            var rawWaveStream = new RawSourceWaveStream(stream, new WaveFormat(soundConfig.SamplingRate, (int) soundConfig.BitDepth, (int) soundConfig.Channels));
 
             WasapiOut wasapiOut;
-            var deviceId = audioDeviceId != null ? audioDeviceId : DeviceId;
+            var deviceId = soundConfig.AudioDeviceId ?? DeviceId;
             if (deviceId != null)
                 wasapiOut = new WasapiOut(new MMDeviceEnumerator().GetDevice(deviceId), AudioClientShareMode.Shared,
                     false, 300);
@@ -42,7 +39,7 @@ namespace AudioTools
 
         public ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels, string audioDeviceId = null)
         {
-            return PlaySound(new MemoryStream(data), samplingRate, bitDepth, channels, audioDeviceId);
+            return PlaySound(new MemoryStream(data), new SoundConfig(samplingRate, bitDepth, channels, audioDeviceId));
         }
 
         public string DeviceId { get; set; }

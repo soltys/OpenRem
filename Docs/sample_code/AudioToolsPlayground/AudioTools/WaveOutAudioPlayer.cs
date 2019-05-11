@@ -18,20 +18,16 @@ namespace AudioTools
         /// Plays PCM sound
         /// </summary>
         /// <param name="stream"></param>
-        /// <param name="samplingRate"></param>
-        /// <param name="bitDepth"></param>
-        /// <param name="channels"></param>
-        /// <param name="audioDeviceId">It should be provided by WaveOut Capabilities (ProductGuid)</param>
+        /// <param name="soundConfig">audioDeviceId inside should be provided by WaveOut Capabilities (ProductGuid)</param>
         /// <returns></returns>
-        public ISound PlaySound(Stream stream, int samplingRate, BitDepth bitDepth, Channels channels,
-            string audioDeviceId = null)
+        public ISound PlaySound(Stream stream, SoundConfig soundConfig)
         {
             // create WaveOutEvent and Init using NAudio
-            var rawWaveStream = new RawSourceWaveStream(stream, new WaveFormat(samplingRate, (int) bitDepth, (int) channels));
+            var rawWaveStream = new RawSourceWaveStream(stream, new WaveFormat(soundConfig.SamplingRate, (int) soundConfig.BitDepth, (int) soundConfig.Channels));
             var waveOutEvent = new WaveOutEvent();
 
-            if (audioDeviceId != null)
-                waveOutEvent.DeviceNumber = DeviceIdToNumber(audioDeviceId);
+            if (soundConfig.AudioDeviceId != null)
+                waveOutEvent.DeviceNumber = DeviceIdToNumber(soundConfig.AudioDeviceId);
             else if (DeviceId != null)
                 waveOutEvent.DeviceNumber = DeviceIdToNumber(DeviceId);
             waveOutEvent.Init(rawWaveStream);
@@ -55,7 +51,7 @@ namespace AudioTools
         public ISound PlaySound(byte[] data, int samplingRate, BitDepth bitDepth, Channels channels,
             string audioDeviceId = null)
         {
-            return PlaySound(new MemoryStream(data), samplingRate, bitDepth, channels, audioDeviceId);
+            return PlaySound(new MemoryStream(data), new SoundConfig(samplingRate, bitDepth, channels, audioDeviceId));
         }
 
         /// <summary>

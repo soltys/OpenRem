@@ -20,7 +20,7 @@ namespace AudioTools.Interface
         /// <param name="channels">Mono/Stereo</param>
         /// <param name="audioDeviceId">I</param>
         /// <returns>Sound instance</returns>
-        ISound PlaySound(Stream stream, int samplingRate, BitDepth bitDepth, Channels channels, string audioDeviceId = null);
+        ISound PlaySound(Stream stream, SoundConfig soundConfig);
 
         /// <summary>
         /// Plays a sound using byte array
