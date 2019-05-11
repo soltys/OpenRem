@@ -30,18 +30,7 @@ namespace AudioToolsPlayground
 
         public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
 
-        public IEnumerable<IAudioDevice> AudioOutputDevices
-        {
-            get
-            {
-                if (_audioOutputDevices == null)
-                {
-                    _audioOutputDevices = _deviceDetector.GetOutputDevices();
-                }
-
-                return _audioOutputDevices;
-            }
-        }
+        public IEnumerable<IAudioDevice> AudioOutputDevices => _audioOutputDevices ?? (_audioOutputDevices = _deviceDetector.GetOutputDevices());
 
         public IAudioDevice SelectedAudioDevice
         {
