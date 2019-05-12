@@ -11,6 +11,9 @@
         <Label>Choose your output device</Label>
         <ComboBox ItemsSource="{Binding AudioOutputDevices}" SelectedItem="{Binding SelectedAudioDevice}"></ComboBox>
         <Label>Here you can play some sound</Label>
+        <StackPanel VerticalAlignment="Center" Margin="10">
+            <Slider Maximum="255" Value="{Binding Volume}" IsMoveToPointEnabled="true" />
+        </StackPanel>
         <Button Command="{Binding PlaySoundCommand}">Play!</Button>
     </StackPanel>
     

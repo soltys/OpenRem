@@ -19,6 +19,7 @@ namespace AudioToolsPlayground
         private readonly IAudioDeviceDetector _deviceDetector;
         private IAudioDevice _selectedAudioDevice;
         private IEnumerable<IAudioDevice> _audioOutputDevices;
+        private double _volume;
 
         public MainWindowViewModel()
         {
@@ -42,17 +43,46 @@ namespace AudioToolsPlayground
             }
         }
 
+        public double Volume
+        {
+            get => _volume;
+            set
+            {
+                _volume = value;
+                OnPropertyChanged(nameof(Volume));
+            }
+        }
+
         #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void PlaySound()
         {
-            var sampleRate = 16000;
-            var frequency = 500;
-            var amplitude = 0.2;
-            var seconds = 1;
+            PlayRawSoundSample();
+        }
 
+        private void PlayRawSoundSample()
+        {
+            const int sampleRate = 16000;
+            const int frequency = 500;
+            const double amplitude = 0.2;
+            const int seconds = 1;
+
+            var raw = CreateRawSoundSample(sampleRate, seconds, frequency, amplitude);
+
+            _audioPlayer.PlaySound(raw, new SoundConfig()
+            {
+                SamplingRate = sampleRate,
+                BitDepth = BitDepth.Of16,
+                Channels = Channels.Mono,
+                Volume = (float)(this.Volume / 255d),
+                AudioDeviceId = _selectedAudioDevice.Id
+            });
+        }
+
+        private static byte[] CreateRawSoundSample(int sampleRate, int seconds, int frequency, double amplitude)
+        {
             var raw = new byte[sampleRate * seconds * 2];
 
             var multiple = 2.0 * frequency / sampleRate;
@@ -66,7 +96,7 @@ namespace AudioToolsPlayground
                 raw[n * 2 + 1] = bytes[1];
             }
 
-            _audioPlayer.PlaySound(raw, new SoundConfig(sampleRate, BitDepth.Of16, Channels.Mono, _selectedAudioDevice.Id));
+            return raw;
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

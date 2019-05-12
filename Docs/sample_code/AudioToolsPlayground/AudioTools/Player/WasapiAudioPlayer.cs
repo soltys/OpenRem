@@ -29,6 +29,8 @@ namespace AudioTools.Player
             var wasapiOut = deviceId != null
                 ? new WasapiOut(new MMDeviceEnumerator().GetDevice(deviceId), AudioClientShareMode.Shared, false, 300)
                 : new WasapiOut(AudioClientShareMode.Shared, false, 300);
+
+            wasapiOut.Volume = soundConfig.Volume;
             wasapiOut.Init(rawWaveStream);
 
             var sound = new RawSound(wasapiOut);
