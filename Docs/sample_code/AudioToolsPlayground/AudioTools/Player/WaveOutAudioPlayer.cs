@@ -32,6 +32,7 @@ namespace AudioTools.Player
                 waveOutEvent.DeviceNumber = DeviceIdToNumber(soundConfig.AudioDeviceId);
             else if (DeviceId != null)
                 waveOutEvent.DeviceNumber = DeviceIdToNumber(DeviceId);
+            waveOutEvent.Volume = soundConfig.Volume;
             waveOutEvent.Init(rawWaveStream);
 
             // wrap into local sound implementation
