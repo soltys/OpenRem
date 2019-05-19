@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Devices\MmAudioDevice.cs" />
     <Compile Include="Devices\MmAudioDeviceDetector.cs" />
+    <Compile Include="Devices\WaveOutDevice.cs" />
+    <Compile Include="Devices\WaveOutDeviceDetector.cs" />
     <Compile Include="Player\WasapiAudioPlayer.cs" />
     <Compile Include="Player\WaveOutAudioPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
