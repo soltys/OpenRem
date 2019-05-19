@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using AudioTools;
 using AudioTools.Devices;
 using AudioTools.Interface;
 using AudioTools.Interface.Config;
@@ -17,43 +16,18 @@ namespace AudioToolsPlayground
     {
         private readonly IAudioPlayer _audioPlayer;
         private readonly IAudioDeviceDetector _deviceDetector;
-        private IAudioDevice _selectedAudioDevice;
         private IEnumerable<IAudioDevice> _audioOutputDevices;
+        private IAudioDevice _selectedAudioDevice;
         private double _volume;
 
         public MainWindowViewModel()
         {
             _deviceDetector = new MmAudioDeviceDetector();
             _audioPlayer = new WasapiAudioPlayer();
+//            _deviceDetector = new WaveOutDeviceDetector();
+//            _audioPlayer = new WaveOutAudioPlayer();
             SelectedAudioDevice = _deviceDetector.GetDeviceSelectedInSystem();
         }
-
-        #region Binded Properties
-
-        public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
-
-        public IEnumerable<IAudioDevice> AudioOutputDevices => _audioOutputDevices ?? (_audioOutputDevices = _deviceDetector.GetOutputDevices());
-
-        public IAudioDevice SelectedAudioDevice
-        {
-            get => _selectedAudioDevice;
-            set {
-                _selectedAudioDevice = value; 
-                OnPropertyChanged(nameof(SelectedAudioDevice));
-            }
-        }
-
-        public double Volume
-        {
-            get => _volume;
-            set
-            {
-                _volume = value;
-                OnPropertyChanged(nameof(Volume));
-            }
-        }
-
-        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -71,12 +45,12 @@ namespace AudioToolsPlayground
 
             var raw = CreateRawSoundSample(sampleRate, seconds, frequency, amplitude);
 
-            _audioPlayer.PlaySound(raw, new SoundConfig()
+            _audioPlayer.PlaySound(raw, new SoundConfig
             {
                 SamplingRate = sampleRate,
                 BitDepth = BitDepth.Of16,
                 Channels = Channels.Mono,
-                Volume = (float)(this.Volume / 255d),
+                Volume = (float) (Volume / 255d),
                 AudioDeviceId = _selectedAudioDevice.Id
             });
         }
@@ -103,5 +77,33 @@ namespace AudioToolsPlayground
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        #region Bound Properties
+
+        public ICommand PlaySoundCommand => new DelegateCommand(PlaySound);
+
+        public IEnumerable<IAudioDevice> AudioOutputDevices => _audioOutputDevices ?? (_audioOutputDevices = _deviceDetector.GetOutputDevices());
+
+        public IAudioDevice SelectedAudioDevice
+        {
+            get => _selectedAudioDevice;
+            set
+            {
+                _selectedAudioDevice = value;
+                OnPropertyChanged(nameof(SelectedAudioDevice));
+            }
+        }
+
+        public double Volume
+        {
+            get => _volume;
+            set
+            {
+                _volume = value;
+                OnPropertyChanged(nameof(Volume));
+            }
+        }
+
+        #endregion
     }
 }
