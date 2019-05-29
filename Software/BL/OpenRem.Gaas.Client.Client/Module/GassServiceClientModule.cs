@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Autofac;
 using Gaas.Service.Client;
-using Gaas.Service.Client.Interface;
 using OpenRem.Core;
+using OpenRem.Gaas.Client.Interface;
 
 [assembly: ApplicationLayer]
 namespace OpenRem.Gaas.Service.Client.Module

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Gaas.Service.Client.Interface;
 using Gaas.Service.Protocol;
 using Grpc.Core;
 using OpenRem.Common.Service;
-using OpenRem.Gaas.Service.Client.Interface;
+using OpenRem.Gaas.Client.Interface;
 
 namespace Gaas.Service.Client
 {

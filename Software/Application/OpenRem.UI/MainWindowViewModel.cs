@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading;
-using Gaas.Service.Client.Interface;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using OpenRem.CommonUI;
@@ -38,6 +36,7 @@ namespace OpenRem.UI
         private IGraphServiceClient gsc;
 
         private bool send = false;
+
         private Timer timer;
 
         public string OutputFilename
@@ -51,7 +50,7 @@ namespace OpenRem.UI
             this.rawFileRecorder = rawFileRecorder;
             this.detectManager = detectManager;
             this.gsc = gsc;
-            this.timer = new Timer(SendCallback, null, 0, 30);
+            this.timer = new Timer(SendCallback, null, 0, 50);
 
             AddCommands();
         }
@@ -67,7 +66,7 @@ namespace OpenRem.UI
                     dataPoints.Add(new DataPoint(this.randomGenerator.Next(230,4000), this.randomGenerator.Next(70, 80)));
 
                 }
-
+                
                 dataPoints = dataPoints.OrderBy(x => x.X).ToList();
                 
                 await this.gsc.DisplayDataAsync("name", dataPoints);

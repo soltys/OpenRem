@@ -1,7 +1,12 @@
-﻿namespace OpenRem.Gaas.Service.Client.Interface
+﻿namespace OpenRem.Gaas.Client.Interface
 {
     public class DataPoint
     {
+        public DataPoint()
+        {
+            
+        }
+
         public DataPoint(double x, double y)
         {
             X = x;

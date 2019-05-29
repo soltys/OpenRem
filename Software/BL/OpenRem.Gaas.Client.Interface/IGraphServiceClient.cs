@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using OpenRem.Gaas.Service.Client.Interface;
 
-namespace Gaas.Service.Client.Interface
+namespace OpenRem.Gaas.Client.Interface
 {
     public interface IGraphServiceClient
     {
