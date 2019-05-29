@@ -7,8 +7,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using OpenRem.CommonUI;
 using OpenRem.Engine;
 using Microsoft.Win32;
-using OpenRem.Gaas.Service.Client.Interface;
-using OpenRem.Common;
+using OpenRem.Gaas.Client.Interface;
 
 namespace OpenRem.UI
 {
