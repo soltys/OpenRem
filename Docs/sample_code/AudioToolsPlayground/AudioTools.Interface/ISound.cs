@@ -1,7 +1,14 @@
+using System;
+
 namespace AudioTools.Interface
 {
-    public interface ISound
+    public interface ISound : IDisposable
     {
-        void AddSample(byte[] sample);
+        event EventHandler<EventArgs> PlaybackFinished;
+        
+        ISound AddSample(byte[] sample);
+        ISound Pause();
+        ISound Play();
+        ISound Stop();
     }
 }

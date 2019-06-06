@@ -7,9 +7,5 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     
-    <Window.DataContext>
-        <local:MainWindowViewModel/>
-    </Window.DataContext>
-    
     <local:PlaybackControl></local:PlaybackControl>
 </Window>

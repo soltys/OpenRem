@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioTools.Interface", "Aud
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioTools", "AudioTools\AudioTools.csproj", "{EA332E76-587D-41AF-93A9-E180954FB6E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioTools.UnitTests", "AudioTools.UnitTests\AudioTools.UnitTests.csproj", "{4ECB006A-C2BD-49DA-924B-DC689AC161C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{EA332E76-587D-41AF-93A9-E180954FB6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA332E76-587D-41AF-93A9-E180954FB6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA332E76-587D-41AF-93A9-E180954FB6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ECB006A-C2BD-49DA-924B-DC689AC161C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECB006A-C2BD-49DA-924B-DC689AC161C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECB006A-C2BD-49DA-924B-DC689AC161C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECB006A-C2BD-49DA-924B-DC689AC161C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
