@@ -19,15 +19,32 @@ namespace OpenRem.UI
         {
             this.panel = new System.Windows.Forms.Panel() {Width = 800, Height = 800, Visible = false};
             this.host = new WindowsFormsHost { Child = this.panel };
-            Content = this.host;
         }
+
+        public Control MissingApplicationPlaceholder
+        {
+            get => (Control) GetValue(GaasControl.MissingApplicationPlaceholderProperty);
+            set => SetValue(GaasControl.MissingApplicationPlaceholderProperty, value);
+        }
+
+        public static readonly DependencyProperty MissingApplicationPlaceholderProperty =
+            DependencyProperty.Register(
+                "MissingApplicationPlaceholder",
+                typeof(Control),
+                typeof(GaasControl),
+                new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
+
 
         public void Open()
         {
             if (!File.Exists(ApplicationLocation))
             {
-                Content = Template.FindName("PART_MISSING_APPLICATION", this);
+                Content = MissingApplicationPlaceholder;
                 return;
+            }
+            else
+            {
+                Content = this.host;
             }
 
             ProcessStartInfo psi = new ProcessStartInfo(ApplicationLocation);
@@ -52,9 +69,9 @@ namespace OpenRem.UI
 
         public void Close()
         {
-            if (!process.HasExited)
+            if (this.process?.HasExited == false)
             {
-                process?.Kill();
+                this.process.Kill();
             }
         }
 

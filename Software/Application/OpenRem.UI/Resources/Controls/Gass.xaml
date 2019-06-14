@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="clr-namespace:OpenRem.UI"
+                    >
+    <Style TargetType="{x:Type ui:GaasControl}">
+        <Setter Property="MissingApplicationPlaceholder">
+            <Setter.Value>
+                <Control>
+                    <Control.Template>
+                        <ControlTemplate TargetType="{x:Type Control}">
+                            <Grid>
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="24"
+                                           Text="No Gaas.exe"
+                                           />
+                            </Grid>
+                        </ControlTemplate>
+                    </Control.Template>
+                </Control>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

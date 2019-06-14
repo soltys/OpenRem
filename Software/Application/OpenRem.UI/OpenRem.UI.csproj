@@ -30,6 +30,9 @@
     <OutputPath>..\..\_Result\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Page Include="Resources\All.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
