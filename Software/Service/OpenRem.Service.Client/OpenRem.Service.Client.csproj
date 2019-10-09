@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <DebugType>Full</DebugType>
   </PropertyGroup>
 
@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.9.2" />
-    <PackageReference Include="Grpc" Version="1.20.0" />
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="Grpc" Version="2.24.0" />
   </ItemGroup>
 
   <ItemGroup>

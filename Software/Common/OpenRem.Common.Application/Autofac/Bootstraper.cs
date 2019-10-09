@@ -29,7 +29,7 @@ namespace OpenRem.Common.Application.Autofac
         private static IEnumerable<string> GetAssemblyNames(string path)
         {
             List<string> assemblyNames = new List<string>();
-            foreach (var searchPattern in new[] { "OpenRem*.dll", "OpenRem*.exe" })
+            foreach (var searchPattern in new[] { "OpenRem*.dll" })
             {
                 assemblyNames.AddRange(Directory.GetFiles(path, searchPattern, SearchOption.TopDirectoryOnly));
             }

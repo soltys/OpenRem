@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyTitle>OpenRem.Service.Server</AssemblyTitle>
     <Company>DGS</Company>
     <Product>OpenRem.Service</Product>
@@ -13,10 +13,7 @@
     <OutputPath>..\..\_Result\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.*" />
-    <PackageReference Include="System.Net.Http" Version="4.*" />
-    <PackageReference Include="Autofac" Version="4.9.2" />
+    <PackageReference Include="Autofac" Version="4.9.4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BL\OpenRem.Engine.Interface\OpenRem.Engine.Interface.csproj" />

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyTitle>OpenRem.Ark</AssemblyTitle>
     <Product>OpenRem.Ark</Product>
     <Copyright>Copyright ©  2019</Copyright>
@@ -10,17 +10,12 @@
     <OutputPath>..\..\_Result\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.*" />
-    <PackageReference Include="System.Net.Http" Version="4.*" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\BL\OpenRem.Engine\OpenRem.Engine.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
     <ProjectReference Include="..\..\Common\OpenRem.Core\OpenRem.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.9.2" />
-    <PackageReference Include="System.Reactive" Version="4.1.3" />
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="System.Reactive" Version="4.1.6" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using GalaSoft.MvvmLight;
 using OpenRem.Common;
 
 namespace OpenRem.CommonUI
