@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyTitle>OpenRem.Arduino</AssemblyTitle>
     <Product>OpenRem.Arduino</Product>
     <Copyright>Copyright ©  2019</Copyright>
@@ -10,9 +10,7 @@
     <OutputPath>..\..\_Result\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.*" />
-    <PackageReference Include="System.Net.Http" Version="4.*" />
+    <PackageReference Include="System.IO.Ports" Version="4.6.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\OpenRem.Common\OpenRem.Common.csproj" />
@@ -21,7 +19,7 @@
     <ProjectReference Include="..\OpenRem.HAL.Interface\OpenRem.HAL.Interface.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.9.2" />
-    <PackageReference Include="System.Reactive" Version="4.1.3" />
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="System.Reactive" Version="4.1.6" />
   </ItemGroup>
 </Project>

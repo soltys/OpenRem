@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net471</TargetFramework>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
         <AssemblyTitle>OpenRem.Config</AssemblyTitle>
         <Product>OpenRem.Config</Product>
         <Copyright>Copyright ©  2019</Copyright>
@@ -14,15 +14,12 @@
         <EmbeddedResource Include="Config\AnalyzerCollection.json" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-        <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.2.0" />
-
-        <PackageReference Include="Microsoft.CSharp" Version="4.*" />
-        <PackageReference Include="System.Net.Http" Version="4.*" />
-        <PackageReference Include="Autofac" Version="4.9.2" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.0.0" />
+        <PackageReference Include="Autofac" Version="4.9.4" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\Common\OpenRem.Common.Config\OpenRem.Common.Config.csproj" />
